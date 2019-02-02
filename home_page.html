@@ -27,13 +27,11 @@
         a{
             font-family: 'Kaushan Script', cursive, 'Roboto Slab', serif;
         }
-
-        
     </style>
 
 </head>
 
-<body style="margin-top: 65px;margin-right: 15px;">
+<body style="margin-top: 65px;">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light clean-navbar" 
         style="margin-bottom:0px;background-image: linear-gradient(to right,#C2C7C8,#9FB1B3);">
         <div class="container">
@@ -53,8 +51,18 @@
         </div>
     </nav>
     <!-- ///////////////////////Carrousel///////////////////////////////////////////////////////////////////-->
-    <div class="row text-justify d-inline mx-auto" style="margin-top: 0px;width: 985;">
-        <section id="carousel">
+    <div class="row text-justify d-inline mx-auto" style="margin-top: 0px;width: 985;height: 450;">
+        <div style="background-image: url(&quot;assets/img/young-college-students.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+            <div class="d-flex justify-content-center align-items-center" style="height: inherit;min-height: initial;width: 100%;position: absolute;left: 0;background-color: rgba(30,41,99,0.23);">
+                <div class="d-flex align-items-center order-12" style="height:200px;">
+                    <div class="container">
+                        <h1 class="text-center" style="color:rgb(246,245,248);font-size:56px;font-weight:bold;font-family:Roboto, sans-serif;">Welcome to Vilaronga Courses</h1>
+                        <h3 class="text-center" style="color:rgb(246,245,248);padding-top:0.25em;padding-bottom:0.25em;font-weight:normal;">Aprenda o melhor da língua da inglesa e desfrute dos nossos grandes cursos que lhe oferecemos.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <section id="carousel">
             <div data-ride="carousel" class="carousel slide" id="carousel-1">
                 <div role="listbox" class="carousel-inner">
                     <div class="carousel-item">
@@ -90,9 +98,9 @@
                     <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
                     </ol>
             </div>
-            <!-- ///////////////////////Fim do Carrousel////////////////////////////////////////////////////////////////-->
-        </section>
-</div>
+        </section> -->
+    </div>
+<!--///////////////////////Fim do Carrousel////////////////////////////////////////////////////////////////-->
     <main class="page landing-page">
         <section class="clean-block clean-info bg-light" style="background-color: transparent;">
             <div class="container"><div class="block-heading">
@@ -262,5 +270,14 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="assets/js/Card-hover-affect-2.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('.carousel').carousel({
+                interval: 4000,
+                pause:"null"
+            });
+
+        });
+    </script>
 </body>
 </html>
