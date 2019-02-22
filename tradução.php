@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -15,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="assets/css/css_traducao/Team.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <style type="text/css">
         h2  {
@@ -30,7 +30,10 @@
 
 <body>
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar" style="margin-bottom:0px;background-image: linear-gradient(to right,#C2C7C8,#9FB1B3)">
-        <div class="container"><a class="navbar-brand logo" href="home_page.html" style="font-size: 2em;"><em>Cursos Vilaronga</em></a>
+        <div class="container">
+            <a class="navbar-brand logo" href="home_page.html" style="font-size: 2em; font-family: 'Lobster', cursive;">
+            <em>Cursos Vilaronga</em>
+        </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="navbar-toggler-icon"></span>
@@ -40,7 +43,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="sobreNos.html">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="ingles.html">Cursos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="tradução.html">Serviços</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="tradução.php">Serviços</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">LOgin</a></li>
                 </ul>
         </div>
@@ -60,7 +63,7 @@
         <section class="clean-block feature" style="margin-top: 10px;">
             <div class="container">
                 <div id="servicos" class="block-heading" style="padding-top: 30px;">
-                    <h2 class="text-info">O que é nosso serviço de tradução??</h2>
+                    <h2 class="text-info">O que é nosso serviço de tradução?</h2>
                 </div>
                 <p class="text-justify">O Vilaronga Cursos e Idiomas juntamente com seus professores e colaboradores trabalham também com traduções. Tendo em vista a imersão das pessoas no contexto globalizado,&nbsp;de maneira que as transações comerciais já criam uma grande
                     demanda de documentos e prospectos traduzidos para outras línguas. Além disso, há filmes, séries, livros, trabalhos acadêmicos, os quais por precisarem de uma maior amplitude acabam alcançando maiores adeptos quando disponíveis em
@@ -106,8 +109,8 @@
                     </div>
                     <div class="col-md-5 feature-box"><i class="far fa-money-bill-alt icon"></i>
                         <h4>Orçamento</h4>
-                        <p class="text-justify">Como trabalhamos de forma autônoma, temos preços altamente competitivo. Para que possamos efetuar uma avaliação orçamentária, precisaremos examinar os seus manuscritos e textos. Assim sendo , preencha o formulário(abaixo desta
-                            seção) solicitando o serviço ou analise dos documentos que é gratuita!<br></p>
+                        <p class="text-justify">Como trabalhamos de forma autônoma, temos preços altamente competitivos. Para que possamos efetuar uma avaliação orçamentária, precisaremos examinar os seus manuscritos e textos. Assim sendo, preencha o formulário (abaixo desta seção) solicitando o serviço ou analise dos documentos que é gratuita!<br>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -135,21 +138,47 @@
                 </div>
             </div>
 </section>
+        <!-- Formulário de solicitação de serviços -->
         <section class="clean-block clean-form dark" style="background-image: url(&quot;imagens/traducao/cenario.jpg&quot;);background-color: transparent;background-repeat: no-repeat;background-size: cover;">
             <div class="container">
                 <div class="block-heading" style="padding-top: 40px;">
                     <h2 class="text-info">Solicitação de serviços</h2>
                     <p><br><em>Preencha o formulário e o seu pedido ou questionamento será respondido.</em><br><br></p>
                 </div>
-                <form class="bg-light border-dark shadow">
-                    <div class="form-group"><label>Nome</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Email</label><input class="form-control" type="text"></div>
-                    <div class="form-group"><label>Telefone</label><input class="form-control" type="email"></div>
-                    <div class="form-group"><label>Mensagem</label><textarea class="form-control"></textarea></div>
-                    <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Enviar</button></div>
+                <form class="bg-light border-dark shadow" action="processingForm.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input id="nome" name="nome" class="form-control" placeholder="Nome Completo" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input id = "email" name = "email" class="form-control" placeholder="exemplo@gmail.com" type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone</label>
+                        <input id = "telefone" name = "telefone" class="form-control" placeholder="(xx)xxxx-xxxx" type="tel" required="">
+                    </div>
+                    <div class="form-group">
+                        <label>Assunto</label>
+                        <input id = "assunto" name = "assunto" class="form-control" type="text" required="">
+                    </div>
+                    <div class="form-group">                            
+                        <label>Mensagem</label>
+                        <textarea ind = "msg" name= "msg" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group">                            
+                        <label>Anexe seu documento para tradução</label>
+                        <input id="arquivo" name="arquivo" type="file">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+                    </div>
                 </form>
             </div>
         </section>
+        <!-- =====================FIM DO FORMULÁRIO=================================================== -->
     </main>
     <footer class="page-footer dark">
         <div class="container">
