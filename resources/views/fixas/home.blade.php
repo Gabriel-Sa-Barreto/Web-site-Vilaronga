@@ -168,7 +168,7 @@
     <div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
         <div class="team-member"><img src="/img/imagens/Ricardo.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 5px 5px #888888;"/>
             <h4>Ricardo Vilaronga</h4>
-            <p class="text-muted">Dono e Coordenador Geral</p>
+            <p class="text-muted">Coordenador Geral</p>
             <ul class="list-inline social-buttons">
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -239,14 +239,5 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/Card-hover-affect-2.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('.carousel').carousel({
-                interval: 4000,
-                pause:"null"
-            });
-
-        });
-    </script>
 </body>
 </html>

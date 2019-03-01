@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="block-heading" style="height: 209.6px;">
                     <h2 class="text-info">Espanhol</h2>
-                    <p>O ser humano se empolga com tudo que é novo, o sentimento e o desejo de aprender idiomas, em especial o Inglês e o Espanhol.</p>
+                    <p>O ser humano se empolga com tudo que é novo, o sentimento e o desejo de aprender idiomas, em especial o Inglês e o Espanhol, se torna cada vez mais efervescente.</p>
                 </div>
                 <div class="row align-items-center">
                     <div class="col-md-6"><img class="img-thumbnail" src="/img/scenery/image5.jpg"></div>
@@ -65,38 +65,5 @@
                 </div>
             </div>
         </section>
-        <section class="clean-block about-us">
-            <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info">Professores</h2>
-                    <p>Nossa equipe:</p>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="/img/avatars/avatar1.jpg">
-                            <div class="card-body info">
-                                <h4 class="card-title">John Smith</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div><button class="btn btn-primary" type="button">Currículo</button></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="/img/avatars/avatar2.jpg">
-                            <div class="card-body info">
-                                <h4 class="card-title">Robert Downturn</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div><button class="btn btn-primary" type="button">Currículo<br></button></div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4">
-                        <div class="card clean-card text-center"><img class="card-img-top w-100 d-block" src="/img/avatars/avatar3.jpg">
-                            <div class="card-body info">
-                                <h4 class="card-title">Ally Sanders</h4>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                                <div class="icons"><a href="#"><i class="icon-social-facebook"></i></a><a href="#"><i class="icon-social-instagram"></i></a><a href="#"><i class="icon-social-twitter"></i></a></div><button class="btn btn-primary" type="button">Currículo<br></button></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
 @stop

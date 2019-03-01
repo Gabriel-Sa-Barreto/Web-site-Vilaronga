@@ -22,6 +22,7 @@ Route::get('/ingles', function () {
 Route::get('/espanhol', function () {
     return view('cursos.espanhol');
 });
+//Route::view('/espanhol','cursos.espanhol');
 
 Route::get('/portugues', function () {
     return view('cursos.portugues');
