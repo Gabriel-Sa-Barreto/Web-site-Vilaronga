@@ -51,7 +51,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">LOGiN</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/login">LOGiN</a></li>
                 </ul>
         </div>
         </div>
@@ -204,7 +204,7 @@
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="#">Fale conosco&nbsp;</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="/login">Login</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">

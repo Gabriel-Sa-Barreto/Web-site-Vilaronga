@@ -8,20 +8,16 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
-    <link rel="stylesheet" href="/css/Customizable-Background--Overlay.css">
-    <link rel="stylesheet" href="/css/css_sobreNos/dh-row-titile-text-image-right-1.css">
+    <link rel="stylesheet" href="/fonts/ionicons.min.css">
     <link rel="stylesheet" href="/css/css_home/3-Columns-Info-Icons-1.css">
     <link rel="stylesheet" href="/css/best-carousel-slide.css">
     <link rel="stylesheet" href="/css/css_home/blocosAnimados.css">
     <link rel="stylesheet" href="/css/css_home/Bold-BS4-Cards-with-Hover-Effect-74.css">
     <link rel="stylesheet" href="/css/css_home/Card-hover-affect-2.css">
     <link rel="stylesheet" href="/css/css_home/dh-card-image-left-dark.css">
-    <link rel="stylesheet" href="/css/css_traducao/Customizable-Background--Overlay.css">
-    <link rel="stylesheet" href="/css/css_traducao/Features-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
     <link rel="stylesheet" href="/css/css_home/Team-1.css">
+    <link rel="stylesheet" href="/css/css_login/Login-Form-Clean.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -52,15 +48,44 @@
             </button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobreNos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/tradução">Serviços</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/login">Login</a></li>
                 </ul>
         </div>
         </div>
     </nav>
-    @yield('conteudo')
+    <main class="page landing-page" style="margin-top: -55px;">
+        <div class="row text-justify d-inline mx-auto" style="width: 985;height: 450;">
+            <div style="background-image: url(&quot;/img/login.jpg&quot;);height: 650px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+                <div class="d-flex justify-content-center align-items-center" style="height: inherit;min-height: initial;width: 100%;position: absolute;left: 0;background-color: rgba(30,41,99,0.25);">
+                    <div class="d-flex align-items-center order-12" style="height:200px;">
+                        <div class="container">
+                            <div class="login-clean">
+                                <form method="post">
+                                    <h2 class="sr-only">Login Form</h2>
+                                    <div class="illustration">
+                                        <ion-icon name="contact"></ion-icon>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" name="email" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="password" name="password" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary btn-block" type="submit">Login</button>
+                                    </div>
+                                    <a style = "font-size: 1em;" href="#" class="forgot">Esqueceu seu email ou senha?</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer class="page-footer dark">
         <div class="container">
             <div class="row">
@@ -69,7 +94,7 @@
                     <ul>
                         <li><a href="home_page.html">Home</a></li>
                         <li><a href="#">Fale conosco&nbsp;</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="login.html">Login</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -104,14 +129,6 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/Card-hover-affect-2.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('.carousel').carousel({
-                interval: 4000,
-                pause:"null"
-            });
-
-        });
-    </script>
+    <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 </body>
 </html>

@@ -36,3 +36,6 @@ Route::get('/traducao', function () {
     return view('fixas.servicos');
 });
 
+Route::get('/login', function () {
+    return view('fixas.login');
+});
