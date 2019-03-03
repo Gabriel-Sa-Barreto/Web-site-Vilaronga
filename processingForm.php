@@ -30,24 +30,41 @@
         
         //configuração do usuário do gmail
         $mail->SMTPAuth    = true;             
-        $mail->Username    = '';
-        $mail->Password    = '';     
-                     
-        $mail->SingleTo = true;                      
+        $mail->Username    = ''; //colocar email 
+        $mail->Password    = '';     // e senha do professor
+        $mail->SingleTo = true;
 
-        //Recipients
-        $mail->setFrom('bielbarretoalves@gmail.com', 'Gabriel');
-        $mail->addAddress('gbamusic9@gmail.com', 'Ricardo');//destinatário
+        /*---------------Envio principal para o tradutor responsável---------------*/
+        $mail->setFrom($email, $nome);
+        $mail->addAddress('', 'Oráculo Traduções');//destinatário(email do professor)
 
-        $mail->Subject = $assunto;
+        $mail->Subject = "Oráculo Traduções: {$assunto}";
         $mail->msgHTML("<html>Nome: {$nome}<br/>Telefone: {$telefone}<br/> Email: {$email}<br/>Mensagem: <br/>{$mensagem}</html>");
         $mail->AltBody = "Nome: {$nome}\nemail:{$email}\nmensagem: {$mensagem}";
         $mail->AddAttachment($arquivo['tmp_name'], $arquivo['name']  );
+        /*---------------------------------------------------------------------------*/
         
         if ($mail->send()) {
             echo "<p align=center>$nome, sua mensagem foi enviada com sucesso!</p>";
         } else {
-           echo "<p align=center>$nome, ocorreu um erro no envio</p>";
+           echo "<p align=center>$nome, ocorreu um erro no envio da solicitação</p>";
+        }
+
+        # Limpa os destinatários e os anexos
+        $mail->ClearAllRecipients();
+        $mail->ClearAttachments();
+        /*-----------Envio de resposta ao cliente-------------------------------------*/
+
+        $mail->setFrom('', 'Oráculo Traduções');//email do professor
+        $mail->addAddress($email, $nome);//destinatário
+        $mail->Subject = "Solicitação feita com Sucesso!";
+        $mail->msgHTML("<html>Sua Solicitação foi realizada com sucesso.<br/>Oráculo Traduções agradece sua preferência, entraremos em contato em breve.</html>");
+        /*------------------------------------------------------------------------------*/
+
+        if ($mail->send()) {
+            echo "<p align=center>Verifique seu email para confirmação!</p>";
+        } else {
+           echo "<p align=center>$nome, ocorreu um erro na confirmação do seu email!</p>";
         }
         # Limpa os destinatários e os anexos
         $mail->ClearAllRecipients();
