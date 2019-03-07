@@ -149,9 +149,8 @@
                             </p>
                             <br>
                             <ul class="list-inline social-buttons">
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com/people/Vilaronga-Ricardo/100011765255547"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.instagram.com/vilarongaidiomas/?hl=pt-br"><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
