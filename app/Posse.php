@@ -10,4 +10,17 @@ class Posse extends Model
 
     public $incrementing = false;
 
+    public function aluno(){
+    	return $this->belongsTo('App\Aluno');
+    }
+
+    public function nota(){
+    	return $this->belongsTo('App\Nota');
+    }
+
+    public function turma(){
+    	return $this->belongsTo('App\Turma');
+    }
+
+
 }

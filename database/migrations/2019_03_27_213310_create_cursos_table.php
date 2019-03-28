@@ -15,8 +15,6 @@ class CreateCursosTable extends Migration
     {
         Schema::create('cursos', function (Blueprint $table) {
             $table->increments('id'); //chave primária
-            $table->integer('professores_id')->unsigned();
-            $table->foreign('professores_id')->references('user_id')->on('professores'); //chave estrangeira
             $table->string('nome');
             $table->timestamps();
         });
