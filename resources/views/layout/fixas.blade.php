@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/fonts/ionicons.min.css">
     <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="/css/Customizable-Background--Overlay.css">
     <link rel="stylesheet" href="/css/css_sobreNos/dh-row-titile-text-image-right-1.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/css/css_home/Bold-BS4-Cards-with-Hover-Effect-74.css">
     <link rel="stylesheet" href="/css/css_home/Card-hover-affect-2.css">
     <link rel="stylesheet" href="/css/css_home/dh-card-image-left-dark.css">
+    <link rel="stylesheet" href="/css/css_login/Login-Form-Clean.css">
     <link rel="stylesheet" href="/css/css_traducao/Customizable-Background--Overlay.css">
     <link rel="stylesheet" href="/css/css_traducao/Features-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
@@ -55,7 +56,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/login">Login</a></li>
                 </ul>
         </div>
         </div>
@@ -104,14 +105,6 @@
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/Card-hover-affect-2.js"></script>
-    <script type="text/javascript">
-        $(function(){
-            $('.carousel').carousel({
-                interval: 4000,
-                pause:"null"
-            });
-
-        });
-    </script>
+    <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 </body>
 </html>
