@@ -14,11 +14,16 @@ class CreateAlunosTable extends Migration
     public function up()
     {
         Schema::create('alunos', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->primary('user_id'); //id que vem de user transformada em chave primária pela herança
+            $table->increments('id');
+            //$table->integer('user_id')->unsigned();
+            //$table->foreign('user_id')->references('id')->on('users');
+            //$table->primary('user_id'); //id que vem de user transformada em chave primária pela herança
             $table->string('nome');
             $table->string('telefone');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

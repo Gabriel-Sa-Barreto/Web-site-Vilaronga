@@ -15,7 +15,7 @@ class CreateEnderecosTable extends Migration
     {
         Schema::create('enderecos', function (Blueprint $table) {
             $table->integer('aluno_id')->unsigned();
-            $table->foreign('aluno_id')->references('user_id')->on('alunos');
+            $table->foreign('aluno_id')->references('id')->on('alunos');
             $table->primary('aluno_id'); //transforma esse campo em chave primária.
             $table->string('rua');
             $table->string('numero');

@@ -36,6 +36,7 @@ return [
     */
 
     'guards' => [
+        
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -44,6 +45,35 @@ return [
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
+        ],
+
+        'administrador' => [
+            'driver' => 'session',
+            'provider' => 'administradors',
+        ],
+
+        'administrador-api' => [
+            'driver' => 'session',
+            'provider' => 'administradors',
+        ],
+
+        'aluno' => [
+            'driver' => 'session',
+            'provider' => 'alunos',
+        ],
+
+        'aluno-api' => [
+            'driver' => 'session',
+            'provider' => 'alunos',
+        ],
+        'professor' => [
+            'driver' => 'session',
+            'provider' => 'professores',
+        ],
+
+        'professor-api' => [
+            'driver' => 'session',
+            'provider' => 'professores',
         ],
     ],
 
@@ -70,6 +100,21 @@ return [
             'model' => App\User::class,
         ],
 
+        'administradors' => [
+            'driver' => 'eloquent',
+            'model' => App\Administrador::class,
+        ],
+
+        'alunos' => [
+            'driver' => 'eloquent',
+            'model' => App\Aluno::class,
+        ],
+
+        'professores' => [
+            'driver' => 'eloquent',
+            'model' => App\Professor::class,
+        ],
+
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
@@ -94,6 +139,21 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'administradors' => [
+            'provider' => 'administradors',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'alunos' => [
+            'provider' => 'alunos',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'professores' => [
+            'provider' => 'professores',
             'table' => 'password_resets',
             'expire' => 60,
         ],

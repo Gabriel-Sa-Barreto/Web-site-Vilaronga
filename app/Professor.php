@@ -3,14 +3,34 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Professor extends Model
+class Professor extends Authenticatable
 {
-    protected $table_name = 'professores'; 
+    protected $table_name = 'professores';
+	protected $guard = 'professor';
 
-    public function user(){
+    use Notifiable;
+
+	protected $fillable = [
+        'name', 'email', 'password',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
+    /*public function user(){
     	return $this->belongsTo('App\User');
-    }
+    }*/
 
     public function curso(){
     	return $this->belongsTo('App\Curso');

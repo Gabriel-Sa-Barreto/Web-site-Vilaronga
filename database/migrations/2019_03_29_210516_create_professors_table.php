@@ -14,15 +14,18 @@ class CreateProfessorsTable extends Migration
     public function up()
     {
         Schema::create('professores', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->primary('user_id'); //transforma esse campo em chave primária.
-
+            //$table->integer('user_id')->unsigned();
+            //$table->foreign('user_id')->references('id')->on('users');
+            //$table->primary('user_id'); //transforma esse campo em chave primária.
+            $table->increments('id');
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos'); //chave estrangeira
-
             $table->string('nome');
             $table->string('telefone');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

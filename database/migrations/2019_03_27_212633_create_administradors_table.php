@@ -13,11 +13,16 @@ class CreateAdministradorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrador', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->primary('user_id');
+        Schema::create('administradors', function (Blueprint $table) {
+            //$table->integer('user_id')->unsigned();
+            //$table->foreign('user_id')->references('id')->on('users');
+            //$table->primary('user_id');
+            $table->increments('id');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->string('nome');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -29,6 +34,6 @@ class CreateAdministradorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrador');
+        Schema::dropIfExists('administradors');
     }
 }

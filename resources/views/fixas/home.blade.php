@@ -51,7 +51,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/login">LOGiN</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/login">LOGiN</a></li>
                 </ul>
         </div>
         </div>
@@ -212,6 +212,9 @@
                     <ul>
                         <li><a href="/sobrenos">Sobre Nós ( detalhes )</a></li>
                         <li><a href="#">Serviços</a></li>
+                        <li><a href="/adm/login">Administrador</a></li>
+                        <li><a href="/professor/login">Professor</a></li>
+                        <li><a href="/aluno/login">Aluno</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">

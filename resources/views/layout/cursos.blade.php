@@ -67,6 +67,9 @@
                     <ul>
                         <li><a href="sobreNos.html">Sobre Nós ( detalhes )</a></li>
                         <li><a href="#">Serviços</a></li>
+                        <li><a href="/adm/login">Administrador</a></li>
+                        <li><a href="/professor/login">Professor</a></li>
+                        <li><a href="/aluno/login">Aluno</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">

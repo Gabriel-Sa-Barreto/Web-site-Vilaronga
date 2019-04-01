@@ -16,7 +16,7 @@ class CreatePossesTable extends Migration
         Schema::create('posses', function (Blueprint $table) {
             //id do aluno e id da turma como primárias, id das notas como secundário
             $table->integer('aluno_id')->unsigned();
-            $table->foreign('aluno_id')->references('user_id')->on('alunos');
+            $table->foreign('aluno_id')->references('id')->on('alunos');
             
             $table->integer('turma_id')->unsigned();
             $table->foreign('turma_id')->references('id')->on('turmas');

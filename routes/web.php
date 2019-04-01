@@ -39,3 +39,24 @@ Route::get('/traducao', function () {
 Route::get('/login', function () {
     return view('fixas.login');
 });
+
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('adm')->group(function(){
+	Route::get('/', 'AdminController@index')->name('admin.dashboard');
+	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+});
+
+Route::prefix('aluno')->group(function(){
+	Route::get('/', 'AlunoController@index')->name('aluno.dashboard');
+	Route::get('/login', 'Auth\AlunoLoginController@showLoginForm')->name('aluno.login');
+	Route::post('/login', 'Auth\AlunoLoginController@login')->name('aluno.login.submit');
+});
+
+Route::prefix('professor')->group(function(){
+    Route::get('/', 'ProfController@index')->name('prof.dashboard');
+    Route::get('/login', 'Auth\ProfLoginController@showLoginForm')->name('prof.login');
+    Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
+});
+
