@@ -36,11 +36,12 @@ Ele possui:
 	- Turma
 
 
-Metas pro dia 04/03:
-	- Tela de login (Gabriel)
-	- Lincagem das redes sociais (Sam)
-	- Implementação do banco de dados (Sam: tabela relacional, Gabriel: implementação do banco)
-	- Tela de Home dos alunos
+Metas:
+	- Tela de Home dos alunos              (Gabriel)
+	- Tela de home dos professores e admin (Sam)
+	- SEED para preenchimento do banco     (Gabriel)
+	- Cadastro de curso e aluno            (Gabriel)
+	- Cadastro de professor                (Sam)
 
 
 
