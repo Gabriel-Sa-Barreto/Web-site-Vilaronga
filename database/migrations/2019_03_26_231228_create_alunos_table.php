@@ -20,7 +20,7 @@ class CreateAlunosTable extends Migration
             //$table->primary('user_id'); //id que vem de user transformada em chave primária pela herança
             $table->string('nome');
             $table->string('telefone');
-            $table->string('email')->unique();
+            $table->string('email',100)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

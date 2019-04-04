@@ -8,7 +8,8 @@
                     <div class="d-flex align-items-center order-12" style="height:200px;">
                         <div class="container">
                             <div class="login-clean">
-                                <form method="post">
+                                 <form method="POST" action="{{ route('aluno.login.submit') }}">
+                                    @csrf
                                     <h2 class="sr-only">Login Form</h2>
                                     <div class="illustration">
                                         <ion-icon name="contact"></ion-icon>

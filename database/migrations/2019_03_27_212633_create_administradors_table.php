@@ -18,7 +18,7 @@ class CreateAdministradorsTable extends Migration
             //$table->foreign('user_id')->references('id')->on('users');
             //$table->primary('user_id');
             $table->increments('id');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('nome');

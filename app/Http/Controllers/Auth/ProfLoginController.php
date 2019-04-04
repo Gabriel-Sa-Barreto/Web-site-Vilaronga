@@ -27,7 +27,7 @@ class ProfLoginController extends Controller
             'password' => 'required|min:6'
           ]);
           // Attempt to log the user in
-          if (Auth::guard('aluno')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+          if (Auth::guard('professor')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             // if successful, then redirect to their intended location
             return redirect()->intended(route('prof.dashboard'));
           }

@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Professor extends Authenticatable
 {
-    protected $table_name = 'professores';
 	protected $guard = 'professor';
 
     use Notifiable;
