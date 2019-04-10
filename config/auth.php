@@ -68,12 +68,12 @@ return [
         ],
         'professor' => [
             'driver' => 'session',
-            'provider' => 'professores',
+            'provider' => 'professors',
         ],
 
         'professor-api' => [
             'driver' => 'session',
-            'provider' => 'professores',
+            'provider' => 'professors',
         ],
     ],
 
@@ -110,7 +110,7 @@ return [
             'model' => App\Aluno::class,
         ],
 
-        'professores' => [
+        'professors' => [
             'driver' => 'eloquent',
             'model' => App\Professor::class,
         ],
@@ -152,8 +152,8 @@ return [
             'table' => 'password_resets',
             'expire' => 60,
         ],
-        'professores' => [
-            'provider' => 'professores',
+        'professors' => [
+            'provider' => 'professors',
             'table' => 'password_resets',
             'expire' => 60,
         ],

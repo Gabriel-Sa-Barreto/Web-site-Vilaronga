@@ -34,7 +34,7 @@ class AlunoController extends Controller
      */
     public function create()
     {
-       return view('novoAluno') //redireciona para a view do formulário de cadastro.
+       return view('novoAluno'); //redireciona para a view do formulário de cadastro.
     }
 
 

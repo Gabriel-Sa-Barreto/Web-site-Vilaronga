@@ -13,22 +13,22 @@ class AlunosSeeder extends Seeder
     {
         DB::table('alunos')->insert(
         	['nome'=>'Gabriel', 'telefone'=>'75981018840', 'email'=>'bielbarretoalves@gmail.com',
-             'password'=>'gabriel'
+             'password'=>Hash::make('gabriel')
         ]);
 
         DB::table('alunos')->insert(
         	['nome'=>'Thiago', 'telefone'=>' 7593434234', 'email'=>'thiago@gmail.com',
-             'password'=>'thiago'
+             'password'=>Hash::make('thiago')
         ]);
 
         DB::table('alunos')->insert(
         	['nome'=>'Daniel', 'telefone'=>'75934323231', 'email'=>'dan@gmail.com',
-             'password'=>'daniel'
+             'password'=>Hash::make('daniel')
         ]);
 
         DB::table('alunos')->insert(
         	['nome'=>'Augusto', 'telefone'=>'7534543234', 'email'=>'augusto@gmail.com',
-             'password'=>'augusto'
+             'password'=>Hash::make('augusto')
         ]);
     }
 }
