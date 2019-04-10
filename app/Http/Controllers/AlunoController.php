@@ -25,4 +25,17 @@ class AlunoController extends Controller
     {
         return view('aluno');
     }
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+       return view('novoAluno') //redireciona para a view do formulário de cadastro.
+    }
+
+
 }

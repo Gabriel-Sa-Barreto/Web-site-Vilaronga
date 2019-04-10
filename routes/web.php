@@ -60,3 +60,12 @@ Route::prefix('professor')->group(function(){
     Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
 });
 
+
+
+
+Route::get('/cursos_turma/novo', 'CursoController@create');       //rota para formulário de cadastro de novo curso
+Route::get('/cursos_turma/nova_turma', 'TurmaController@create'); //rota para formulário de cadastro de nova turma
+Rout:get('/aluno/novo', 'AlunoController@create');                //rota para formulário de cadastro de novo aluno
+
+Route::post('/cursos', 'CursoController@store'); //rota para salvar os dados de novo curso
+Route::post('/turma', 'TurmaController@store'); //rota para salvar os dados de novo curso

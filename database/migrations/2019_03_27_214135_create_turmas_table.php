@@ -18,7 +18,7 @@ class CreateTurmasTable extends Migration
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->string('senhaTurma'); //senha para validar qualquer alteração dos alunos dessa turma 
-            $table->integer('qtdAlunos');
+            //$table->integer('qtdAlunos');
             $table->string('nivel');
             $table->string('horario');
             $table->timestamps();
