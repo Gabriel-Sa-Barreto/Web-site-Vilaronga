@@ -36,12 +36,21 @@ Ele possui:
 	- Turma
 
 
-Metas:
+Metas Anteriores:
 	- Tela de Home dos alunos              (Gabriel)
 	- Tela de home dos professores e admin (Sam)
 	- SEED para preenchimento do banco     (Gabriel)
 	- Cadastro de curso e aluno            (Gabriel)
 	- Cadastro de professor                (Sam)
+
+Metas Atuais:
+	- 	Vincular aluno a turma (Gabriel)
+	-	Listagem de Turmas por cursos (Gabriel)
+	-   Vincular materiais por turma (Sam)
+	- 	Cadastro de Materiais   (Sam)
+	- 	Download dos Materiais (Sam)
+	- 	Listagem dos materiais (Sam)
+	- 	Cadastro das notas (Gabriel)
 
 
 
