@@ -39,9 +39,9 @@ Ele possui:
 Metas Anteriores:
 	- Tela de Home dos alunos              (Gabriel)
 	- Tela de home dos professores e admin (Sam)
-	- SEED para preenchimento do banco     (Gabriel)
-	- Cadastro de curso e aluno            (Gabriel)
-	- Cadastro de professor                (Sam)
+	- SEED para preenchimento do banco     (Gabriel)     OK
+	- Cadastro de curso e aluno            (Gabriel)     OK
+	- Cadastro de professor                (Sam)         OK
 
 Metas Atuais:
 	- 	Vincular aluno a turma (Gabriel)
