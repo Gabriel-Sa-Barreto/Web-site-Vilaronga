@@ -26,7 +26,9 @@ class AlunoController extends Controller
      */
     public function index()
     {
-        return view('aluno');
+        $userAluno = Aluno::Where('id',Auth::user()->id)->get()->first();
+        $enderecoAluno = Endereco::Where('aluno_id',Auth::user()->id)->get()->first();
+        return view('aluno', compact('userAluno','enderecoAluno'));
     }
 
 
@@ -69,20 +71,20 @@ class AlunoController extends Controller
     public function update(Request $request)
     {
         if(Auth::check()){
-            $aluno    = Aluno::Where('id',Auth::user()->id)->get()->first();
-            $endereco = Endereco::Where('aluno_id', Auth::user()->id)->get()->first();
-            if(isset($aluno) && isset($endereco)){
+            $aluno         = Aluno::Where('id',Auth::user()->id)->get()->first();
+            $enderecoAluno = Endereco::Where('aluno_id', Auth::user()->id)->get()->first();
+            if(isset($aluno) && isset($enderecoAluno)){
                 //realiza as modificações
-                $aluno->nome        = $request->input('nomeAluno');
-                $aluno->telefone    = $request->input('telefone');
-                $endereco->rua      = $request->input('rua');
-                $endereco->bairro   = $request->input('bairro');
-                $endereco->cep      = $request->input('cep');
-                $endereco->cidade   = $request->input('cidade');
-                $endereco->numero   = $request->input('numero');
+                $aluno->nome             = $request->input('nomeAluno');
+                $aluno->telefone         = $request->input('telefone');
+                $enderecoAluno->rua      = $request->input('rua');
+                $enderecoAluno->bairro   = $request->input('bairro');
+                $enderecoAluno->cep      = $request->input('cep');
+                $enderecoAluno->cidade   = $request->input('cidade');
+                $enderecoAluno->numero   = $request->input('numero');
 
                 $aluno->save(); //salva as alterações de aluno
-                $endereco->save(); //salva as alterações do endereço do aluno
+                $enderecoAluno->save(); //salva as alterações do endereço do aluno
                 return redirect('/aluno/dados');
             }
         }
