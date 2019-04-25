@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <style type="text/css">
-        h2  {
+        h2,h3,h4 {
             font-size: 3em;
             font-family: 'Kaushan Script', cursive, 'Roboto Slab', serif;
         }
@@ -26,12 +26,12 @@
 </head>
 <body>
      <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="#" style="font-size:2em;">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/aluno" style="font-size:2em;">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/dados">Meus Dados</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/dados">Editar Dados</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -49,11 +49,16 @@
     <main class="page landing-page">
          <section class="clean-block clean-hero" style="background-image:url(&quot;img/login.jpg&quot;);color:rgba(9, 162, 255, 0.5); margin-bottom: 3em;">
             <div class="text">
-                <h2>Seja bem-vindo (nome do aluno)</h2>
-                <p>Visualize seus dados cadastrados, tenha acesso aos avisos dos professores, suas notas, materiais de apoio e tudo que lhe trará maior usabilidade no seus estudos e período de aulas.</p><button class="btn btn-outline-light btn-lg" type="button">Área do Aluno</button></div>
+                <h2>Seja bem-vindo</h2>
+                <h3>{{$userAluno->nome}}</h3>
+                <p>Visualize seus dados cadastrados, tenha acesso aos avisos dos professores, suas notas, materiais de apoio e tudo que lhe trará maior usabilidade no seus estudos e período de aulas.</p>
+                <button type="button" class="btn btn-outline-light btn-lg"  data-toggle="modal" data-target="#exampleModalCenter">
+                    Dados Pessoais
+                </button>
+            </div>
         </section>
         <div class="text-center" style="margin-bottom: 3em;">
-            <h2 class="text-info">Área do alusno</h2>
+            <h2 class="text-info">Área do aluno</h2>
         </div>  
         <div class="container">  
             <div class="row">
@@ -104,6 +109,61 @@
                     </div>              
                 </div>
             </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header  text-center">
+                <h5 class="modal-title" id="exampleModalLongTitle">Seus dados pessoais</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                    <b><h4>Principais:</h4></b>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <i><h5>Nome Completo:</h5></i> <p>{{$userAluno->nome}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <i><h5>Telefone:</h5></i> <p>{{$userAluno->telefone}}</p>
+                    </div>
+                </div>
+                <h5>Email:</h5>           <p>{{$userAluno->email}}</p>
+                <div class="text-center">
+                    <b><h4>Endereço:</h4></b>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <i><h5>Rua:</h5></i> <p>{{$enderecoAluno->rua}}</p> 
+                    </div>
+                    <div class="col-md-6">
+                        <i><h5>Bairro:</h5></i> <p>{{$enderecoAluno->bairro}}</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <i><h5>Numero:</h5></i>  <p>{{$enderecoAluno->numero}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <i><h5>Cidade:</h5></i>  <p>{{$enderecoAluno->cidade}}</p>
+                    </div>
+                </div>
+
+                <i><h5>Cep:</h5></i>  <p>{{$enderecoAluno->cep}}</p>    
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
     </main>
     
