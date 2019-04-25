@@ -24,7 +24,6 @@
         }
 
     </style>
-
 </head>
 
 <body>
@@ -34,7 +33,7 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="">cursos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Alunos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/criarProfessor">Professores</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">Materiais</a></li>
                     <li class="nav-item" role="presentation">
@@ -50,12 +49,8 @@
             </div>
         </div>
     </nav>
-    <main class="page landing-page">
-        <section class="clean-block clean-hero" style="background-image:url(&quot;/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85);">
-            <div class="text">
-                <h2>Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
-        </section>
+    <main class="page landing-page" style="margin-bottom: 2em; margin-top: 3em;">
+        @yield('conteudo')
     </main>
     <footer class="page-footer dark">
         <div class="footer-copyright">
