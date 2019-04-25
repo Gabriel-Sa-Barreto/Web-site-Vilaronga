@@ -1,0 +1,62 @@
+@media (min-width: 300px) {
+  .carousel-main .carousel-item active {
+    height: 450px;
+  }
+}
+
+@media (min-width: 992px) {
+  .carousel-main .carousel-item active {
+    height: 500px;
+  }
+}
+
+@media (min-width: 576px) {
+  .carousel-main .carousel-item active {
+    height: 500px;
+  }
+}
+
+@media (min-width: 300px) {
+  .clean-block .block-heading {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .clean-block .block-heading {
+    padding: 60px;
+  }
+}
+
+@media (min-width: 576px) {
+  .clean-block .block-heading {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 300px) {
+  .clean-block.clean-info.dark {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .clean-block.clean-info.dark {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .clean-block.clean-info.dark {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 300px) {
+  .card.clean-card.text-center {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 5px;
+  }
+}
+

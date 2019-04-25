@@ -1,0 +1,5 @@
+Aluno(id , email , senha , nome , telefone , endereco) id chave primaria
+Nota(idNota , idAluno , unidade , nota) idNota , idaluno chaves primaria idAluno referencia id(Aluno)
+Curso(idCurso , idUser , email , senha , nome) idCurso , idUser chaves primarias idUser referencia id(User)
+Turma(idTurma , idCurso , qtdAluno , nivel , professor) idTurma , idCurso chaves primarias idCurso referencia id(Curso)
+Aviso(idAviso , idTurma , mensagem) idAviso , idTurma chaves primaria idTurma referencia id(Turma) 

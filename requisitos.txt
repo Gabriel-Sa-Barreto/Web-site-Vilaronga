@@ -1,0 +1,57 @@
+Requisitos do sistema:
+
+- Login
+- CRUD de aluno, turmas.
+- Um login fixo para cada curso. Ou seja, cada professor que entrar terá acesso ao usuário adm do curso específico.
+- Upload de arquivos do professor referente aos materiais para compartilhamento. (CRUD)
+- Implementação de sistema de avisos nos cursos. (CRUD)
+- Caderneta de alunos
+- Link das redes sociais na view
+
+
+Ideias:
+- Na página inicial dos alunos terá os avisos, notas e um link para a tela de materias onde mostrará os materiais de apoio
+para a turma do aluno que está logado.
+
+Para professores:
+- Colocar avisos
+- Materiais
+- Notas
+
+Para ADM:
+- Cadastro dos alunos nas turmas
+- Cancelamento de turma
+- Listagem de materiais
+- Backup
+
+ALUNO:
+Cadastro:
+	- Nome Completo	
+	- Email
+	- telefone
+	- endereço
+	- senha
+Ele possui:
+	- Notas
+	- Turma
+
+
+Metas Anteriores:
+	- Tela de Home dos alunos              (Gabriel)
+	- Tela de home dos professores e admin (Sam)
+	- SEED para preenchimento do banco     (Gabriel)     OK
+	- Cadastro de curso e aluno            (Gabriel)     OK
+	- Cadastro de professor                (Sam)         OK
+
+Metas Atuais:
+	- 	Vincular aluno a turma (Gabriel)
+	-	Listagem de Turmas por cursos (Gabriel)
+	-   Vincular materiais por turma (Sam)
+	- 	Cadastro de Materiais   (Sam)
+	- 	Download dos Materiais (Sam)
+	- 	Listagem dos materiais (Sam)
+	- 	Cadastro das notas (Gabriel)
+
+
+
+
