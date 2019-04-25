@@ -52,6 +52,8 @@ Route::prefix('aluno')->group(function(){
 	Route::get('/', 'AlunoController@index')->name('aluno.dashboard');
 	Route::get('/login', 'Auth\AlunoLoginController@showLoginForm')->name('aluno.login');
 	Route::post('/login', 'Auth\AlunoLoginController@login')->name('aluno.login.submit');
+    Route::get('/dados', 'AlunoController@edit');
+     Route::post('/editar', 'AlunoController@update');
 });
 
 Route::prefix('professor')->group(function(){

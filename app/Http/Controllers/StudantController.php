@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Aluno;
 use App\Endereco;
+use Auth;
 
 class StudantController extends Controller
 {
@@ -68,7 +69,7 @@ class StudantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
     }

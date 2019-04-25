@@ -12,6 +12,7 @@ class Aluno  extends Authenticatable
 	protected $guard = 'aluno';
 
 	use Notifiable;
+    
 
 	protected $fillable = [
         'name', 'email', 'password',
