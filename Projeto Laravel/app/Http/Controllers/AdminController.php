@@ -5,10 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Auth;
 use App\Professor;
 use App\Curso;
 use App\Endereco;
 use App\Aluno;
+use App\Turma;
+use App\Posse;
+use App\Nota;
 
 class AdminController extends Controller
 {
@@ -29,7 +33,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        $adm = Auth::user()->nome;
+        return view('admin', compact('adm'));
     }
 
     public function telaCriarProfessor(){
@@ -129,6 +134,52 @@ class AdminController extends Controller
 
     }
 
+    public function vincularAlunoCurso(){
+        $cursos = Curso::all();
+        if(isset($cursos)){
+            return view('adm.vincularAlunoCurso',compact('cursos'));
+        }
+        return redirect('/adm/gerenciarCursos');
 
+    }
+
+    public function escolherTurma( Request $request){
+        $curso  = Curso::Where('nome', $request->input('nomeCurso'))->get()->first();
+        $alunos = Aluno::all(); 
+        //buscar todas as turmas disponíveis para este curso
+        $turma = Turma::Where('curso_id', $curso->id)->get();
+
+        if( (count($alunos) == 0) && (count($turma) == 0)){//caso não tenha nem aluno, nem turma
+             return view('adm.vincularTurma');
+        }
+        
+        if( (count($alunos) > 0) && (count($turma) > 0)){
+            return view('adm.vincularTurma',compact('curso','turma', 'alunos'));
+        }else if(count($alunos) == 0 ){ 
+            //caso não encontre alunos
+            return view('adm.vincularTurma', compact('alunos'));
+        }else{
+            //caso não encontre turmas
+             return view('adm.vincularTurma', compact('turma'));
+        }
+    }
+
+
+    public function salvarVinculacao(Request $request){
+        $aluno = Aluno::Where('id', $request->input('idAluno'))->get()->first();
+        $turma = Turma::Where('id', $request->input('nivelTurma'))->get()->first();
+
+        $nota       = new Nota();
+        $nota->aluno_id = $aluno->id;
+        $nota->save();
+        $AlunoPosse = new Posse();
+        $AlunoPosse->aluno_id = $aluno->id;
+        $AlunoPosse->turma_id = $turma->id;
+
+        $idNota = Nota::Where('aluno_id',$aluno->id)->get()->first();
+        $AlunoPosse->nota_id  = $idNota->id;
+        $AlunoPosse->save();
+        return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');        
+    }
 
 }
