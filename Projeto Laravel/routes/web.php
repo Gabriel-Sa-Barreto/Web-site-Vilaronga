@@ -58,6 +58,13 @@ Route::prefix('adm')->group(function(){
 
     Route::get('/gerenciarAlunos/listagem','AdminController@listagemDeAlunos'); //rota para listagem de alunos
     Route::get('/gerenciarAlunos/dadosCompletos/{id}','AdminController@dadosAluno'); //rota para pegar os dados completos de um aluno, incluindo cursos aos quais está cadastrado e as turmas
+
+    Route::get('/gerenciarCursos', function(){ return view('adm.gerenciarCursos');});  
+    Route::get('/gerenciarCursos/novaTurma_Curso', 'TurmaController@create');     //rota para formulário de cadastro de nova turma ou novo curso
+
+    Route::post('/gerenciarCursos/salvarCurso', 'CursoController@store');        //rota para salvar os dados de novo curso
+    Route::post('/gerenciarCursos/salvarTurma', 'TurmaController@store');         //rota para salvar os dados da nova turma
+
 });
 
 Route::prefix('aluno')->group(function(){
@@ -75,10 +82,7 @@ Route::prefix('professor')->group(function(){
     Route::post('/novo', 'TeacherController@store'); //rota para salvar os dados de novo professor
 });
 
-Route::get('/cursos_turma/novo', 'CursoController@create');       //rota para formulário de cadastro de novo curso
-Route::get('/cursos_turma/nova_turma', 'TurmaController@create'); //rota para formulário de cadastro de nova turma
+Route::get('/cursos_turma/novo', 'CursoController@create');           //rota para formulário de cadastro de novo curso
 Route::get('/aluno/novo', 'StudantController@create');                //rota para formulário de cadastro de novo aluno
 
-Route::post('/cursos', 'CursoController@store');        //rota para salvar os dados de novo curso
-Route::post('/turma', 'TurmaController@store');         //rota para salvar os dados de novo curso
-Route::post('/novoAluno', 'StudantController@store');  //rota para salvar os dados de novo aluno
+

@@ -12,15 +12,15 @@ class TurmaSeeder extends Seeder
     public function run()
     {
         DB::table('turmas')->insert(
-        	['curso_id'=> 1, 'senhaTurma'=>'ingles', 'nivel'=>'Básico', 'horario'=>'8:00h']);
+        	['curso_id'=> 1,'nivel'=>'Básico', 'horario'=>'8:00h']);
 
         DB::table('turmas')->insert(
-        	['curso_id'=> 2, 'senhaTurma'=>'espanhol', 'nivel'=>'Básico', 'horario'=>'10:00h']);
+        	['curso_id'=> 2,'nivel'=>'Básico', 'horario'=>'10:00h']);
 
         DB::table('turmas')->insert(
-        	['curso_id'=> 3, 'senhaTurma'=>'redação', 'nivel'=>'Único', 'horario'=>'11:00h']);
+        	['curso_id'=> 3, 'nivel'=>'Único', 'horario'=>'11:00h']);
 
         DB::table('turmas')->insert(
-        	['curso_id'=> 1, 'senhaTurma'=>'ingles2', 'nivel'=>'Avançado', 'horario'=>'14:30h']);
+        	['curso_id'=> 1, 'nivel'=>'Avançado', 'horario'=>'14:30h']);
     }
 }

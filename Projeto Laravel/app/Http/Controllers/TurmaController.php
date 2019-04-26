@@ -26,7 +26,7 @@ class TurmaController extends Controller
     public function create()
     {
        $cursos = Curso::all(); //retorna todos os cursos disponíveis no banco para associação com uma nova turma.
-       return view('novoCurso_Turma', compact('cursos'));
+       return view('adm.novaTurma_Cursos', compact('cursos'));
     }
 
     /**
@@ -38,7 +38,6 @@ class TurmaController extends Controller
     public function store(Request $request)
     {
         $new_turma = new Turma();
-        $new_turma->senhaTurma = $request->input('senha');
         $new_turma->nivel      = $request->input('nivel');
         $new_turma->horario    = $request->input('horario');
 
@@ -50,6 +49,7 @@ class TurmaController extends Controller
         $new_turma->curso_id = $cursoID->id;
 
         $new_turma->save();
+        return redirect('/adm/gerenciarCursos/novaTurma_Curso');
     }
 
     /**

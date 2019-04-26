@@ -24,8 +24,7 @@ class CursoController extends Controller
      */
     public function create()
     {
-        $cursos = Curso::all();
-        return view('novoCurso_Turma', compact('cursos')); //exibi formulário para criação de um novo curso
+        
     }
 
     /**
@@ -39,6 +38,7 @@ class CursoController extends Controller
         $new_curso = new Curso();
         $new_curso->nome = $request->input('nomeCurso');
         $new_curso->save();
+        return redirect('/adm/gerenciarCursos/novaTurma_Curso');
     }
 
     /**

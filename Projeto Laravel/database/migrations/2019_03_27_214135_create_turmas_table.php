@@ -16,8 +16,7 @@ class CreateTurmasTable extends Migration
         Schema::create('turmas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('curso_id')->unsigned();
-            $table->foreign('curso_id')->references('id')->on('cursos');
-            $table->string('senhaTurma'); //senha para validar qualquer alteração dos alunos dessa turma 
+            $table->foreign('curso_id')->references('id')->on('cursos'); 
             //$table->integer('qtdAlunos');
             $table->string('nivel');
             $table->string('horario');

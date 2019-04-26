@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">cursos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/adm/gerenciarCursos">cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/criarProfessor">Professores</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">Materiais</a></li>
