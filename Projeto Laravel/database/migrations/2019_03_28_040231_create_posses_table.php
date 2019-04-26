@@ -26,7 +26,7 @@ class CreatePossesTable extends Migration
             $table->integer('nota_id')->unsigned();
             $table->foreign('nota_id')->references('id')->on('notas');
 
-            $table->string('data_inicio');
+            $table->string('data_inicio')->nullable();
             $table->timestamps();
         });
     }

@@ -28,15 +28,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="/adm">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">cursos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/adm/gerenciarCursos">cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/criarProfessor">Professores</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Materiais</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -53,8 +52,8 @@
     <main class="page landing-page">
         <section class="clean-block clean-hero" style="background-image:url(&quot;/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85);">
             <div class="text">
-                <h2>Lorem ipsum dolor sit amet.</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                <h2>Seja Bem-Vindo {{$adm}}</h2>
+                <p>Você tem o controle de toda parte acadêmica que diz respeito à Instituição Cursos Vilaronga</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
         </section>
     </main>
     <footer class="page-footer dark">

@@ -12,7 +12,7 @@ class AlunosSeeder extends Seeder
     public function run()
     {
         DB::table('alunos')->insert(
-        	['nome'=>'Gabriel', 'telefone'=>'75981018840', 'email'=>'bielbarretoalves@gmail.com',
+        	['nome'=>'Gabriel Sá Barreto Alves', 'telefone'=>'75981018840', 'email'=>'bielbarretoalves@gmail.com',
              'password'=>Hash::make('gabriel')
         ]);
 

@@ -27,15 +27,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
         <div class="container"><a class="navbar-brand logo" href="/adm">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">cursos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Alunos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/adm/gerenciarCursos">Cursos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/criarProfessor">Professores</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Materiais</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
