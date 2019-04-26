@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 use App\Professor;
 use App\Curso;
 use App\Endereco;
@@ -91,6 +92,42 @@ class AdminController extends Controller
     }
 
 
+    public function excluirAluno($id){
+        $aluno = Aluno::find($id);
+        if(isset($aluno)){
+            //deletar o aluno,excluir ele das turmas e apagar as notas
+
+            $aluno->delete();
+        }
+        return redirect('adm/gerenciarAlunos/deletar');
+    }
+
+
+    public function listagemDeAlunos(){
+        $alunosCad = Aluno::all();
+        if($alunosCad){
+            return view('adm.listaDeAlunos',compact('alunosCad'));
+        }
+        return redirect('/adm/gerenciarAlunos');
+    }
+
+    public function dadosAluno($id){
+        //retornar para a view os dados completos de um aluno requisitado, junto com os cursos que está cadastrado e as turmas
+        //$aluno    = Aluno::Where('id',$id)->get()->first();
+        //$endereço = Endereco::Where('aluno_id', $id)->get()->first(); 
+        $userAluno = DB::table('alunos')->join('enderecos', 'id','=','aluno_id')->select('alunos.*', 'enderecos.*')->get(); //variável com campo de aluno e seu endereco
+        foreach ($userAluno as $c) {
+            if($c->id == $id){
+                $userAluno = $c;
+                break;
+            }
+        }
+        if(isset($userAluno)){
+            return view('adm.dadosCompletosAlunos',compact('userAluno'));
+        }
+        return redirect('/adm/gerenciarAlunos');
+
+    }
 
 
 

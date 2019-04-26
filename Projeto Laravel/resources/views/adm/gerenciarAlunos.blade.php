@@ -31,7 +31,7 @@
                         <b><h5>Visualizar lista de alunos</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="btn btn-md btn-primary">Lista de alunos</a>
+                        <a href="/adm/gerenciarAlunos/listagem" class="btn btn-md btn-primary">Lista de alunos</a>
                     </div>
                 </div>              
             </div>
@@ -45,5 +45,9 @@
     </div>
     <div class="container">
         @yield('visualizarAluno')
+    </div>
+
+    <div class="container">
+        @yield('visualizarDadosAluno')
     </div>
 @stop

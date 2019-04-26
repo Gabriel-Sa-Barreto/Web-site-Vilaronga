@@ -53,7 +53,11 @@ Route::prefix('adm')->group(function(){
     Route::get('/gerenciarAlunos/novo',function(){ return view('adm.novoAluno');});  //tela de formulário para cadastro de um novo aluno
     Route::post('/gerenciarAlunos/novo/salvar', 'AdminController@salvarAluno');  //rota para salvar os dados do novo aluno cadastrado no sistema
 
-    Route::get('/gerenciarAlunos/deletar','AdminController@telaDeletarAluno');
+    Route::get('/gerenciarAlunos/deletar','AdminController@telaDeletarAluno'); //rota para exibição da tabela contendo os alunos
+    Route::get('/gerenciarAlunos/deletar/{id}','AdminController@excluirAluno'); //rota para exclusão de aluno
+
+    Route::get('/gerenciarAlunos/listagem','AdminController@listagemDeAlunos'); //rota para listagem de alunos
+    Route::get('/gerenciarAlunos/dadosCompletos/{id}','AdminController@dadosAluno'); //rota para pegar os dados completos de um aluno, incluindo cursos aos quais está cadastrado e as turmas
 });
 
 Route::prefix('aluno')->group(function(){
