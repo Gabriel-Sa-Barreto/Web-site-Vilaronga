@@ -12,7 +12,7 @@
 	            <div class="card border border-primary">
 	                <div class="card-body">
 	                    <h5 class="card-title">Cadastro de novo Professor</h5>
-	                    <form action="/professor/novo" method="POST">
+	                    <form action="/adm/criarProfessor/salvar" method="POST">
 			            @csrf
 				            <div class="form-group">
 				                <label for="nomeProfessor">Nome do Professor</label>
