@@ -2,16 +2,16 @@ Requisitos do sistema:
 
 - Login
 - CRUD de aluno, turmas.
-- Um login fixo para cada curso. Ou seja, cada professor que entrar ter· acesso ao usu·rio adm do curso especÌfico.
+- Um login fixo para cada curso. Ou seja, cada professor que entrar ter√° acesso ao usu√°rio adm do curso espec√≠fico.
 - Upload de arquivos do professor referente aos materiais para compartilhamento. (CRUD)
-- ImplementaÁ„o de sistema de avisos nos cursos. (CRUD)
+- Implementa√ß√£o de sistema de avisos nos cursos. (CRUD)
 - Caderneta de alunos
 - Link das redes sociais na view
 
 
 Ideias:
-- Na p·gina inicial dos alunos ter· os avisos, notas e um link para a tela de materias onde mostrar· os materiais de apoio
-para a turma do aluno que est· logado.
+- Na p√°gina inicial dos alunos ter√° os avisos, notas e um link para a tela de materias onde mostrar√° os materiais de apoio
+para a turma do aluno que est√° logado.
 
 Para professores:
 - Colocar avisos
@@ -29,7 +29,7 @@ Cadastro:
 	- Nome Completo	
 	- Email
 	- telefone
-	- endereÁo
+	- endere√ßo
 	- senha
 Ele possui:
 	- Notas
@@ -46,10 +46,10 @@ Metas Anteriores:
 Metas Atuais:
 	- 	Vincular aluno a turma (Gabriel)
 	-	Listagem de Turmas por cursos (Gabriel)
-	-   Vincular materiais por turma (Sam)
-	- 	Cadastro de Materiais   (Sam)
+	-   Vincular materiais por turma (Sam) //ok
+	- 	Cadastro de Materiais   (Sam) //ok
 	- 	Download dos Materiais (Sam)
-	- 	Listagem dos materiais (Sam)
+	- 	Listagem dos materiais (Sam) //ok
 	- 	Cadastro das notas (Gabriel)
 
 

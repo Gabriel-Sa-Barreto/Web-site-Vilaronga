@@ -62,6 +62,13 @@ Route::prefix('professor')->group(function(){
     Route::get('/criar', 'TeacherController@create');//rota para formulário de cadastro de novo professor
 });
 
+Route::prefix('material')->group(function(){
+    Route::get('/criar','MaterialController@create');
+    Route::post('/novo','MaterialController@store');
+    Route::get('/lista','MaterialController@index');
+    Route::get('/download/{id}','MaterialController@download');
+});
+
 Route::get('/cursos_turma/novo', 'CursoController@create');       //rota para formulário de cadastro de novo curso
 Route::get('/cursos_turma/nova_turma', 'TurmaController@create'); //rota para formulário de cadastro de nova turma
 Route::get('/aluno/novo', 'StudantController@create');                //rota para formulário de cadastro de novo aluno

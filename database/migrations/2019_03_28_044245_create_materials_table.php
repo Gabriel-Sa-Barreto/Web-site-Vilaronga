@@ -13,7 +13,7 @@ class CreateMaterialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('materiais', function (Blueprint $table) {
+        Schema::create('materials', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('turma_id')->unsigned();
             $table->foreign('turma_id')->references('id')->on('turmas');
@@ -29,6 +29,6 @@ class CreateMaterialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('materiais');
+        Schema::dropIfExists('materials');
     }
 }
