@@ -117,9 +117,7 @@ class AdminController extends Controller
     }
 
     public function dadosAluno($id){
-        //retornar para a view os dados completos de um aluno requisitado, junto com os cursos que está cadastrado e as turmas
-        //$aluno    = Aluno::Where('id',$id)->get()->first();
-        //$endereço = Endereco::Where('aluno_id', $id)->get()->first(); 
+        //retornar para a view os dados completos de um aluno requisitado, junto com os cursos que está cadastrado e as turmas 
         $userAluno = DB::table('alunos')->join('enderecos', 'id','=','aluno_id')->select('alunos.*', 'enderecos.*')->get(); //variável com campo de aluno e seu endereco
         foreach ($userAluno as $c) {
             if($c->id == $id){
@@ -181,5 +179,33 @@ class AdminController extends Controller
         $AlunoPosse->save();
         return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');        
     }
+
+    public function listagemDeTurma(){
+        $cursos = Curso::all();
+        if(count($cursos) > 0){
+            //existe curso cadastrado
+            $turma = Turma::all();
+            if(count($turma) > 0){
+                //existe turmas casdastradas
+                return view('adm.listagemDeTurmas',compact('cursos','turma'));
+            }
+
+            //caso não existam turmas
+            return view('adm.gerenciarCursos',compact('cursos'));
+        }
+        //caso não existam cursos
+        return view('adm.gerenciarCursos');       
+
+    }
+
+    public function listagemDeAlunosTurma(Request $request){
+        //busca as tuplas com os alunos da turma desejada
+        $alunos =  DB::table('posses')->join('alunos', 'aluno_id','=','id')
+                                      ->select('alunos.*')->Where('turma_id','=', $request->input('turma'))->get();
+                                  
+       return view('adm.listagemAlunosTurma',compact('alunos'));
+
+    }
+
 
 }

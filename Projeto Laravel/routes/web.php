@@ -71,6 +71,10 @@ Route::prefix('adm')->group(function(){
 
     Route::post('/gerenciarCursos/vincularTurma', 'AdminController@salvarVinculacao'); //rota para salvar vinculação de aluno com turma e curso
 
+    Route::get('/gerenciarAlunos/listagemDeTurma', 'AdminController@listagemDeTurma'); //rota para listagem de turmas por curso
+
+    Route::post('/gerenciarCursos/listagemDeTurma/visualizar', 'AdminController@listagemDeAlunosTurma'); //rota para visualização de alunos em uma turma
+
 });
 
 Route::prefix('aluno')->group(function(){
