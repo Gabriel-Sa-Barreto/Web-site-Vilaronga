@@ -31,7 +31,7 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="features.html">Meus dados</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/dados">Meus Dados</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -47,19 +47,19 @@
     </nav>
     
     <main class="page landing-page">
-         <section class="clean-block clean-hero" style="background-image:url(&quot;assets/img/tech/image4.jpg&quot;);color:rgba(9, 162, 255, 0.85); margin-bottom: 3em;">
+         <section class="clean-block clean-hero" style="background-image:url(&quot;img/login.jpg&quot;);color:rgba(9, 162, 255, 0.5); margin-bottom: 3em;">
             <div class="text">
-                <h2>Seja bem-vindo (nomeAluno)</h2>
+                <h2>Seja bem-vindo (nome do aluno)</h2>
                 <p>Visualize seus dados cadastrados, tenha acesso aos avisos dos professores, suas notas, materiais de apoio e tudo que lhe trará maior usabilidade no seus estudos e período de aulas.</p><button class="btn btn-outline-light btn-lg" type="button">Área do Aluno</button></div>
         </section>
         <div class="text-center" style="margin-bottom: 3em;">
-            <h2 class="text-info">Área do aluno</h2>
+            <h2 class="text-info">Área do alusno</h2>
         </div>  
         <div class="container">  
             <div class="row">
                 <div class="col-sm-4 col-lg-4">
                     <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
-                            <img class="card-img-top img-fluid" src="img/teamwork.png" alt="Card image cap" style="width: 11em; height: 11em; display: block; margin:auto;">
+                            <img class="card-img-top img-fluid" src="img/task.png" alt="Card image cap" style="width: 7em; height: 7em; display: block; margin:auto;">
                             <div class="card-header">
                                 <b><h5>Materiais de Apoio</h5></b>
                             </div>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-sm-4 col-lg-4">
                     <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center">
-                            <img class="card-img-top img-fluid" src="img/teamwork.png" alt="Card image cap" style="width: 11em; height: 11em; display: block; margin:auto;"> 
+                            <img class="card-img-top img-fluid" src="img/message.png" alt="Card image cap" style="width:7em; height:7em; display: block; margin:auto;"> 
                             <div class="card-header">
                                 <b><h5>Avisos</h5></b>
                             </div>
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-sm-4 col-lg-4">
                     <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center">
-                            <img class="card-img-top img-fluid" src="img/teamwork.png" alt="Card image cap" style="width: 11em; height: 11em; display: block; margin:auto;"> 
+                            <img class="card-img-top img-fluid" src="img/grades.png" alt="Card image cap" style="width:7em; height:7em; display: block; margin:auto;"> 
                             <div class="card-header">
                                 <b><h5>Notas</h5></b>
                             </div>

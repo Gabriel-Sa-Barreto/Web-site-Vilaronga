@@ -14,7 +14,7 @@
 	                    <form action="/novoAluno" method="POST">
 			            @csrf
 	                    	<div class="form-group">
-				                	<label for="nomeAluno">Nome do Completo</label>
+				                	<label for="nomeAluno">Nome Completo</label>
 				                	<input type="text" class="form-control" name="nomeAluno" id="nomeAluno" placeholder="....">
 				            </div>
 							<div class="form-row">
