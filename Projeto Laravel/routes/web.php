@@ -81,6 +81,13 @@ Route::prefix('aluno')->group(function(){
     Route::post('/editar', 'AlunoController@update');
 });
 
+Route::prefix('material')->group(function(){
+    Route::get('/criar','MaterialController@create');
+    Route::post('/novo','MaterialController@store');
+    Route::get('/lista','MaterialController@index');
+    Route::get('/download/{id}','MaterialController@download');
+});
+
 Route::prefix('professor')->group(function(){
     Route::get('/', 'ProfController@index')->name('prof.dashboard');
     Route::get('/login', 'Auth\ProfLoginController@showLoginForm')->name('prof.login');

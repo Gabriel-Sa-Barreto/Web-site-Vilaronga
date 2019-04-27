@@ -20,6 +20,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">Avisos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/material/lista">Material</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();

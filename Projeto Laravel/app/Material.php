@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Material extends Model
 {
-    protected $table_name = 'materiais'; 
+    protected $fillable = ['nome'];
 
-    return $this->belongsTo('App\Turma');
+    public function turma(){
+    	return $this->belongsTo('App\Turma');
+    }
 }
