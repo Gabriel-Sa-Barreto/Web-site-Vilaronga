@@ -20,7 +20,7 @@
                         <b><h5>Listagem de Turmas por cursos</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarAlunos/deletar" class="btn btn-md btn-primary">Novo curso</a>
+                        <a href="/adm/gerenciarAlunos/listagemDeTurma" class="btn btn-md btn-primary">Visualizar lista completa</a>
                     </div>
                 </div>              
             </div>
@@ -47,6 +47,13 @@
 
     <div class="container">
         @yield('vincularTurma')
+    </div>
+
+    <div class="container">
+        @yield('listagemDeTurma')
+    </div>
+     <div class="container">
+        @yield('listagemDeTurmaAlunos')
     </div>
     
     </div>
