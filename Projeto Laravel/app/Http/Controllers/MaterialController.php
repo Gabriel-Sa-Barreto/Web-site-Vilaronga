@@ -23,7 +23,7 @@ class MaterialController extends Controller
             // The user is logged in...
             $materiais = collect([]);
             $user = Auth::guard('professor')->user();
-            $turmas = DB::table('turmas')->where('curso_id', '=', $user->curso_id)->get();
+            $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();
             foreach ($turmas as $turma){
                 $materiaisPerTurma = DB::table('materials')->where('turma_id', '=', $turma->id)->get();
                 $materiais = $materiais->concat($materiaisPerTurma);
@@ -42,7 +42,7 @@ class MaterialController extends Controller
     {
         if (Auth::guard('professor')->check()) {
             $user = Auth::guard('professor')->user();
-            $turmas = DB::table('turmas')->where('curso_id', '=', $user->curso_id)->get();//retorna todos as turmas disponíveis no banco para associação com um novo arquivo
+            $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();//retorna todos as turmas disponíveis no banco para associação com um novo arquivo
             return view('novoTurma_Material', compact('turmas'));
         }
         return redirect('/');    

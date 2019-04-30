@@ -17,6 +17,8 @@ class CreateTurmasTable extends Migration
             $table->increments('id');
             $table->integer('curso_id')->unsigned();
             $table->foreign('curso_id')->references('id')->on('cursos'); 
+            $table->integer('professor_id')->unsigned()->nullable();
+            $table->foreign('professor_id')->references('id')->on('professors');
             //$table->integer('qtdAlunos');
             $table->string('nivel');
             $table->string('horario');

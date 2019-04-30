@@ -14,22 +14,22 @@ class ProfessorSeeder extends Seeder
     {
       DB::table('professors')->insert(
             ['nome'=>'Samuel', 'telefone'=>'75981018840', 'email'=>'samvlima10@gmail.com',
-             'password'=>Hash::make('samuel') , 'curso_id' => 1
+             'password'=>Hash::make('samuel')
         ]);
 
         DB::table('professors')->insert(
             ['nome'=>'Joao', 'telefone'=>' 7593434234', 'email'=>'joao@gmail.com',
-             'password'=>Hash::make('joaovc') , 'curso_id' => 3
+             'password'=>Hash::make('joaovc')
         ]);
 
         DB::table('professors')->insert(
             ['nome'=>'Kaio', 'telefone'=>'75934323231', 'email'=>'kaio@gmail.com',
-             'password'=>Hash::make('kaiovc') , 'curso_id' => 2
+             'password'=>Hash::make('kaiovc') 
         ]);
 
         DB::table('professors')->insert(
             ['nome'=>'Elisangela', 'telefone'=>'7534543234', 'email'=>'elisangela@gmail.com',
-             'password'=>Hash::make('elisangela') , 'curso_id' => 1
+             'password'=>Hash::make('elisangela') 
         ]);
     }    
 }
