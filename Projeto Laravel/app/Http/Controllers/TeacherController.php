@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Professor;
 use App\Curso;
+use Auth;
 
 class TeacherController extends Controller
 {
@@ -26,6 +27,13 @@ class TeacherController extends Controller
      */
     public function create()
     {
+        if(Auth::guard('administrador')->check()){
+            //se o adm estiver logado
+            $cursos = Curso::all();
+            return view('adm.novoProfessor',compact('cursos'));
+        }else{
+            return redirect('/');//redireciona para a home_page do site
+        }
        
     }
 
@@ -37,7 +45,18 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $new_professor = new Professor();
+        $new_professor->nome = $request->input('nomeProfessor');
+        $new_professor->telefone = $request->input('telefone');
+        $new_professor->email = $request->input('email');
+        $new_professor->password = Hash::make($request->input('senha'));
+
+        $nomeCurso = $request->input('nomeCurso');
+        //busca ID do curso que será vinculado à turma que está sendo criada.
+        $cursoID = Curso::Where('nome', $nomeCurso)->get()->first();
+        $new_professor->curso_id = $cursoID->id;
+        $new_professor->save();
+        return redirect('/adm/gerenciarProfessores/novo');
     }
 
     /**

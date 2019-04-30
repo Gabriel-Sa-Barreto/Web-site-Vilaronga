@@ -34,7 +34,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/adm/gerenciarCursos">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/criarProfessor">Professores</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarProfessores">Professores</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
