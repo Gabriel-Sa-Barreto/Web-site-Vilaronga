@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Turma;
 use App\Material;
+use DB;
+use Auth;
 //use App\Curso;
 
 class MaterialController extends Controller
@@ -17,8 +19,18 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materiais = Material::all();
-        return view('lista_Materiais' , compact('materiais'));
+        $materiais = collect();
+        if (Auth::guard('professor')->check()) {
+            // The user is logged in...
+            $user = Auth::guard('professor')->user();
+            $turmas = DB::table('turmas')->where('curso_id', '=', $user->curso_id)->get();
+            foreach ($turmas as $turma){
+                $materiaisPerTurma = DB::table('materials')->where('turma_id', '=', $turma->id)->get();
+                $materiais->concat($materiaisPerTurma);
+            }
+            return view('lista_Materiais' , compact('materiais'));
+        }
+        //return view('lista_Materiais' , compact('materiais'));
     }
 
     /**
