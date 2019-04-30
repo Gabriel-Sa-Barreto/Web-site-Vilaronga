@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Professor;
 use App\Curso;
+use App\Turma;
+use App\Aluno;
 use Auth;
 
 class TeacherController extends Controller
@@ -67,7 +69,7 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -101,6 +103,36 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $professor_id = Professor::Where('id',$id)->get()->first(); //busca todos os professores cadastrados no sistema.
+        if(isset($professor_id)){//caso ache algum professor 
+            $turmas = Turma::Where('professor_id', $id)->get();//busca todas as turmas que este professor pertence
+            foreach ($turmas as $t) {
+                $turmas->delete();
+            }
+            $professor_id->delete();
+            return redirect('/adm/gerenciarProfessores/deletar');
+        }
+        return redirect('/adm/gerenciarProfessores/deletar');
+    }
+
+
+    public function listagemDeProfessores($id){
+        if(Auth::guard('administrador')->check()){
+            $professores = Professor::All();
+            if(count($professores) > 0){
+                if($id == 1){//para deletar   
+                    return view('adm.deletarProfessor', compact('professores'));
+                }else if($id == 2){//para vincular ou desvincular um professore
+                    $cursos  = Curso::all();
+                    $turmas = Turma::all(); 
+                    return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas'));
+                }
+            }
+            //caso não ache nenhum professor
+            //return view('adm.deletarProfessor');
+        }else{
+            return redirect('/');
+        }
+
     }
 }

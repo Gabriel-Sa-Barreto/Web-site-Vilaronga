@@ -46,7 +46,7 @@ Route::prefix('adm')->group(function(){
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    
+
     Route::get('/gerenciarAlunos',function(){ return view('adm.gerenciarAlunos'); }); //tela para opções de gerenciar os alunos
 
     Route::get('/gerenciarAlunos/novo',function(){ return view('adm.novoAluno');});  //tela de formulário para cadastro de um novo aluno
@@ -79,6 +79,12 @@ Route::prefix('adm')->group(function(){
     Route::get('/gerenciarProfessores/novo', 'TeacherController@create');  //tela de formulário para cadastro de um professor
 
     Route::post('/gerenciarProfessores/novo/salvar', 'TeacherController@store');  //rota para salvar um novo professor
+
+    Route::get('/gerenciarProfessores/deletar/{id}', 'TeacherController@listagemDeProfessores'); //rota para selecionar qual professor deseja-se deletar  
+
+    Route::get('/gerenciarProfessores/deletar/salvar/{id}', 'TeacherController@destroy'); //rota para deletar um professor por completo
+
+    Route::get('/gerenciarProfessores/vincularDesvincular/{id}', 'TeacherController@listagemDeProfessores'); //rota de listagem de professores com o objetivo de vincular ou desvincular algum
 });
 
 Route::prefix('aluno')->group(function(){

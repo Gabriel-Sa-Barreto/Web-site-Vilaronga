@@ -84,13 +84,17 @@
           }
         }
     </script>
-
-
     <script src="/js/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
+    <script>
+        $(document).on("click", "#vincular", function () {
+            var info = $(this).attr('data-id');
+            $(".modal-content #meuid").val(info);
+         });
+    </script>
 </body>
 
 </html>
