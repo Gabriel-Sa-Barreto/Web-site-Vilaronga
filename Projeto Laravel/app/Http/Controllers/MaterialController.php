@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Turma;
 use App\Material;
+use DB;
+use Auth;
 //use App\Curso;
 
 class MaterialController extends Controller
@@ -17,8 +19,18 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        $materiais = Material::all();
-        return view('lista_Materiais' , compact('materiais'));
+        if (Auth::guard('professor')->check()) {
+            // The user is logged in...
+            $materiais = collect([]);
+            $user = Auth::guard('professor')->user();
+            $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();
+            foreach ($turmas as $turma){
+                $materiaisPerTurma = DB::table('materials')->where('turma_id', '=', $turma->id)->get();
+                $materiais = $materiais->concat($materiaisPerTurma);
+            }
+            return view('lista_Materiais' , compact('materiais'));
+        }
+        return redirect('/');
     }
 
     /**
@@ -28,9 +40,12 @@ class MaterialController extends Controller
      */
     public function create()
     {
-       $turmas = Turma::all(); //retorna todos as turmas disponíveis no banco para associação com um novo arquivo
-       
-       return view('novoTurma_Material', compact('turmas'));
+        if (Auth::guard('professor')->check()) {
+            $user = Auth::guard('professor')->user();
+            $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();//retorna todos as turmas disponíveis no banco para associação com um novo arquivo
+            return view('novoTurma_Material', compact('turmas'));
+        }
+        return redirect('/');    
     }
 
     /**

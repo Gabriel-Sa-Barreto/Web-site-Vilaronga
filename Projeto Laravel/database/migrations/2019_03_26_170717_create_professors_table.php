@@ -18,8 +18,6 @@ class CreateProfessorsTable extends Migration
             //$table->foreign('user_id')->references('id')->on('users');
             //$table->primary('user_id'); //transforma esse campo em chave primária.
             $table->increments('id');
-            $table->integer('curso_id')->unsigned();
-            $table->foreign('curso_id')->references('id')->on('cursos'); //chave estrangeira
             $table->string('nome');
             $table->string('telefone');
             $table->string('email',100)->unique();
