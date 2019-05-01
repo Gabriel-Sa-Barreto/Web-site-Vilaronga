@@ -85,6 +85,10 @@ Route::prefix('adm')->group(function(){
     Route::get('/gerenciarProfessores/deletar/salvar/{id}', 'TeacherController@destroy'); //rota para deletar um professor por completo
 
     Route::get('/gerenciarProfessores/vincularDesvincular/{id}', 'TeacherController@listagemDeProfessores'); //rota de listagem de professores com o objetivo de vincular ou desvincular algum
+
+    Route::post('/gerenciarProfessores/vincular','TeacherController@vincular'); //rota para salvar vinculação de um professor em uma turma.
+
+    Route::post('/gerenciarProfessores/desvincular','TeacherController@desvincular'); //rota para salvar desvinculação de um professor em uma turma.
 });
 
 Route::prefix('aluno')->group(function(){

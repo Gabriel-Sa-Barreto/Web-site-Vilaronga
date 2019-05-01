@@ -34,7 +34,8 @@
                         <b><h5>Vincular/Desvincular professor a turma</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarProfessores/vincularDesvincular/2" class="btn btn-md btn-primary">Vincular/Desvincular</a>
+                        <a href="/adm/gerenciarProfessores/vincularDesvincular/2" class="btn btn-md btn-primary">Vincular</a>
+                        <a href="/adm/gerenciarProfessores/vincularDesvincular/3" class="btn btn-md btn-primary">Desvincular</a>
                     </div>
                 </div>              
             </div>

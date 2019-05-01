@@ -7,7 +7,7 @@
 				<div class="input-group-prepend">
 				   <span class="input-group-text" id="inputGroup-sizing-default">Buscar:</span>
 				</div>
-				<input type="text" id="myInput" onkeyup="myFunction('myInput','tabela')" placeholder="Digite o nome do curso" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+				<input type="text" id="myInput" onkeyup="myFunction('myInput','tabela')" placeholder="Digite o nome do professor" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 			</div>
 			 
 			<table class="table table-ordered table-hover" id="tabela">
@@ -28,8 +28,11 @@
 						      <td>{{$p->telefone}}</td>
 						      <td>{{$p->email}}</td>
 						      <td>
-						      	<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg" id="vincular" data-id='{{$p->id}}'>Vincular</button>
-						      	<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg" id="desvincular">Desvincular</button>
+						      	@if($opcao == 1)
+						      		<button type="button" class="btn btn-success" data-toggle="modal" data-target=".bd-example-modal-lg" id="desvincularVincular" data-id='{{$p->id}}:{{$p->nome}}'>Vincular</button>
+						      	@else
+						      		<button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-lg" id="desvincularVincular" data-id='{{$p->id}}:{{$p->nome}}'>Desvincular</button>
+						      	@endif
 						      </td>
 						    </tr>
 						@endforeach
@@ -46,7 +49,11 @@
 	  	<div class="modal-dialog modal-lg">
 	    	<div class="modal-content">
 	      		<div class="modal-header text-center">
-	                <h5 class="modal-title" id="exampleModalLongTitle">Seus dados pessoais</h5>
+	      			@if($opcao == 1)
+	                	<h5 class="modal-title" id="exampleModalLongTitle">Escolha uma turma para vinculação:</h5>
+	                @else
+	                	<h5 class="modal-title" id="exampleModalLongTitle">Escolha uma turma para desvinculação:</h5>
+	                @endif
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                  <span aria-hidden="true">&times;</span>
 	                </button>
@@ -65,27 +72,39 @@
 								    </tr>
 								</thead>
 								<tbody>
-								  	@foreach($cursos as $c)
-								  		@foreach($turmas as $t)
-											<tr>	
-												@if($t->curso_id == $c->id)
-													<td>{{$c->nome}}</td>
-											    	<td>{{$t->nivel}}</td>
-											    	<td>{{$t->horario}}</td>
-											    	<td>{{$t->nome}}</td>
-													<td><a href="/adm/gerenciarProfessores/vincular/{{}}" class="btn btn-md btn-danger">Vincular</a></td>
-												@endif
-											</tr>
-										@endforeach
-									@endforeach
+									<input type="text" class="form-control" name="nomeProfessor" id="nomeProfessor" readonly="readonly">
+										  	@foreach($cursos as $c)
+										  		@foreach($turmas as $t)
+													<tr>	
+														@if($t->curso_id == $c->id)
+															<td>{{$c->nome}}</td>
+													    	<td>{{$t->nivel}}</td>
+													    	<td>{{$t->horario}}</td>
+													    	<td>{{$t->nome}}</td>
+															<td>
+																@if($opcao == 1)
+																	<form class="form-inline" action="/adm/gerenciarProfessores/vincular" method="POST">
+							      									@csrf
+							      								@else
+							      									<form class="form-inline" action="/adm/gerenciarProfessores/desvincular" method="POST">
+							      									@csrf
+							      								@endif
+																	<input type="hidden" name="idTurma" value="{{$t->id}}" readonly="readonly">
+																	<input type="hidden" id="idProfessor" name="idProfessor" readonly="readonly">			
+																	<button type="submit" class="btn btn-outline-primary" type="button">Selecionar</button>
+																</form>
+															</td>
+														@endif
+													</tr>
+												@endforeach
+											@endforeach
 								</tbody>
 							</table>
 		              	@endif
-		              	<input type="text" class="form-control" name="meuid" id="meuid" readonly="readonly">
 		              </div>
 		        </div>
               	<div class="modal-footer">
-               		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               		<button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
               	</div>
 	    	</div>
 	  	</div>

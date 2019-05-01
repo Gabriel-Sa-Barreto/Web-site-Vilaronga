@@ -90,9 +90,13 @@
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
     <script>
-        $(document).on("click", "#vincular", function () {
+        $(document).on("click", "#desvincularVincular", function () {
             var info = $(this).attr('data-id');
-            $(".modal-content #meuid").val(info);
+            var str = info.split(':');
+            var id = str[0];
+            var nome = str[1];
+            $(".modal-content #idProfessor").val(id);
+            $(".modal-content #nomeProfessor").val(nome);
          });
     </script>
 </body>

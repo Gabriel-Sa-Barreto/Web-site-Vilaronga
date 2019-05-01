@@ -107,7 +107,7 @@ class TeacherController extends Controller
         if(isset($professor_id)){//caso ache algum professor 
             $turmas = Turma::Where('professor_id', $id)->get();//busca todas as turmas que este professor pertence
             foreach ($turmas as $t) {
-                $turmas->delete();
+                $t->delete();
             }
             $professor_id->delete();
             return redirect('/adm/gerenciarProfessores/deletar');
@@ -122,14 +122,52 @@ class TeacherController extends Controller
             if(count($professores) > 0){
                 if($id == 1){//para deletar   
                     return view('adm.deletarProfessor', compact('professores'));
-                }else if($id == 2){//para vincular ou desvincular um professore
+                }else if($id == 2){//para vincular um professor
                     $cursos  = Curso::all();
-                    $turmas = Turma::all(); 
-                    return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas'));
+                    $turmas = Turma::all();
+                    $opcao = 1; 
+                    return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao'));
+                }else if ($id == 3){//para desvincular um professor.
+                    $cursos  = Curso::all();
+                    $turmas = Turma::all();
+                    $opcao = 2; 
+                    return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao'));
+                }
+            }else{//caso não existam professores cadastrados.
+                if($id == 1){//para deletar   
+                    return view('adm.deletarProfessor');
+                }else if($id == 2){//para vincular um professor
+                    return view('adm.vincular_desvincularProfessor');
                 }
             }
-            //caso não ache nenhum professor
-            //return view('adm.deletarProfessor');
+        }else{
+            return redirect('/');
+        }
+    }
+
+    public function vincular(Request $request){
+        if(Auth::guard('administrador')->check()){
+            $turma = Turma::Where('id',$request->input('idTurma'))->get()->first(); //retorna a turma desejada
+            $turma->professor_id = $request->input('idProfessor');
+            $turma->save();
+            return redirect('/adm/gerenciarProfessores/vincularDesvincular/2');
+        }else{
+            return redirect('/');
+        }
+
+    }
+
+    public function desvincular(Request $request){
+        if(Auth::guard('administrador')->check()){
+            $turma = Turma::Where('id',$request->input('idTurma'))->get()->first(); //retorna a turma desejada
+            if($turma->professor_id == $request->input('idProfessor')){
+                $turma->professor_id = null;
+                $turma->save();
+                return redirect('/adm/gerenciarProfessores/vincularDesvincular/3');
+            }else{
+                //o professor não pertece à turma escolhida
+                return redirect('/adm/gerenciarProfessores/vincularDesvincular/3');    
+            }
         }else{
             return redirect('/');
         }
