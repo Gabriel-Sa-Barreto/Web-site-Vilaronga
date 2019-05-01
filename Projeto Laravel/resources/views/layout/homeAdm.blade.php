@@ -34,7 +34,7 @@
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/adm/gerenciarCursos">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/criarProfessor">Professores</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarProfessores">Professores</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -84,13 +84,21 @@
           }
         }
     </script>
-
-
     <script src="/js/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
+    <script>
+        $(document).on("click", "#desvincularVincular", function () {
+            var info = $(this).attr('data-id');
+            var str = info.split(':');
+            var id = str[0];
+            var nome = str[1];
+            $(".modal-content #idProfessor").val(id);
+            $(".modal-content #nomeProfessor").val(nome);
+         });
+    </script>
 </body>
 
 </html>

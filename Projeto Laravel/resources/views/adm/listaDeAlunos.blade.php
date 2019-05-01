@@ -7,7 +7,7 @@
 				<div class="input-group-prepend">
 				   <span class="input-group-text" id="inputGroup-sizing-default">Buscar:</span>
 				</div>
-				<input type="text" id="myInput" onkeyup="myFunction('myInput','tabela')" placeholder="Digite o nome do curso" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+				<input type="text" id="myInput" onkeyup="myFunction('myInput','tabela')" placeholder="Digite o nome do aluno" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 			</div>
 			 
 			<table class="table table-ordered table-hover" id="tabela">

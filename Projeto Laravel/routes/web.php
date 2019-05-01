@@ -46,8 +46,7 @@ Route::prefix('adm')->group(function(){
 	Route::get('/', 'AdminController@index')->name('admin.dashboard');
 	Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 	Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/criarProfessor', 'AdminController@telaCriarProfessor');//rota para formulário de cadastro de novo professor
-    Route::get('/criarProfessor/salvar', 'AdminController@storeProfessor');//rota para um salvar novo professor
+
     Route::get('/gerenciarAlunos',function(){ return view('adm.gerenciarAlunos'); }); //tela para opções de gerenciar os alunos
 
     Route::get('/gerenciarAlunos/novo',function(){ return view('adm.novoAluno');});  //tela de formulário para cadastro de um novo aluno
@@ -75,6 +74,21 @@ Route::prefix('adm')->group(function(){
 
     Route::post('/gerenciarCursos/listagemDeTurma/visualizar', 'AdminController@listagemDeAlunosTurma'); //rota para visualização de alunos em uma turma
 
+    Route::get('/gerenciarProfessores', function(){ return view('adm.gerenciarProfessores');}); 
+
+    Route::get('/gerenciarProfessores/novo', 'TeacherController@create');  //tela de formulário para cadastro de um professor
+
+    Route::post('/gerenciarProfessores/novo/salvar', 'TeacherController@store');  //rota para salvar um novo professor
+
+    Route::get('/gerenciarProfessores/deletar/{id}', 'TeacherController@listagemDeProfessores'); //rota para selecionar qual professor deseja-se deletar  
+
+    Route::get('/gerenciarProfessores/deletar/salvar/{id}', 'TeacherController@destroy'); //rota para deletar um professor por completo
+
+    Route::get('/gerenciarProfessores/vincularDesvincular/{id}', 'TeacherController@listagemDeProfessores'); //rota de listagem de professores com o objetivo de vincular ou desvincular algum
+
+    Route::post('/gerenciarProfessores/vincular','TeacherController@vincular'); //rota para salvar vinculação de um professor em uma turma.
+
+    Route::post('/gerenciarProfessores/desvincular','TeacherController@desvincular'); //rota para salvar desvinculação de um professor em uma turma.
 });
 
 Route::prefix('aluno')->group(function(){
@@ -98,8 +112,4 @@ Route::prefix('professor')->group(function(){
     Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
     Route::post('/novo', 'TeacherController@store'); //rota para salvar os dados de novo professor
 });
-
-Route::get('/cursos_turma/novo', 'CursoController@create');           //rota para formulário de cadastro de novo curso
-Route::get('/aluno/novo', 'StudantController@create');                //rota para formulário de cadastro de novo aluno
-
 

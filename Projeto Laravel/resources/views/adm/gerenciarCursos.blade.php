@@ -1,6 +1,9 @@
 @extends('layout.homeAdm')
 	@section('conteudo')
     <div class="container">
+        <div class="text-center" style="margin-bottom: 3em;">
+            <h2 class="text-info">Gerencie seus cursos e turmas</h2>
+        </div> 
     	<div class="row">
     		<div class="col-sm-4 col-lg-4">
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
@@ -54,7 +57,5 @@
     </div>
      <div class="container">
         @yield('listagemDeTurmaAlunos')
-    </div>
-    
     </div>
 @stop

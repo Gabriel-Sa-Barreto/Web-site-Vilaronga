@@ -1,4 +1,4 @@
-Requisitos do sistema:
+ Requisitos do sistema:
 
 - Login
 - CRUD de aluno, turmas.
@@ -44,8 +44,8 @@ Metas Anteriores:
 	- Cadastro de professor                (Sam)         OK
 
 Metas Atuais:
-	- 	Vincular aluno a turma (Gabriel)
-	-	Listagem de Turmas por cursos (Gabriel)
+	- 	Vincular aluno a turma (Gabriel)                 OK
+	-	Listagem de Turmas por cursos (Gabriel)          OK
 	-   Vincular materiais por turma (Sam)
 	- 	Cadastro de Materiais   (Sam)
 	- 	Download dos Materiais (Sam)
