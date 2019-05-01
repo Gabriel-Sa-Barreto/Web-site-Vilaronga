@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ProfController extends Controller
 {
@@ -23,6 +24,7 @@ class ProfController extends Controller
      */
     public function index()
     {
-        return view('professor');
+        $professor = Auth::guard('professor')->user()->nome;
+        return view('professor', compact('professor'));
     }
 }

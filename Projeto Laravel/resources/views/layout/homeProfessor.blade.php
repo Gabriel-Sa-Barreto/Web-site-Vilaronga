@@ -24,18 +24,17 @@
         }
 
     </style>
-
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="/professor">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/adm">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Turmas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Material</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">Avisos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarMaterial">Material</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -49,12 +48,8 @@
             </div>
         </div>
     </nav>
-    <main class="page landing-page">
-        <section class="clean-block clean-hero" style="background-image:url(&quot;img/login.jpg&quot;);color:rgba(9, 162, 255, 0.5);">
-            <div class="text">
-                <h2>Seja Bem-Vindo {{$professor}}</h2>
-                <p>Você tem o controle de toda parte acadêmica que diz respeito à Instituição Cursos Vilaronga</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
-        </section>
+    <main class="page landing-page" style="margin-bottom: 2em; margin-top: 3em;">
+        @yield('conteudo')
     </main>
     <footer class="page-footer dark">
         <div class="footer-copyright">
@@ -62,11 +57,48 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
+
+    <script>
+        //Função responsável por filtrar dados em uma tabela tabela
+        //idEntrada corresponde ao id do input
+        //idTabela corresponde ao id da tabela que deseja-se realizar o filtro
+        function myFunction(idEntrada, idTabela) {
+          // Declare variables 
+          var input, filter, table, tr, td, i, txtValue;
+          input = document.getElementById(idEntrada);
+          filter = input.value.toUpperCase();
+          table = document.getElementById(idTabela);
+          tr = table.getElementsByTagName("tr");
+
+          // Loop through all table rows, and hide those who don't match the search query
+          for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+              txtValue = td.textContent || td.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              } else {
+                tr[i].style.display = "none";
+              }
+            } 
+          }
+        }
+    </script>
     <script src="/js/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
+    <script>
+        $(document).on("click", "#desvincularVincular", function () {
+            var info = $(this).attr('data-id');
+            var str = info.split(':');
+            var id = str[0];
+            var nome = str[1];
+            $(".modal-content #idProfessor").val(id);
+            $(".modal-content #nomeProfessor").val(nome);
+         });
+    </script>
 </body>
 
 </html>

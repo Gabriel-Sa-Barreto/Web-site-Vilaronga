@@ -104,6 +104,7 @@ Route::prefix('material')->group(function(){
     Route::post('/novo','MaterialController@store');
     Route::get('/lista','MaterialController@index');
     Route::get('/download/{id}','MaterialController@download');
+    Route::get('/remover/{id}','MaterialController@destroy');
 });
 
 Route::prefix('professor')->group(function(){
@@ -111,5 +112,6 @@ Route::prefix('professor')->group(function(){
     Route::get('/login', 'Auth\ProfLoginController@showLoginForm')->name('prof.login');
     Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
     Route::post('/novo', 'TeacherController@store'); //rota para salvar os dados de novo professor
+    Route::get('/gerenciarMaterial',function(){ return view('professor.gerenciarMaterial'); }); //tela para opções de gerenciar os alunos
 });
 

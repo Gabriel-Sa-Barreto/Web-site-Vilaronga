@@ -33,7 +33,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $adm = Auth::user()->nome;
+        $adm = Auth::guard('administrador')->user()->nome;
         return view('admin', compact('adm'));
     }
 

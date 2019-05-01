@@ -8,6 +8,7 @@ use App\Turma;
 use App\Material;
 use DB;
 use Auth;
+use File;
 //use App\Curso;
 
 class MaterialController extends Controller
@@ -123,6 +124,10 @@ class MaterialController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $material = Material::find($id);
+        $path = public_path().'/materiais/'.$material->nome;
+        unlink($path);
+        $material->delete();
+        return back()->with('success', 'Data Your files has been successfully removed');
     }
 }
