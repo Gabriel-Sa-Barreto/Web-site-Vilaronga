@@ -12,7 +12,7 @@
                         <b><h5>Listagem completa de alunos por turma</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarAlunos/novo" class="btn btn-md btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" id="desvincularVincular">
+                        <a href="/adm/gerenciarAlunos/novo" class="btn btn-md btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
                             Lista completa
                         </a>
                     </div>
@@ -25,7 +25,8 @@
                         <b><h5>Notas de atividades e avaliações</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarAlunos/deletar" class="btn btn-md btn-primary">Colocar notas</a>
+                        <a href="/adm/gerenciarAlunos/deletar" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Colocar notas
+                        </a>
                     </div>
                 </div>              
             </div>
@@ -35,12 +36,12 @@
         @yield('listagemDeAlunos')
     </div>
 
-    <!-- Modal -->
+    <!-- Modal de listagem de alunos-->
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header  text-center">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Escolha a turma:</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Turmas que voçê está cadastrado como professor:</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -86,6 +87,60 @@
                 </div>
             </div>
         </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Escolha a turma desejada:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card border border-secondary">
+                        <div class="card-body">
+                                    <table class="table table-ordered table-hover" id="tabela">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">Curso</th>
+                                                <th scope="col">Nível</th>
+                                                <th scope="col">Horário</th>
+                                                <th scope="col">Dia da semana</th>
+                                                <th scope="col">.....</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if(isset($turmas))
+                                                @foreach($cursos as $c)
+                                                    @foreach($turmas as $t)
+                                                        <tr>  
+                                                            @if($t->curso_id == $c->id)  
+                                                                <td>{{$c->nome}}</td>
+                                                                <td>{{$t->nivel}}</td>
+                                                                <td>{{$t->horario}}</td>
+                                                                <td>{{$c->nome}}</td>
+                                                                <td>
+                                                                    <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/notasTurma/{{$t->id}}" >Selecionar</a>
+                                                                </td>
+                                                            @endif
+                                                        </tr>  
+                                                        @endforeach
+                                                    @endforeach
+                                                @endif
+                                             
+                                        </tbody>
+                                    </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         @yield('listagemDeAlunosTurma')
     </div>
