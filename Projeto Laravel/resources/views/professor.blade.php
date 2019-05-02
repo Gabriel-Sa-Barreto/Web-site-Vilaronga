@@ -33,7 +33,7 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Turmas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarTurmas">Turmas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">Avisos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarMaterial">Material</a></li>
                     <li class="nav-item" role="presentation">
@@ -53,7 +53,8 @@
         <section class="clean-block clean-hero" style="background-image:url(&quot;img/login.jpg&quot;);color:rgba(9, 162, 255, 0.5);">
             <div class="text">
                 <h2>Seja Bem-Vindo {{$professor}}</h2>
-                <p>Você tem o controle de toda parte acadêmica que diz respeito à Instituição Cursos Vilaronga</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                <p>Você tem a possibilidade de disponibilizar atividades, notas e avisos para as respectivas turmas aos quais está cadastrado(a).</p>
+                <button class="btn btn-outline-light btn-lg" type="button">Veja suas turmas</button></div>
         </section>
     </main>
     <footer class="page-footer dark">

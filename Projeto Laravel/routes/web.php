@@ -113,5 +113,9 @@ Route::prefix('professor')->group(function(){
     Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
     Route::post('/novo', 'TeacherController@store'); //rota para salvar os dados de novo professor
     Route::get('/gerenciarMaterial',function(){ return view('professor.gerenciarMaterial'); }); //tela para opções de gerenciar os alunos
+
+    Route::get('/gerenciarTurmas', 'ProfController@gerenciarTurmas'); //rota para a tela de gerencias turmas ao qual o usuário professor pertence 
+
+    Route::get('/gerenciarTurmas/listagemDeAlunos/{id}', 'ProfController@alunosTurma'); //rota para a listagem de alunos de determinada turma
 });
 
