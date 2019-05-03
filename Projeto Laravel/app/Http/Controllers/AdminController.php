@@ -140,16 +140,18 @@ class AdminController extends Controller
         $aluno = Aluno::Where('id', $request->input('idAluno'))->get()->first();
         $turma = Turma::Where('id', $request->input('nivelTurma'))->get()->first();
 
-        $nota       = new Nota();
+        $nota           = new Nota();
         $nota->aluno_id = $aluno->id;
+        $nota->id_turma = $turma->id; 
         $nota->save();
-        $AlunoPosse = new Posse();
-        $AlunoPosse->aluno_id = $aluno->id;
-        $AlunoPosse->turma_id = $turma->id;
+        //$AlunoPosse = new Posse();
+        //$AlunoPosse->aluno_id = $aluno->id;
+        //$AlunoPosse->turma_id = $turma->id;
 
-        $idNota = Nota::Where('aluno_id',$aluno->id)->get()->first();
-        $AlunoPosse->nota_id  = $idNota->id;
-        $AlunoPosse->save();
+        //$idNota = Nota::Where('aluno_id',$aluno->id)->get()->first();
+        //$idNota = DB::table('notas')->select('notas.id')->Where([ ['id_turma', $turma->id], ['aluno_id', $aluno->id] ])->get()->first();
+        ///$AlunoPosse->nota_id  = $idNota;
+        //$AlunoPosse->save();
         return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');        
     }
 
@@ -173,8 +175,8 @@ class AdminController extends Controller
 
     public function listagemDeAlunosTurma(Request $request){
         //busca as tuplas com os alunos da turma desejada
-        $alunos =  DB::table('posses')->join('alunos', 'aluno_id','=','id')
-                                      ->select('alunos.*')->Where('turma_id','=', $request->input('turma'))->get();
+        $alunos =  DB::table('alunos')->join('notas', 'alunos.id','=','aluno_id')
+                                      ->select('alunos.*')->Where('id_turma','=', $request->input('turma'))->get();
                                   
        return view('adm.listagemAlunosTurma',compact('alunos'));
 

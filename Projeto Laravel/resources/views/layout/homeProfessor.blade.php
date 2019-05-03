@@ -28,13 +28,13 @@
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="/adm">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/professor">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Material</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/professor/gerenciarTurmas">Turmas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="">Avisos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarMaterial">Material</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -89,16 +89,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
-    <script>
-        $(document).on("click", "#desvincularVincular", function () {
-            var info = $(this).attr('data-id');
-            var str = info.split(':');
-            var id = str[0];
-            var nome = str[1];
-            $(".modal-content #idProfessor").val(id);
-            $(".modal-content #nomeProfessor").val(nome);
-         });
-    </script>
 </body>
 
 </html>

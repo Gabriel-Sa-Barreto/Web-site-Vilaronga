@@ -17,9 +17,12 @@ class CreateNotasTable extends Migration
             $table->increments('id');
             $table->integer('aluno_id')->unsigned();
             $table->foreign('aluno_id')->references('id')->on('alunos');
+            $table->integer('id_turma')->unsigned();
+            $table->foreign('id_turma')->references('id')->on('turmas');
             $table->float('nota1')->nullable();
             $table->float('nota2')->nullable();
             $table->float('nota3')->nullable();
+            $table->float('nota4')->nullable();
             $table->float('media')->nullable();
             $table->timestamps();
         });
