@@ -17,11 +17,11 @@
 			@csrf
 				<div class="form-group">
 			    	<label for="valor"><b>Valor da nota</b></label>
-			    	<input type="text" class="form-control" id="valor" name="valor">
+			    	<input type="text" class="form-control" id="valor" name="valor" value="{{$valorNota}}" required>
 			  	</div>
 				<div class="form-group">
 			    	<label for="descricao"><b>Descrição/Composição da nota:</b></label>
-			    	<textarea class="form-control" id="descricao" name = "descricao" rows="3"></textarea>
+			    	<textarea class="form-control" id="descricao" name = "descricao" rows="3" required>{{$descricaoNota}}</textarea>
 			  	</div>
 			  	<input type="hidden" id="idTurma" name="idTurma" value="{{$turmaNota->id}}">
 				<input type="hidden" id="idAluno" name="idAluno" value="{{$alunoNome->id}}">
