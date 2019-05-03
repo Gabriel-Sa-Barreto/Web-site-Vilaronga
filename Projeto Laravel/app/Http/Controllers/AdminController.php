@@ -140,15 +140,17 @@ class AdminController extends Controller
         $aluno = Aluno::Where('id', $request->input('idAluno'))->get()->first();
         $turma = Turma::Where('id', $request->input('nivelTurma'))->get()->first();
 
-        $nota       = new Nota();
+        $nota           = new Nota();
         $nota->aluno_id = $aluno->id;
+        $nota->id_turma = $turma->id; 
         $nota->save();
         $AlunoPosse = new Posse();
         $AlunoPosse->aluno_id = $aluno->id;
         $AlunoPosse->turma_id = $turma->id;
 
-        $idNota = Nota::Where('aluno_id',$aluno->id)->get()->first();
-        $AlunoPosse->nota_id  = $idNota->id;
+        //$idNota = Nota::Where('aluno_id',$aluno->id)->get()->first();
+        $idNota = DB::table('notas')->select('notas.id')->Where([ ['id_turma', $turma->id], ['aluno_id', $aluno->id] ])->get()->first();
+        $AlunoPosse->nota_id  = $idNota;
         $AlunoPosse->save();
         return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');        
     }

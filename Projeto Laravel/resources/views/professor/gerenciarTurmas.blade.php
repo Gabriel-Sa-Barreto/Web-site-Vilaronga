@@ -46,39 +46,41 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="card border border-secondary">
-                        <div class="card-body">
-                                    <table class="table table-ordered table-hover" id="tabela">
-                                        <thead class="thead-dark">
-                                            <tr>
-                                                <th scope="col">Curso</th>
-                                                <th scope="col">Nível</th>
-                                                <th scope="col">Horário</th>
-                                                <th scope="col">Dia da semana</th>
-                                                <th scope="col">.....</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @if(isset($turmas))
-                                                @foreach($cursos as $c)
-                                                    @foreach($turmas as $t)
-                                                        <tr>  
-                                                            @if($t->curso_id == $c->id)  
-                                                                <td>{{$c->nome}}</td>
-                                                                <td>{{$t->nivel}}</td>
-                                                                <td>{{$t->horario}}</td>
-                                                                <td>{{$c->nome}}</td>
-                                                                <td>
-                                                                    <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/listagemDeAlunos/{{$t->id}}" >Selecionar</a>
-                                                                </td>
-                                                            @endif
-                                                        </tr>  
+                    <div class="modal-body">
+                        <div class="card border border-secondary">
+                            <div class="card-body">
+                                        <table class="table table-ordered table-hover" id="tabela">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Curso</th>
+                                                    <th scope="col">Nível</th>
+                                                    <th scope="col">Horário</th>
+                                                    <th scope="col">Dia da semana</th>
+                                                    <th scope="col">.....</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if(isset($turmas))
+                                                    @foreach($cursos as $c)
+                                                        @foreach($turmas as $t)
+                                                            <tr>  
+                                                                @if($t->curso_id == $c->id)  
+                                                                    <td>{{$c->nome}}</td>
+                                                                    <td>{{$t->nivel}}</td>
+                                                                    <td>{{$t->horario}}</td>
+                                                                    <td>{{$c->nome}}</td>
+                                                                    <td>
+                                                                        <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/listagemDeAlunos/{{$t->id}}" >Selecionar</a>
+                                                                    </td>
+                                                                @endif
+                                                            </tr>  
+                                                            @endforeach
                                                         @endforeach
-                                                    @endforeach
-                                                @endif
-                                             
-                                        </tbody>
-                                    </table>
+                                                    @endif
+                                                 
+                                            </tbody>
+                                        </table>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -143,5 +145,13 @@
     </div>
     <div class="container">
         @yield('listagemDeAlunosTurma')
+    </div>
+
+    <div class="container">
+        @yield('selecionarAlunoNota')
+    </div>
+
+    <div class="container">
+        @yield('nota_e_descricao')
     </div>
 @stop
