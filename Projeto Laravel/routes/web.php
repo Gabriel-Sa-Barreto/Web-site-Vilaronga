@@ -97,6 +97,8 @@ Route::prefix('aluno')->group(function(){
 	Route::post('/login', 'Auth\AlunoLoginController@login')->name('aluno.login.submit');
     Route::get('/dados', 'AlunoController@edit');
     Route::post('/editar', 'AlunoController@update');
+    Route::get('/material' , 'MaterialController@index');
+    Route::get('/aviso' , 'AvisoController@index');
 });
 
 Route::prefix('material')->group(function(){
@@ -107,12 +109,22 @@ Route::prefix('material')->group(function(){
     Route::get('/remover/{id}','MaterialController@destroy');
 });
 
+Route::prefix('aviso')->group(function(){
+    Route::get('/criar','AvisoController@create');
+    Route::post('/novo','AvisoController@store');
+    Route::get('/lista','AvisoController@index');
+    Route::get('/ver/{id}','AvisoController@download');
+    Route::get('/remover/{id}','AvisoController@destroy');
+});
+
 Route::prefix('professor')->group(function(){
     Route::get('/', 'ProfController@index')->name('prof.dashboard');
     Route::get('/login', 'Auth\ProfLoginController@showLoginForm')->name('prof.login');
     Route::post('/login', 'Auth\ProfLoginController@login')->name('prof.login.submit');
     Route::post('/novo', 'TeacherController@store'); //rota para salvar os dados de novo professor
-    Route::get('/gerenciarMaterial',function(){ return view('professor.gerenciarMaterial'); }); //tela para opções de gerenciar os alunos
+    Route::get('/gerenciarMaterial',function(){ return view('professor.gerenciarMaterial'); }); //tela para opções de gerenciar os materiais
+
+    Route::get('/gerenciarAviso',function(){ return view('professor.gerenciarAviso'); }); //tela para opções de gerenciar os avisos
 
     Route::get('/gerenciarTurmas', 'ProfController@gerenciarTurmas'); //rota para a tela de gerencias turmas ao qual o usuário professor pertence 
 

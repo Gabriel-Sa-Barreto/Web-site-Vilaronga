@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Turma;
@@ -10,7 +8,6 @@ use DB;
 use Auth;
 use File;
 //use App\Curso;
-
 class MaterialController extends Controller
 {
     /**
@@ -22,18 +19,35 @@ class MaterialController extends Controller
     {
         if (Auth::guard('professor')->check()) {
             // The user is logged in...
-            $materiais = collect([]);
+            //$materiais = collect([]);
             $user = Auth::guard('professor')->user();
-            $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();
+            /*$turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();
             foreach ($turmas as $turma){
                 $materiaisPerTurma = DB::table('materials')->where('turma_id', '=', $turma->id)->get();
                 $materiais = $materiais->concat($materiaisPerTurma);
             }
-            return view('lista_Materiais' , compact('materiais'));
+            return view('lista_Materiais' , compact('materiais'));*/
+            $materiais = DB::table('materials')->join('turmas', 'materials.turma_id','=','turmas.id')
+                                               ->select('materials.*' , 'turmas.nivel')->Where('professor_id','=', $user->id)->get();
+            return view('lista_Materiais' , compact('materiais'));                                   
+        }
+        if (Auth::guard('aluno')->check()) {
+            // The user is logged in...
+            //$materiais = collect([]);
+            $userAluno = Auth::guard('aluno')->user();
+            /*$turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();
+            foreach ($turmas as $turma){
+                $materiaisPerTurma = DB::table('materials')->where('turma_id', '=', $turma->id)->get();
+                $materiais = $materiais->concat($materiaisPerTurma);
+            }
+            return view('lista_Materiais' , compact('materiais'));*/
+            $materiais = DB::table('materials')->join('notas', 'materials.turma_id','=','notas.id_turma')
+                                               ->join('turmas', 'materials.turma_id','=','turmas.id')
+                                               ->select('materials.*' , 'turmas.nivel')->Where('aluno_id','=', $userAluno->id)->get();
+            return view('lista_Materiais' , compact('materiais'));                                   
         }
         return redirect('/');
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -48,7 +62,6 @@ class MaterialController extends Controller
         }
         return redirect('/');    
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -76,7 +89,6 @@ class MaterialController extends Controller
         }    
         return back()->with('success', 'Data Your files has been successfully added');
     }
-
     /**
      * Display the specified resource.
      *
@@ -87,7 +99,6 @@ class MaterialController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -100,10 +111,8 @@ class MaterialController extends Controller
         $headers = [
             'Content-Type' => 'application/pdf',
         ];
-
         return response()->download( public_path() . '\materiais/' . $material->nome , $material->nome , $headers);
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -115,7 +124,6 @@ class MaterialController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *

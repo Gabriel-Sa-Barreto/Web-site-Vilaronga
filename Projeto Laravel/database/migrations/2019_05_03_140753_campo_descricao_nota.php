@@ -14,10 +14,10 @@ class CampoDescricaoNota extends Migration
     public function up()
     {
         Schema::table('notas', function (Blueprint $table) {
-            $table->string('descricao1');
-            $table->string('descricao2');
-            $table->string('descricao3');
-            $table->string('descricao4');
+            $table->string('descricao1')->nullable();
+            $table->string('descricao2')->nullable();
+            $table->string('descricao3')->nullable();
+            $table->string('descricao4')->nullable();
         });
     }
 

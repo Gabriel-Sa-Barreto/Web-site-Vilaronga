@@ -74,7 +74,7 @@
                                     Realize o download dos materiais que você necessita.
                                     Selecione a turma desejada, baixe o arquivo e bons estudos.
                                 </p>
-                                <a href="#" class="btn btn-lg btn-primary">Download de Materiais</a>
+                                <a href="/aluno/material" class="btn btn-lg btn-primary">Download de Materiais</a>
                             </div>
                     </div>              
                 </div>
@@ -89,7 +89,7 @@
                                 <p class="card-text text-left">
                                     Descubra se algum professor deixou um recado.<br><br><br>
                                 </p>
-                                <a href="#" class="btn btn-lg btn-primary">Visualizar Avisos</a>
+                                <a href="/aluno/aviso" class="btn btn-lg btn-primary">Visualizar Avisos</a>
                             </div>
                     </div>              
                 </div>
@@ -173,7 +173,6 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
-
     <script src="/js/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>

@@ -33,7 +33,7 @@
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/professor/gerenciarTurmas">Turmas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="">Avisos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarAviso">Avisos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarMaterial">Material</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
@@ -57,7 +57,6 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
-
     <script>
         //Função responsável por filtrar dados em uma tabela tabela
         //idEntrada corresponde ao id do input
