@@ -44,7 +44,7 @@ class MaterialController extends Controller
             $materiais = DB::table('materials')->join('notas', 'materials.turma_id','=','notas.id_turma')
                                                ->join('turmas', 'materials.turma_id','=','turmas.id')
                                                ->select('materials.*' , 'turmas.nivel')->Where('aluno_id','=', $userAluno->id)->get();
-            return view('lista_Materiais' , compact('materiais'));                                   
+            return view('alunos.lista_Materiais_Aluno' , compact('materiais'));                                   
         }
         return redirect('/');
     }
