@@ -61,8 +61,13 @@ class ProfController extends Controller
         $alunos =  DB::table('alunos')->join('notas', 'alunos.id','=','aluno_id')
                                       ->select('alunos.*')->Where('id_turma','=', $id)->get();
         $id_turma = $id; //id da turma desejada
+
+        //busca a tupla da turma desejada para realizar a busca pelo curso 
+        $class = Turma::Where('id', $id)->get()->first();
+        //busca o curso ao qual aquela turma pertence.
+        $cursoTurma = Curso::Where('id', $class->curso_id)->get()->first();
         if(count($alunos) > 0){
-             return view('professor.selecionarAlunoNota', compact('alunos', 'id_turma', 'turmas','cursos'));
+             return view('professor.selecionarAlunoNota', compact('alunos', 'id_turma', 'turmas','cursos', 'cursoTurma'));
         }
         return view('professor.selecionarAlunoNota', compact('turmas','cursos'));
     }
@@ -77,7 +82,7 @@ class ProfController extends Controller
 
         $alunoNome = Aluno::Where('id', $idAluno)->get()->first(); //busca nome do aluno
         $turmaNota = Turma::Where('id', $idTurma)->get()->first(); //busca dados da turma
-        $cursoNome     = Curso::Where('id', $turmaNota->curso_id)->get()->first(); //busca dados do curso
+        $cursoNome = Curso::Where('id', $turmaNota->curso_id)->get()->first(); //busca dados do curso
 
         $cursos = Curso::all();
         $turmas = Turma::Where('professor_id', Auth::user()->id)->get();//busca todas as turmas que este professor pertence
@@ -86,26 +91,46 @@ class ProfController extends Controller
         $valorNota     = null;
         $aluno         = $this->notaAluno($idTurma,$idAluno);
         if($aluno != null){
-           switch ($nota) { //passa para a view os valores atuais da nota e da descrição, assim caso o usuário deseje editar, somente faz o complemento necessário.
-            case '1':
-                $valorNota = $aluno->nota1; 
-                $descricaoNota     = $aluno->descricao1;
-                break;
-            case '2':
-                $valorNota = $aluno->nota2; 
-                $descricaoNota     = $aluno->descricao2;
-                break;
-            case '3':
-                $valorNota = $aluno->nota3; 
-                $descricaoNota     = $aluno->descricao3;
-                break;
-            case '4':
-                $valorNota = $aluno->nota4; 
-                $descricaoNota     = $aluno->descricao4;
-                break;
+            if($cursoNome->id == '1' || $cursoNome->id == '2'){//inglês ou espanhol
+                switch ($nota) { //passa para a view os valores atuais da nota e da descrição, assim caso o usuário deseje editar, somente faz o complemento necessário.
+                    case '1':
+                        $valorNota         = $aluno->nota1; 
+                        $descricaoNota     = $aluno->descricao1;
+                        break;
+                    case '2':
+                        $valorNota         = $aluno->nota2; 
+                        $descricaoNota     = $aluno->descricao2;
+                        break;
+                    case '3':
+                        $valorNota         = $aluno->nota3; 
+                        $descricaoNota     = $aluno->descricao3;
+                        break;
+                }
+            }else{
+                switch ($nota) { //passa para a view os valores atuais da nota e da descrição, assim caso o usuário deseje editar, somente faz o complemento necessário.
+                    case '1':
+                        $valorNota         = $aluno->nota1; 
+                        $descricaoNota     = $aluno->descricao1;
+                        break;
+                    case '2':
+                        $valorNota         = $aluno->nota2; 
+                        $descricaoNota     = $aluno->descricao2;
+                        break;
+                    case '3':
+                        $valorNota         = $aluno->nota3; 
+                        $descricaoNota     = $aluno->descricao3;
+                        break;
+                    case '4':
+                        $valorNota         = $aluno->nota4; 
+                        $descricaoNota     = $aluno->descricao4;
+                        break;
+                    case '5':
+                        $valorNota         = $aluno->nota5; 
+                        $descricaoNota     = $aluno->descricao5;
+                        break;
+                    }
             }
         }
-
         return view('professor.nota_e_descricao', compact('alunoNome', 'turmaNota', 'nota', 'cursoNome', 'cursos','turmas', 'descricaoNota', 'valorNota'));
     }
 

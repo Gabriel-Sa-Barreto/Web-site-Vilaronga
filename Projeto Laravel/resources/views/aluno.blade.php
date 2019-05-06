@@ -104,7 +104,7 @@
                                 <p class="card-text text-left">
                                     Veja suas notas do curso ao qual você está cadastrado.<br><br><br>
                                 </p>
-                                <a href="#" class="btn btn-lg btn-primary">Visualizar Notas</a>
+                                <a href="/aluno/visualizarNotas" class="btn btn-lg btn-primary">Visualizar Notas</a>
                             </div>
                     </div>              
                 </div>

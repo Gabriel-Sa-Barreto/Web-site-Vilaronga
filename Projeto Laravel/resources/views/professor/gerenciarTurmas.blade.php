@@ -12,7 +12,7 @@
                         <b><h5>Listagem completa de alunos por turma</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarAlunos/novo" class="btn btn-md btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
+                        <a href="" class="btn btn-md btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">
                             Lista completa
                         </a>
                     </div>
@@ -25,7 +25,7 @@
                         <b><h5>Notas de atividades e avaliações</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarAlunos/deletar" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Colocar notas
+                        <a href="" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Colocar notas
                         </a>
                     </div>
                 </div>              
@@ -68,7 +68,7 @@
                                                                     <td>{{$c->nome}}</td>
                                                                     <td>{{$t->nivel}}</td>
                                                                     <td>{{$t->horario}}</td>
-                                                                    <td>{{$c->nome}}</td>
+                                                                    <td>{{$t->diaDaSemana}}</td>
                                                                     <td>
                                                                         <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/listagemDeAlunos/{{$t->id}}" >Selecionar</a>
                                                                     </td>
@@ -122,7 +122,7 @@
                                                                 <td>{{$c->nome}}</td>
                                                                 <td>{{$t->nivel}}</td>
                                                                 <td>{{$t->horario}}</td>
-                                                                <td>{{$c->nome}}</td>
+                                                                <td>{{$t->diaDaSemana}}</td>
                                                                 <td>
                                                                     <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/notasTurma/{{$t->id}}" >Selecionar</a>
                                                                 </td>

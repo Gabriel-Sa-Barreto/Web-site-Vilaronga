@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Aluno;
 use App\Endereco;
+use App\Turma;
+use App\Nota;
+use App\Curso;
 use Auth;
 
 class AlunoController extends Controller
@@ -58,7 +62,7 @@ class AlunoController extends Controller
             return view('alunos.dados', compact('aluno', 'enderecoAluno'));
         }
        
-        return view('alunos.dados');
+        return redirect('/');
     }
 
     /**
@@ -88,8 +92,26 @@ class AlunoController extends Controller
                 return redirect('/aluno/dados');
             }
         }
-        return redirect('/aluno/dados');
+        return redirect('/');
     }
 
+    /**
+        Método que exibi a tela para o aluno poder visualizar suas notas de acordo à turma que ele pertence.
+    */
+    public function telaVisualizarNota(){
+        if(Auth::check()){
+            /*$turmasAluno = DB::table('notas')->join('turmas', 'aluno_id', '=', Auth::user()->id)
+                                             ->join('cursos', 'turmas.curso_id','=', 'cursos.id')
+                                             ->select('notas.*', 'cursos.nome', 'turmas.diaDaSemana', 'turmas.nivel', 'turmas.horario')->Where([ ['notas.id_turma', 'turmas.id'], ['turmas.curso_id', 'curso.id']  ])->get();
+*/
+            $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
+            if(count($turmasAluno) > 0){//o aluno está cadastrado em alguma turma
+                $cursos  = Curso::all();
+                $turmas = Turma::all();
+                return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas'));
+            }
+        }
+        return redirect('/');
+    }
 
 }

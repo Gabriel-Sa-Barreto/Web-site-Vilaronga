@@ -29,10 +29,19 @@
 						      		@csrf
 						      			<div class="input-group">
 											<select class="custom-select" id="notaEscolhida" name="notaEscolhida">
-												<option selected value="1">Nota 1</option>
-												<option selected value="2">Nota 2</option>
-												<option selected value="3">Nota 3</option>
-												<option selected value="4">Nota 4</option>								    		
+												<!-- se for curso de inglês ou espanhol -->
+												@if($cursoTurma->id == '1' || $cursoTurma->id == '2')
+													<option selected value="1">Nota 1</option>
+													<option selected value="2">Nota 2</option>
+													<option selected value="3">Nota 3</option>
+													<option selected value="4">Nota 4</option>
+													<option selected value="5">Nota 5</option>
+												@else
+													<option selected value="1">Nota 1</option>
+													<option selected value="2">Nota 2</option>
+													<option selected value="3">Nota 3</option>	
+												@endif
+																			   
 										  	</select>
 										  	<input type="hidden" id="idTurma" name="idTurma" value="{{$id_turma}}">
 										  	<input type="hidden" id="idAluno" name="idAluno" value="{{$a->id}}">

@@ -7,7 +7,7 @@
 			<input class="form-control" type="text" readonly value="{{$alunoNome->nome}}">
 			
 			<h5>Curso:</h5>
-			<input class="form-control" type="text" readonly value="{{$cursoNome->nome}}: nível->{{$turmaNota->nivel}} às {{$turmaNota->horario}}, {{$cursoNome->nome}}">
+			<input class="form-control" type="text" readonly value="{{$cursoNome->nome}}: nível->{{$turmaNota->nivel}} às {{$turmaNota->horario}}, {{$turmaNota->diaDaSemana}}">
 			
 			<h5>Nota:</h5>
 			<input class="form-control" type="text" readonly value="{{$nota}}">
