@@ -47,6 +47,7 @@
     </nav>
     
     <main class="page landing-page" style="margin-top: 3em; margin-bottom: 3em;">
+         
          @yield('conteudo')
     </main>
     
@@ -87,5 +88,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+              var button = $(event.relatedTarget) // Button that triggered the modal
+              var titulo = button.data('whatever') // Extract info from data-* attributes
+              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+              var data = button.data('data') 
+              var aviso = button.data('aviso') 
+              var modal = $(this)
+              modal.find('.modal-title').text(titulo)
+              modal.find('.modal-data').text(data)
+              modal.find('.modal-aviso').text(aviso)
+        })
+    </script>
 </body>
 </html>

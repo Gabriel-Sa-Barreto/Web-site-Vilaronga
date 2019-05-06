@@ -91,8 +91,7 @@ class AvisoController extends Controller
      */
     public function show($id)
     {
-        $aviso = Aviso::find($id);
-        return view('ver_Aviso', 'aviso');
+    
     }
 
     /**

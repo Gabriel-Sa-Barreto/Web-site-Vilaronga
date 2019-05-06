@@ -113,7 +113,6 @@ Route::prefix('aviso')->group(function(){
     Route::get('/criar','AvisoController@create');
     Route::post('/novo','AvisoController@store');
     Route::get('/lista','AvisoController@index');
-    Route::get('/ver/{id}','AvisoController@download');
     Route::get('/remover/{id}','AvisoController@destroy');
 });
 
