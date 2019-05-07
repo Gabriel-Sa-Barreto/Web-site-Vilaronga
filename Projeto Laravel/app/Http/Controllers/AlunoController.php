@@ -100,16 +100,33 @@ class AlunoController extends Controller
     */
     public function telaVisualizarNota(){
         if(Auth::check()){
-            /*$turmasAluno = DB::table('notas')->join('turmas', 'aluno_id', '=', Auth::user()->id)
-                                             ->join('cursos', 'turmas.curso_id','=', 'cursos.id')
-                                             ->select('notas.*', 'cursos.nome', 'turmas.diaDaSemana', 'turmas.nivel', 'turmas.horario')->Where([ ['notas.id_turma', 'turmas.id'], ['turmas.curso_id', 'curso.id']  ])->get();
-*/
             $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
             if(count($turmasAluno) > 0){//o aluno está cadastrado em alguma turma
                 $cursos  = Curso::all();
                 $turmas = Turma::all();
                 return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas'));
+            }else{
+                return view('alunos.visualizarNotas'); //caso o aluno não esteja em nenhuma turma.
             }
+        }
+        return redirect('/');
+    }
+
+    public function mostrarNotas($id){
+        $turmaId   = $id;
+        if(Auth::check()){
+            /*$class = DB::table('cursos')->join('turmas', 'cursos.id','=','turmas.curso_id')
+                                        ->select('cursos.*', 'turmas.*')->Where([['turmas.id',$turmaId], ['turmas.curso_id', 'cursos.id']])->get()->first();*/
+            $class = Turma::Where('id',$turmaId)->get()->first();//retorna a turma escolhida
+            $class = Curso::Where('id',$class->curso_id)->get()->first();//retorna o curso vinculado à turma encontrada   
+            
+            
+            $notas = DB::table('notas')->Where([ ['aluno_id',Auth::user()->id] , ['id_turma', $turmaId] ])->get()->first();
+
+            $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
+            $cursos  = Curso::all();
+            $turmas = Turma::all();
+            return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas', 'notas', 'class','teste'));
         }
         return redirect('/');
     }

@@ -45,7 +45,7 @@
 										  	</select>
 										  	<input type="hidden" id="idTurma" name="idTurma" value="{{$id_turma}}">
 										  	<input type="hidden" id="idAluno" name="idAluno" value="{{$a->id}}">
-									    	<button type="submit" class="btn btn-outline-secondary" type="button">Selecionar</button>
+									    	<button type="submit" class="btn btn-outline-secondary">Selecionar</button>
 									  	</div>
 						      		</form>
 						      </td>
