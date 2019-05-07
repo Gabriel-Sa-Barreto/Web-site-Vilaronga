@@ -40,7 +40,7 @@
 
 </head>
 
-<body style="margin-top: 65px;">
+<body style="margin-top: 10px;">
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light clean-navbar" 
         style="margin-bottom:0px;background-image: linear-gradient(to right,#C2C7C8,#9FB1B3);">
         <div class="container">
@@ -56,52 +56,48 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/login">Login</a></li>
                 </ul>
         </div>
         </div>
     </nav>
-    @yield('conteudo')
+    <main class="page landing-page">
+        @yield('conteudo')
+    </main>
     <footer class="page-footer dark">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
                     <h5>Ir para:</h5>
                     <ul>
-                        <li><a href="home_page.html">Home</a></li>
-                        <li><a href="#">Fale conosco&nbsp;</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/ingles">Cursos&nbsp;</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Instituição</h5>
                     <ul>
-                        <li><a href="sobreNos.html">Sobre Nós ( detalhes )</a></li>
-                        <li><a href="#">Serviços</a></li>
+                        <li><a href="/sobrenos">Sobre Nós ( detalhes )</a></li>
+                        <li><a href="/traducao">Serviços</a></li>
                         <li><a href="/adm/login">Administrador</a></li>
-                        <li><a href="/professor/login">Professor</a></li>
-                        <li><a href="/aluno/login">Aluno</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Apoio</h5>
                     <ul>
                         <li><a href="#">Materiais Compartilhados</a></li>
-                        <li><a href="#">Help desk</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Legal</h5>
                     <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
-            <p>© 2018 Copyright Gabriel e Samuel</p>
+            <p>© 2019 Copyright Gabriel e Samuel</p>
+            <p>Imagens adquiridas por Bootstrap e pixabay.com</p>
         </div>
     </footer>
     <script src="/js/jquery.min.js"></script>

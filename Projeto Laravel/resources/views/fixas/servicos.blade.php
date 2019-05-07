@@ -10,77 +10,102 @@
                     </div>
                 </div>
             </div>
-            <section class="clean-block feature" style="margin-top: 10px;">
-                <div class="container">
-                    <div id="servicos" class="block-heading" style="padding-top: 30px;">
-                        <h2 class="text-info">Como funciona nosso serviço de tradução?</h2>
-                    </div>
-                     <p class="text-justify">
-                       O Vilaronga Cursos e Idiomas juntamente com seus professores e colaboradores trabalha também com traduções. Tendo em vista a imersão das pessoas no contexto globalizado, se faz necessário a transposição de vários documentos para outros idiomas, de maneira que as transações comerciais já criam uma grande demanda  desses documentos e prospectos traduzidos para outras línguas. Além disso, há filmes, séries, livros, trabalhos acadêmicos, os quais, por precisarem de uma maior amplitude acabam alcançando maiores adeptos quando disponíveis em varias línguas. Principais idiomas pelos quais trabalhamos com traduções: inglês português; português- inglês;  italiano-português; português-italiano; espanhol-português; português-espanhol.
-                    </p>
-                    <div id="servicos" class="block-heading"
-                        style="padding-top: 30px;">
-                        <h2 class="text-info">Serviços disponíveis</h2>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-md-5 feature-box"><i class="icon-docs icon"></i>
-                            <h4>Tradução Livre</h4>
-                            <p class="text-justify">
-                                A tradução livre, de maneira que é conhecida também como tradução simples, é aquela desenvolvida para propósitos não oficiais. Neste tipo de tradução o tradutor procura transmitir mais o pensamento e as ideias do autor, sem se
-                                preocupar muito com as palavras do original.
-                                <br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="icon-briefcase icon"></i>
-                            <h4>Tradução Financeira</h4>
-                            <p class="text-justify">
-                                O serviço de tradução financeira tem como objetivo atender às solicitações por tradução de documentos de instituições financeiras e empresas, auditorias e correlatos.<br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="icon-globe icon"></i>
-                            <h4>Tradução de websites</h4>
-                            <p class="text-justify">
-                                Como estamos mergulhados em um mundo globalizado, ter um sítio eletrônico de sua empresa traduzido em outro idioma, principalmente em inglês, quer dizer ter seus produtos ou serviços acessíveis a pessoas em praticamente todas as
-                                esferas.<br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="icon-note icon"></i>
-                            <h4>Revisão de textos</h4>
-                            <p class="text-justify">
-                                Em uma sociedade cada vez mais exigente, torna-se imprescindível a verificação de textos previamente traduzidos por pessoas não habilitadas. Assim, toda revisão visa lapidar o texto por meio da correção gramatical e sintática,
-                                assim também como combinar e adequar às palavras polissêmicas.<br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="fas fa-money-check icon"></i>
-                            <h4>Tradução comercial</h4>
-                            <p class="text-justify">
-                                A realidade que nos cerca é evidentemente efervescente, estamos num momento em que a comunicação é encurtada devido ao apoio dos meios tecnológicos. Assim sendo, várias missões empresariais e workshops são realizados no Brasil.
-                                Oferecemos serviços de tradução comercial, incluindo também tópicos de marketing e financeiros.<br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="icon-layers icon"></i>
-                            <h4>Tradução de documentos</h4>
-                           <p class="text-justify">
-                                Temos vivência em tradução de documentos/declarações de várias tipologias: realizamos traduções de históricos escolares, diplomas, teses de mestrado, contratos e certidões de nascimento, dentre outros.<br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="icon-magnifier icon"></i>
-                            <h4>Tradução técnica</h4>
-                            <p class="text-justify">
-                                As Traduções Técnicas são direcionadas as áreas específicas como: manuais, artigos científicos, bulas, teses, dissertações e monografias.<br>Portanto, esta visa a atender as variadas formas de áreas de especialização, levando em
-                                consideração as especificidades dos ramos: jurídico, auditoria, indústria e comércio, consultoria, medicina, informática, patentes, licitações, marketing, entretenimento, tecnologia, química, engenharia, telecomunicações, transportes,
-                                entre outras áreas.<br>
-                            </p>
-                        </div>
-                        <div class="col-md-5 feature-box"><i class="far fa-money-bill-alt icon"></i>
-                            <h4>Orçamento</h4>
-                            <p class="text-justify">
-                                Como trabalhamos de forma autônoma, temos preços altamente competitivos. Para que possamos efetuar uma avaliação orçamentária, precisaremos examinar os seus manuscritos e textos. Assim sendo, preencha o formulário (abaixo desta seção) solicitando o serviço ou análise dos documentos de forma gratuita!<br>
-                            </p>
-                        </div>
-                    </div>
+            <section class="clean-block feature">
+            <div class="container">
+                <div id="servicos" class="block-heading" style="padding-top: 30px;">
+                    <h2 class="text-info">Como funciona nosso serviço de tradução?</h2>
                 </div>
-            </section><section class="clean-block about-us">
+                <p class="text-justify">
+                   O Vilaronga Cursos e Idiomas juntamente com seus professores e colaboradores trabalha também com traduções. Tendo em vista a imersão das pessoas no contexto globalizado, se faz necessário a transposição de vários documentos para outros idiomas, de maneira que as transações comerciais já criam uma grande demanda  desses documentos e prospectos traduzidos para outras línguas. Além disso, há filmes, séries, livros, trabalhos acadêmicos, os quais, por precisarem de uma maior amplitude acabam alcançando maiores adeptos quando disponíveis em varias línguas. Principais idiomas pelos quais trabalhamos com traduções: inglês português; português- inglês;  italiano-português; português-italiano; espanhol-português; português-espanhol.
+                </p>
+                <div id="servicos" class="block-heading"
+                    style="padding-top: 30px;">
+                    <h2 class="text-info">Serviços disponíveis</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box"><i class="icon-docs icon"></i>
+                        <h4 style=" color: black;" >Tradução Livre</h4>
+                        <p class="text-justify">
+                            A tradução livre, de maneira que é conhecida também como tradução simples, é aquela desenvolvida para propósitos não oficiais. Neste tipo de tradução o tradutor procura transmitir mais o pensamento e as ideias do autor, sem se
+                            preocupar muito com as palavras do original.
+                            <br>
+                        </p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-briefcase icon"></i>
+                        <h4 style=" color: black;">Tradução Financeira</h4>
+                        <p class="text-justify">
+                            O serviço de tradução financeira tem como objetivo atender às solicitações por tradução de documentos de instituições financeiras e empresas, auditorias e correlatos.<br>
+                        </p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-globe icon"></i>
+                        <h4 style=" color: black;">Tradução de websites</h4>
+                        <p class="text-justify">
+                            Como estamos mergulhados em um mundo globalizado, ter um sítio eletrônico de sua empresa traduzido em outro idioma, principalmente em inglês, quer dizer ter seus produtos ou serviços acessíveis a pessoas em praticamente todas as
+                            esferas.<br>
+                        </p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon-note icon"></i>
+                        <h4 style=" color: black;">Revisão de textos</h4>
+                        <p class="text-justify">
+                            Em uma sociedade cada vez mais exigente, torna-se imprescindível a verificação de textos previamente traduzidos por pessoas não habilitadas. Assim, toda revisão visa lapidar o texto por meio da correção gramatical e sintática,
+                            assim também como combinar e adequar às palavras polissêmicas.<br>
+                        </p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon icon-globe"></i>
+                        <h4 style=" color: black;">Tradução comercial</h4>
+                        <p class="text-justify">
+                            A realidade que nos cerca é evidentemente efervescente, estamos num momento em que a comunicação é encurtada devido ao apoio dos meios tecnológicos. Assim sendo, várias missões empresariais e workshops são realizados no Brasil.
+                            Oferecemos serviços de tradução comercial, incluindo também tópicos de marketing e financeiros.<br>
+                        </p>
+                    </div>
+                    
+                    <div class="col-md-5 feature-box"><i class="icon-magnifier icon"></i>
+                        <h4 style=" color: black;">Tradução técnica</h4>
+                        <p class="text-justify">
+                            As Traduções Técnicas são direcionadas as áreas específicas como: manuais, artigos científicos, bulas, teses, dissertações e monografias.<br>Portanto, esta visa a atender as variadas formas de áreas de especialização, levando em
+                            consideração as especificidades dos ramos: jurídico, auditoria, indústria e comércio, consultoria, medicina, informática, patentes, licitações, marketing, entretenimento, tecnologia, química, engenharia, telecomunicações, transportes,
+                            entre outras áreas.<br>
+                        </p>
+                    </div>
+                    <div class="col-md-5 feature-box"><i class="icon icon-globe"></i>
+                        <h4 style=" color: black;">Tradução de Normas Internacionais (ISO)</h4>
+                        <p class="text-justify">
+                            ISO é a sigla de International Organization for Standardization, ou Organização Internacional para Padronização, em português. A ISO é uma entidade de padronização e normatização, e foi criada em Genebra, na Suíça, em 1947.
+                        </p>
+                        <p class="text-justify">
+                            A ISO tem como objetivo principal aprovar normas internacionais em todos os campos técnicos, como normas técnicas, classificações de países, normas de procedimentos e processos, e etc. No Brasil, a ISO é representada pela ABNT (Associação Brasileira de Normas Técnicas).
+                        </p>
+                        <p class= "text-justify">
+                            Traduzimos com excelência essa categoria de norma. Prestamos serviços a diversas empresas sobre transposição de processos e documentos os quais especificam os padrões de qualidade.
+                        </p>
+                    </div>
+                    
+                    <div class="col-md-5 feature-box"><i class="icon-magnifier icon"></i>
+                        <h4 style=" color: black;">Tradução de FISPQ</h4>
+                        <p class="text-justify">
+                             A FISPQ (Ficha de Informações de Segurança de Produtos Químicos) é um documento normatizado pela Associação Brasileira de Normas Técnicas (ABNT) conforme norma, ABNT-NBR 14725.
+                        </p>
+                        
+                        <p class="text-justify">
+                            Possuímos vasto conhecimento e experiência nessas traduções, visto que a FISPQ fornece informações sobre vários aspectos dos produtos químicos (substâncias ou misturas) abordando temas como segurança, saúde e meio ambiente. As fichas de segurança dispõem de informações sobre os produtos químicos, a maneira correta de manuseá-los, instruindo o usuário no que concerne as medidas protetivas e as ações a serem tomadas em caso de situações emergenciais e não-conformidades.
+                        </p>
+                        
+                        <p class="text-justify">
+                            MSDS/SDS (Material Safety Data Sheet/ Safety Data Sheet) estas são as siglas conhecidas mundialmente relacionadas a estes documentos, de maneira que eles poderão ser apresentados por muitos outros modelos referentes a este documento, o qual é apresentado por diversos modelos conveniente a cada país.
+                        </p>
+                    </div>
+                    
+                    <div class="col-md-10 feature-box"><i class="icon icon-credit-card"></i>
+                        <h4 style=" color: black;">Orçamento</h4>
+                        <p class="text-justify">
+                            Como trabalhamos de forma autônoma, temos preços altamente competitivos. Para que possamos efetuar uma avaliação orçamentária, precisaremos examinar os seus manuscritos e textos. Assim sendo, preencha o formulário (abaixo desta seção) solicitando o serviço ou análise dos documentos de forma gratuita!<br>
+                        </p>
+                    </div>
+     
+                </div>
+            </div>
+        </section>
+        <section class="clean-block about-us">
         <div class="container" id="team" style = "margin-top: -30px;">
             <div style= "text-align:center">
                 <h2 class="text-info">Tradutor Responsável</h2>

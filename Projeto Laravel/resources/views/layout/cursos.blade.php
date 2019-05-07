@@ -51,46 +51,41 @@
     <main class="page landing-page">
         @yield('conteudo')
     </main>
-    <footer class="page-footer dark">
+   <footer class="page-footer dark">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
                     <h5>Ir para:</h5>
                     <ul>
-                        <li><a href="home_page.html">Home</a></li>
-                        <li><a href="#">Fale conosco&nbsp;</a></li>
-                        <li><a href="#">Login</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/ingles">Cursos&nbsp;</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Instituição</h5>
                     <ul>
-                        <li><a href="sobreNos.html">Sobre Nós ( detalhes )</a></li>
-                        <li><a href="#">Serviços</a></li>
+                        <li><a href="/sobrenos">Sobre Nós ( detalhes )</a></li>
+                        <li><a href="/traducao">Serviços</a></li>
                         <li><a href="/adm/login">Administrador</a></li>
-                        <li><a href="/professor/login">Professor</a></li>
-                        <li><a href="/aluno/login">Aluno</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Apoio</h5>
                     <ul>
                         <li><a href="#">Materiais Compartilhados</a></li>
-                        <li><a href="#">Help desk</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Legal</h5>
                     <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
-            <p>© 2018 Copyright Gabriel e Samuel</p>
+            <p>© 2019 Copyright Gabriel e Samuel</p>
+            <p>Imagens adquiridas por Bootstrap e pixabay.com</p>
         </div>
     </footer>
     <script src="/js/jquery.min.js"></script>
