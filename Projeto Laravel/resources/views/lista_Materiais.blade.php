@@ -12,7 +12,6 @@
 			<table class="table table-ordered table-hover" id="materiais">
 				<thead class="thead-dark">
 					<tr>
-						<th>ID</th>
 						<th>Nome</th>
 						<th>Turma</th>
 						<th class="actions">Ações</th>
@@ -21,7 +20,6 @@
 				<tbody>
 					@foreach($materiais as $material)
 						<tr>	
-							<td>{{$material->id}}</td>
 							<td>{{$material->nome}}</td>
 							<td>{{$material->nivel}}</td>
 							<td class="actions">
