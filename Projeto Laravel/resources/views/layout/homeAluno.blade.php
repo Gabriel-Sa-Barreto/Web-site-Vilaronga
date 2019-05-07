@@ -45,7 +45,7 @@
         </div>
     </nav>
     
-    <main class="page landing-page" style="margin-top:3em;">
+    <main class="page landing-page" style="margin-top:3em; margin-top: 3em;">
          @yield('conteudo')
     </main>
     
@@ -86,7 +86,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
-     <script>
+
+    <script>
         $('#modalNotas').on('show.bs.modal', function (event) {
               var button    = $(event.relatedTarget) // Button that triggered the modal
               var nota      = button.data('whatever') // Extract info from data-* attributes
