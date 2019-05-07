@@ -45,7 +45,7 @@
         </div>
     </nav>
     
-    <main class="page landing-page" style="margin-top:3em; margin-top: 3em;">
+    <main class="page landing-page" style="margin-top:3em; margin-bottom:3em;">
          @yield('conteudo')
     </main>
     
