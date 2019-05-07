@@ -30,7 +30,6 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/dados">Editar Dados</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
@@ -104,7 +103,7 @@
                                 <p class="card-text text-left">
                                     Veja suas notas do curso ao qual você está cadastrado.<br><br><br>
                                 </p>
-                                <a href="#" class="btn btn-lg btn-primary">Visualizar Notas</a>
+                                <a href="/aluno/visualizarNotas" class="btn btn-lg btn-primary">Visualizar Notas</a>
                             </div>
                     </div>              
                 </div>

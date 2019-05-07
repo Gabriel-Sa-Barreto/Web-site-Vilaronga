@@ -99,6 +99,10 @@ Route::prefix('aluno')->group(function(){
     Route::post('/editar', 'AlunoController@update');
     Route::get('/material' , 'MaterialController@index');
     Route::get('/aviso' , 'AvisoController@index');
+
+    Route::get('/visualizarNotas', 'AlunoController@telaVisualizarNota'); //rota para visualizar as notas que o aluno possue em cada turma ao qual ele pertence.
+
+    Route::get('/visualizarNotas/turmaEscolhida/{id}', 'AlunoController@mostrarNotas'); //rota para visualizar as notas da turma que o aluno escolheu.
 });
 
 Route::prefix('material')->group(function(){
@@ -129,7 +133,7 @@ Route::prefix('professor')->group(function(){
 
     Route::get('/gerenciarTurmas/listagemDeAlunos/{id}', 'ProfController@alunosTurma'); //rota para a listagem de alunos de determinada turma
 
-    Route::get('/gerenciarTurmas/notasTurma/{id}', 'ProfController@listagemAlunos'); //rota para listagem de alunos de uma turma em um tabela para colocação de notas
+    Route::get('/gerenciarTurmas/notasTurma/{id}', 'ProfController@listagemAlunos'); //rota para listagem de alunos de uma turma em uma tabela para colocação de notas
 
     Route::post('/gerenciarTurmas/notasTurma/salvar', 'ProfController@formularioNota'); //exibi formulário para colocar valor da nota e descrição
 

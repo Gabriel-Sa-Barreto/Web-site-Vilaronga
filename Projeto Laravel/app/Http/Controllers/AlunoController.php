@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Aluno;
 use App\Endereco;
+use App\Turma;
+use App\Nota;
+use App\Curso;
 use Auth;
 
 class AlunoController extends Controller
@@ -58,7 +62,7 @@ class AlunoController extends Controller
             return view('alunos.dados', compact('aluno', 'enderecoAluno'));
         }
        
-        return view('alunos.dados');
+        return redirect('/');
     }
 
     /**
@@ -88,8 +92,43 @@ class AlunoController extends Controller
                 return redirect('/aluno/dados');
             }
         }
-        return redirect('/aluno/dados');
+        return redirect('/');
     }
 
+    /**
+        Método que exibi a tela para o aluno poder visualizar suas notas de acordo à turma que ele pertence.
+    */
+    public function telaVisualizarNota(){
+        if(Auth::check()){
+            $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
+            if(count($turmasAluno) > 0){//o aluno está cadastrado em alguma turma
+                $cursos  = Curso::all();
+                $turmas = Turma::all();
+                return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas'));
+            }else{
+                return view('alunos.visualizarNotas'); //caso o aluno não esteja em nenhuma turma.
+            }
+        }
+        return redirect('/');
+    }
+
+    public function mostrarNotas($id){
+        $turmaId   = $id;
+        if(Auth::check()){
+            /*$class = DB::table('cursos')->join('turmas', 'cursos.id','=','turmas.curso_id')
+                                        ->select('cursos.*', 'turmas.*')->Where([['turmas.id',$turmaId], ['turmas.curso_id', 'cursos.id']])->get()->first();*/
+            $class = Turma::Where('id',$turmaId)->get()->first();//retorna a turma escolhida
+            $class = Curso::Where('id',$class->curso_id)->get()->first();//retorna o curso vinculado à turma encontrada   
+            
+            
+            $notas = DB::table('notas')->Where([ ['aluno_id',Auth::user()->id] , ['id_turma', $turmaId] ])->get()->first();
+
+            $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
+            $cursos  = Curso::all();
+            $turmas = Turma::all();
+            return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas', 'notas', 'class','teste'));
+        }
+        return redirect('/');
+    }
 
 }

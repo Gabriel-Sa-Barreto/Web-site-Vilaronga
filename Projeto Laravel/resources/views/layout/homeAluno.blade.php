@@ -30,7 +30,6 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="">Turmas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/dados">Editar Dados</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
@@ -46,8 +45,7 @@
         </div>
     </nav>
     
-    <main class="page landing-page" style="margin-top: 3em; margin-bottom: 3em;">
-         
+    <main class="page landing-page">
          @yield('conteudo')
     </main>
     
@@ -88,6 +86,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
     <script src="/js/smoothproducts.min.js"></script>
     <script src="/js/theme.js"></script>
+
+    <script>
+        $('#modalNotas').on('show.bs.modal', function (event) {
+              var button    = $(event.relatedTarget) // Button that triggered the modal
+              var nota      = button.data('whatever') // Extract info from data-* attributes
+              var descricao = button.data('descricao')
+              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead. 
+              var modal = $(this)
+              modal.find('.modal-nota').text("Valor da média: " + nota)
+              modal.find('.modal-composicao').text(descricao)
+    </script>
+
     <script>
         $('#exampleModal').on('show.bs.modal', function (event) {
               var button = $(event.relatedTarget) // Button that triggered the modal
