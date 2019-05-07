@@ -51,13 +51,13 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/login">LOGiN</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" data-target="#signIn">Login</a></li>
                 </ul>
         </div>
         </div>
     </nav>
 <div class="row text-justify d-inline mx-auto" style="margin-top: 0px;width: 985;height: 450;">
-        <div style="background-image: url(&quot;/img/young-college-students.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <div style="background-image: url(&quot;img/sydney.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
             <div class="d-flex justify-content-center align-items-center" style="height: inherit;min-height: initial;width: 100%;position: absolute;left: 0;background-color: rgba(30,41,99,0.23);">
                 <div class="d-flex align-items-center order-12" style="height:200px;">
                     <div class="container">
@@ -195,47 +195,75 @@
                 </div>
             </div>
         </section>
-    </main>        
-<footer class="page-footer dark">
+    </main>    
+
+    <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="exampleModalsignin" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" disabled></button>
+            <!-- botão inativo para dar margem ao segundo botão-->
+                    <h1> <br>ENTRAR</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row text-center">
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <a class="btn btn-success btn-xs"  href="/professor/login">Usuário Professor</a>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <a class="btn btn-success btn-xs"  href="/aluno/login">Usuário Aluno</a>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                    </div>
+                </div>  
+            </div>  
+        </div> 
+    </div> 
+
+
+  <footer class="page-footer dark">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
                     <h5>Ir para:</h5>
                     <ul>
                         <li><a href="/">Home</a></li>
-                        <li><a href="#">Fale conosco&nbsp;</a></li>
-                        <li><a href="/login">Login</a></li>
+                        <li><a href="/ingles">Cursos&nbsp;</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Instituição</h5>
                     <ul>
                         <li><a href="/sobrenos">Sobre Nós ( detalhes )</a></li>
-                        <li><a href="#">Serviços</a></li>
+                        <li><a href="/traducao">Serviços</a></li>
                         <li><a href="/adm/login">Administrador</a></li>
-                        <li><a href="/professor/login">Professor</a></li>
-                        <li><a href="/aluno/login">Aluno</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Apoio</h5>
                     <ul>
                         <li><a href="#">Materiais Compartilhados</a></li>
-                        <li><a href="#">Help desk</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Legal</h5>
                     <ul>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
-            <p>© 2018 Copyright Gabriel e Samuel</p>
+            <p>© 2019 Copyright Gabriel e Samuel</p>
+            <p>Imagens adquiridas por Bootstrap e pixabay.com</p>
         </div>
     </footer>
     <script src="/js/jquery.min.js"></script>

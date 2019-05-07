@@ -3,7 +3,7 @@
 @section('conteudo')
 <main class="page landing-page" style="margin-top: -55px;">
         <div class="row text-justify d-inline mx-auto" style="width: 985;height: 450;">
-            <div style="background-image: url(&quot;/img/knowledge.jpg&quot;);height: 650px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+            <div style="background-image: url(&quot;/img/sydney.jpg&quot;);height: 650px;background-position: center;background-size: cover;background-repeat: no-repeat;">
                 <div class="d-flex justify-content-center align-items-center" style="height: inherit;min-height: initial;width: 100%;position: absolute;left: 0;background-color: rgba(30,41,99,0.25);">
                     <div class="d-flex align-items-center order-12" style="height:200px;">
                         <div class="container">

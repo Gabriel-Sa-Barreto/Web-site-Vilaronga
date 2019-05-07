@@ -29,7 +29,7 @@ Route::get('/portugues', function () {
 });
 
 Route::get('/sobrenos', function () {
-    return view('fixas.sobrenos');
+    return view('fixas.sobreNos');
 });
 
 Route::get('/traducao', function () {

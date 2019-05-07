@@ -18,7 +18,7 @@
             <p>A Língua Portuguesa possui ínumeras regras as quais precisam ser conhecidas e controladas nas mais diferentes formas e contextos.</p>
         </div>
         <div class="row align-items-center">
-            <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-0"><img src="/img/scenery/image5.jpg" class="img-thumbnail" /></div>
+            <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-0"><img src="/img/imagens/pencil.jpg" class="img-thumbnail" /></div>
             <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-0">
                 <br>
                 <h3>Apresentação</h3>

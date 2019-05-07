@@ -97,6 +97,7 @@
               var modal = $(this)
               modal.find('.modal-nota').text("Valor da média: " + nota)
               modal.find('.modal-composicao').text(descricao)
+        })
     </script>
 
     <script>
