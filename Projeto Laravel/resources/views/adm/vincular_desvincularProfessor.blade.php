@@ -22,6 +22,9 @@
 				<tbody>
 				  	@if(isset($professores))
 				  		<h5>O professor automaticamente será retirado ou colocado na turma escolhida!!</h5>
+				  		@if(isset($erro))
+				  			<h5>Já existe um professor nessa turma!!</h5>
+				  		@endif
 				  		@foreach($professores as $p)
 						    <tr>	
 						      <td>{{$p->nome}}</td>

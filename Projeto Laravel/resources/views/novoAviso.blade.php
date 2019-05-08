@@ -13,7 +13,7 @@
 					                <label for="nomeCurso">Escolha uma turma:</label>
 					                <select class="form-control" id="nomeTurma" name="nomeTurma" enctype="multipart/form-data">
 								      	@foreach($turmas as $t)
-								      		<option>{{$t->nivel}}</option> <!--Mostra todos as turmas já cadastrados -->
+								      		<option>Turma: {{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})</option> <!--Mostra todos as turmas que o professor pertence -->
 								      	@endforeach
 								    </select>
 					                
@@ -26,9 +26,9 @@
                                         <label for="nomeAluno">Aviso</label>
                                         <textarea id ="aviso" name= "aviso" class="form-control"></textarea>
                                 	</div>	
-														         
-					            	<button type="submit" class="btn btn-success">Submit</button>
-					            	<button type="cancel" class="btn btn-danger">Cancel</button>
+									<br>	         
+					            	<button type="submit" class="btn btn-success">Criar</button>
+					            	<a class="btn btn-danger btn-xs"  href="/professor/gerenciarAviso">Cancelar</a>
 					            </div>	
 	       					</form>
 		                </div>

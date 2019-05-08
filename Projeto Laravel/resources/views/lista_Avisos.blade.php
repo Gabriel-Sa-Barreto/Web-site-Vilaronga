@@ -2,14 +2,14 @@
 	@section('visualizarAvisos')
     <div class="card border border-secondary">
 		<div class="card-body">
-			<b><h4 class="card-title text-center">Lista de Material</h4></b>
+			<b><h4 class="card-title text-center">Lista de Avisos</h4></b>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 				   <span class="input-group-text" id="inputGroup-sizing-default">Buscar:</span>
 				</div>
-				<input type="text" id="myInput" onkeyup="myFunction('myInput','materiais')" placeholder="Digite o nivel da turma" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+				<input type="text" id="myInput" onkeyup="myFunction('myInput','avisos')" placeholder="Digite o nivel da turma" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 			</div>
-			<table class="table table-ordered table-hover" id="materiais">
+			<table class="table table-ordered table-hover" id="avisos">
 				<thead class="thead-dark">
 					<tr>
 						<th>Titulo</th>

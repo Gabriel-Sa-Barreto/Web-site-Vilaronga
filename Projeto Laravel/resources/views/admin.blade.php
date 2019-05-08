@@ -53,7 +53,8 @@
         <section class="clean-block clean-hero" style="background-image:url(&quot;img/login.jpg&quot;);color:rgba(9, 162, 255, 0.5);">
             <div class="text">
                 <h2>Seja Bem-Vindo {{$adm}}</h2>
-                <p>Você tem o controle de toda parte acadêmica que diz respeito à Instituição Cursos Vilaronga</p><button class="btn btn-outline-light btn-lg" type="button">Learn More</button></div>
+                <p>Você tem o controle de toda parte acadêmica que diz respeito à Instituição Cursos Vilaronga</p>
+            </div>
         </section>
     </main>
     <footer class="page-footer dark">

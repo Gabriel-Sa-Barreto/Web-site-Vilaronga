@@ -51,7 +51,8 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" data-toggle="modal" data-target="#signIn">Login</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/perguntas">Dúvidas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="" data-toggle="modal" data-target="#signIn">Login</a></li>
                 </ul>
         </div>
         </div>
@@ -211,17 +212,16 @@
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row text-center">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <p><b>Escolha qual usuário você deseja realizar o login.</b></p>
+                            </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <a class="btn btn-success btn-xs"  href="/professor/login">Usuário Professor</a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
                                 <a class="btn btn-success btn-xs"  href="/aluno/login">Usuário Aluno</a>
                             </div>
-                            <hr>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
                     </div>
                 </div>  
             </div>  
@@ -254,9 +254,9 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h5>Legal</h5>
+                    <h5>Dúvidas?</h5>
                     <ul>
-                        <li><a href="#">Perguntas frequentes</a></li>
+                        <li><a href="/perguntas">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>

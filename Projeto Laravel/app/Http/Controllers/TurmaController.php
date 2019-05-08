@@ -38,8 +38,9 @@ class TurmaController extends Controller
     public function store(Request $request)
     {
         $new_turma = new Turma();
-        $new_turma->nivel      = $request->input('nivel');
-        $new_turma->horario    = $request->input('horario');
+        $new_turma->nivel         = $request->input('nivel');
+        $new_turma->horario       = $request->input('horario');
+        $new_turma->diaDaSemana    = $request->input('dia');
 
         $nomeCurso = $request->input('nomeCurso');
 

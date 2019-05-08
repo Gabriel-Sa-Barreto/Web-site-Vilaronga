@@ -29,7 +29,10 @@ class MaterialController extends Controller
             return view('lista_Materiais' , compact('materiais'));*/
             $materiais = DB::table('materials')->join('turmas', 'materials.turma_id','=','turmas.id')
                                                ->select('materials.*' , 'turmas.nivel')->Where('professor_id','=', $user->id)->get();
-            return view('lista_Materiais' , compact('materiais'));                                   
+            if(count($materiais) > 0){
+                return view('lista_Materiais' , compact('materiais'));
+            }                                   
+            return view('lista_Materiais'); //caso não tenha nenhum material                         
         }
         if (Auth::guard('aluno')->check()) {
             // The user is logged in...

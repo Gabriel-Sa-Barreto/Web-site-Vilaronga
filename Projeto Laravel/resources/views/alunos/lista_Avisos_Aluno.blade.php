@@ -2,7 +2,8 @@
     @section('conteudo')
     <div class="card border border-secondary">
 		<div class="card-body">
-			<b><h4 class="card-title text-center">Avisos</h4></b>
+			<br>
+			<b><h2 class="card-title text-center">Avisos</h2></b>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="inputGroup-sizing-default">Buscar:</span>
@@ -31,6 +32,7 @@
 			</table>
 		</div>
 	</div>
+	<section style="height: 300px;"></section>
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 		    <div class="modal-content">

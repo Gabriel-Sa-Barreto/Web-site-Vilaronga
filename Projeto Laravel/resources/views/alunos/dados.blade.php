@@ -2,6 +2,7 @@
     @section('conteudo')
     <div class="text-center">
         <div class="text-center">
+            <br><br>
             <h2 class="text-info">Meus dados</h2>
         </div>  
     </div>
@@ -55,10 +56,12 @@
                                 <button type="submit" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                     Salvar edição
                                 </button>
+                                <a class="btn btn-danger btn-md" href="/aluno">Cancelar</a>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <section style="height: 200px;"></section>
 @stop

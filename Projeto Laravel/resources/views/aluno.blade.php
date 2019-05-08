@@ -21,7 +21,6 @@
         a{
             font-family: 'Kaushan Script', cursive, 'Roboto Slab', serif;
         }
-
     </style>
 </head>
 <body>

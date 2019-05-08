@@ -53,8 +53,7 @@
         <section class="clean-block clean-hero" style="background-image:url(&quot;img/login.jpg&quot;);color:rgba(9, 162, 255, 0.5);">
             <div class="text">
                 <h2>Seja Bem-Vindo {{$professor}}</h2>
-                <p>Você tem a possibilidade de disponibilizar atividades, notas e avisos para as respectivas turmas aos quais está cadastrado(a).</p>
-                <button class="btn btn-outline-light btn-lg" type="button">Veja suas turmas</button></div>
+                <p>Você tem a possibilidade de disponibilizar atividades, notas e avisos para as respectivas turmas aos quais está responsável.</p>
         </section>
     </main>
     <footer class="page-footer dark">

@@ -1,8 +1,7 @@
 @extends('adm.gerenciarCursos')
 	@section('novaTurma_Curso')
-	<div class=" container">
-		    <div class="row">		    	
-		    	<div class="jumbotron bg-light border border-secondary col-lg-6">
+	<div class=" container">	    	
+		    	<!--<div class="jumbotron bg-light border border-secondary col-lg-6">
 		    			<div class="text-center" style="margin-bottom: 3em;">
             				<h2 class="text-info">Novo Curso</h2>
         				</div>
@@ -22,8 +21,8 @@
 				                </div>
 				           </div>
 				       </div>
-		    	</div>
-		    	<div class="jumbotron bg-light border border-secondary col-lg-6">
+		    	</div> -->
+		    	<div class="jumbotron bg-light border border-secondary">
 		    			<div class="text-center" style="margin-bottom: 3em;">
             				<h2 class="text-info">Nova Turma</h2>
         				</div>
@@ -40,7 +39,8 @@
 										      		<option>{{$c->nome}}</option> <!--Mostra todos os cursos já cadastrados -->
 										      	@endforeach
 										    </select>
-							        
+							        		
+							        		<br>
 							                <label for="nivel">Nível:</label>
 							                <select class="form-control" id="nivel" name="nivel">
 										      <option>Básico       </option>
@@ -49,18 +49,31 @@
 										      <option>Único        </option>
 										    </select>
 										    
+										    <br>
 							                <label for="horario">Horário:</label>
 							                <input type="text" class="form-control" name="horario" 
-							                       id="horario" placeholder="Ex:8:00h">     	
+							                       id="horario" placeholder="Ex:8:00h">  
+							                <br>
+							                <label for="nivel">Dia da Semana:</label>
+							                <select class="form-control" id="dia" name="dia">
+										      <option>Segunda-Feira</option>
+										      <option>Terça-Feira</option>
+										      <option>Quarta-Feira</option>
+										      <option>Quinta-Feira</option>
+										      <option>Sexta-Feira</option>
+										      <option>Sábado</option>
+										      <option>Domingo</option>
+										    </select>   	
 
 							            </div>
 							            <button type="submit" class="btn btn-md btn-primary">Salvar</button>
+							            <a href="/adm/gerenciarCursos" class="btn btn-md btn-danger">Cancelar</a>
 			       					</form>
 				                </div>
 				            </div>   
 			            </div>   
 		            
 		            </div>   
-		        </div>
+		        
 		    </div>
 @stop
