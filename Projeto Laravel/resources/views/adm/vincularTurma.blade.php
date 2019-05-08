@@ -29,11 +29,11 @@
 						      		<div class="input-group">
 										<select class="custom-select" id="nivelTurma" name="nivelTurma">
 											@foreach($turma as $t)
-									    		<option selected value="{{$t->id}}">{{$t->nivel}} às {{$t->horario}}</option>
+									    		<option selected value="{{$t->id}}">{{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})</option>
 									    	@endforeach
 									  	</select>
 									  	<input class="form-control" type="text" readonly value="Curso:{{$curso->nome}}">
-									  	<input class="form-control" name="idAluno" type="text" readonly value="{{$a->id}}">
+									  	<input type="hidden" class="form-control" name="idAluno" type="text" readonly value="{{$a->id}}">
 									  	<div class="input-group-append">
 									    	<button type="submit" class="btn btn-outline-secondary" type="button">Vincular</button>
 									  	</div>

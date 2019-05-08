@@ -103,40 +103,41 @@ class TeacherController extends Controller
      */
     public function destroy($id)
     {
-        $professor_id = Professor::Where('id',$id)->get()->first(); //busca todos os professores cadastrados no sistema.
-        if(isset($professor_id)){//caso ache algum professor 
+        $professor = Professor::Where('id',$id)->get()->first(); //busca os dados do professor.
+        if(isset($professor)){//caso ache o professor desejado 
             $turmas = Turma::Where('professor_id', $id)->get();//busca todas as turmas que este professor pertence
             foreach ($turmas as $t) {
-                $t->delete();
+                $t->professor_id = null;
+                $t->save();
             }
-            $professor_id->delete();
-            return redirect('/adm/gerenciarProfessores/deletar');
+            $professor->delete();
+            return redirect('/adm/gerenciarProfessores/deletar/1');
         }
-        return redirect('/adm/gerenciarProfessores/deletar');
+        return redirect('/adm/gerenciarProfessores/deletar/1');
     }
 
 
-    public function listagemDeProfessores($id){
+    public function listagemDeProfessores($opcao){
         if(Auth::guard('administrador')->check()){
             $professores = Professor::All();
             if(count($professores) > 0){
-                if($id == 1){//para deletar   
+                if($opcao == 1){//para deletar   
                     return view('adm.deletarProfessor', compact('professores'));
-                }else if($id == 2){//para vincular um professor
+                }else if($opcao == 2){//para vincular um professor
                     $cursos  = Curso::all();
                     $turmas = Turma::all();
                     $opcao = 1; 
                     return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao'));
-                }else if ($id == 3){//para desvincular um professor.
+                }else if ($opcao == 3){//para desvincular um professor.
                     $cursos  = Curso::all();
                     $turmas = Turma::all();
                     $opcao = 2; 
                     return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao'));
                 }
             }else{//caso não existam professores cadastrados.
-                if($id == 1){//para deletar   
+                if($opcao == 1){//para deletar   
                     return view('adm.deletarProfessor');
-                }else if($id == 2){//para vincular um professor
+                }else if($opcao == 2){//para vincular um professor
                     return view('adm.vincular_desvincularProfessor');
                 }
             }
@@ -147,9 +148,18 @@ class TeacherController extends Controller
 
     public function vincular(Request $request){
         if(Auth::guard('administrador')->check()){
+            $professores = Professor::all();
             $turma = Turma::Where('id',$request->input('idTurma'))->get()->first(); //retorna a turma desejada
-            $turma->professor_id = $request->input('idProfessor');
-            $turma->save();
+            if($turma->professor_id != null){ //já existe professor nessa turma
+                $erro = 0;
+                $cursos  = Curso::all();
+                $turmas = Turma::all();
+                $opcao = 1; 
+                return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao','erro'));
+            }else{
+                $turma->professor_id = $request->input('idProfessor');
+                $turma->save();
+            }
             return redirect('/adm/gerenciarProfessores/vincularDesvincular/2');
         }else{
             return redirect('/');
@@ -159,6 +169,7 @@ class TeacherController extends Controller
 
     public function desvincular(Request $request){
         if(Auth::guard('administrador')->check()){
+            $professores = Professor::all();
             $turma = Turma::Where('id',$request->input('idTurma'))->get()->first(); //retorna a turma desejada
             if($turma->professor_id == $request->input('idProfessor')){
                 $turma->professor_id = null;

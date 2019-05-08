@@ -65,7 +65,7 @@ Route::prefix('adm')->group(function(){
     Route::get('/gerenciarCursos', function(){ return view('adm.gerenciarCursos');});  
     Route::get('/gerenciarCursos/novaTurma_Curso', 'TurmaController@create');     //rota para formulário de cadastro de nova turma ou novo curso
 
-    Route::post('/gerenciarCursos/salvarCurso', 'CursoController@store');        //rota para salvar os dados de novo curso
+    //Route::post('/gerenciarCursos/salvarCurso', 'CursoController@store');        //rota para salvar os dados de novo curso
     Route::post('/gerenciarCursos/salvarTurma', 'TurmaController@store');         //rota para salvar os dados da nova turma
 
     Route::get('/gerenciarAlunos/vincularAlunoCurso', 'AdminController@vincularAlunoCurso'); //rota para escolher qual aluno irá ser vinculado a um curso e turma
@@ -88,7 +88,7 @@ Route::prefix('adm')->group(function(){
 
     Route::get('/gerenciarProfessores/deletar/salvar/{id}', 'TeacherController@destroy'); //rota para deletar um professor por completo
 
-    Route::get('/gerenciarProfessores/vincularDesvincular/{id}', 'TeacherController@listagemDeProfessores'); //rota de listagem de professores com o objetivo de vincular ou desvincular algum
+    Route::get('/gerenciarProfessores/vincularDesvincular/{opcao}', 'TeacherController@listagemDeProfessores'); //rota de listagem de professores com o objetivo de vincular ou desvincular algum
 
     Route::post('/gerenciarProfessores/vincular','TeacherController@vincular'); //rota para salvar vinculação de um professor em uma turma.
 

@@ -73,9 +73,17 @@ class AdminController extends Controller
     public function excluirAluno($id){
         $aluno = Aluno::find($id);
         if(isset($aluno)){
-            //deletar o aluno,excluir ele das turmas e apagar as notas
-
-            $aluno->delete();
+            //deletar o aluno, e suas viinculações com as turmas
+            $turmas = Nota::Where('aluno_id',$id)->get();
+            if(isset($turmas)){
+                foreach ($turmas as $t) {
+                    $t->delete();
+                }
+            }
+            $aluno = Aluno::Where('id',$id);//retorna o cadastro do usuário aluno
+            $end = Endereco::Where('aluno_id',$id);//retorna o endereço do usuário aluno
+            $end->delete();
+            $aluno->delete(); 
         }
         return redirect('adm/gerenciarAlunos/deletar');
     }
@@ -142,16 +150,14 @@ class AdminController extends Controller
 
         $nota           = new Nota();
         $nota->aluno_id = $aluno->id;
-        $nota->id_turma = $turma->id; 
-        $nota->save();
-        //$AlunoPosse = new Posse();
-        //$AlunoPosse->aluno_id = $aluno->id;
-        //$AlunoPosse->turma_id = $turma->id;
+        $nota->id_turma = $turma->id;
 
-        //$idNota = Nota::Where('aluno_id',$aluno->id)->get()->first();
-        //$idNota = DB::table('notas')->select('notas.id')->Where([ ['id_turma', $turma->id], ['aluno_id', $aluno->id] ])->get()->first();
-        ///$AlunoPosse->nota_id  = $idNota;
-        //$AlunoPosse->save();
+        $verificação = Nota::Where([ ['aluno_id', $nota->aluno_id], ['id_turma', $nota->id_turma] ])->get()->first();
+        if(isset($verificação)){//aluno já está vinculado nessa turma
+            return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');
+        }else{
+           $nota->save();
+        } 
         return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');        
     }
 

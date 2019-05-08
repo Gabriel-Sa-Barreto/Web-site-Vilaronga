@@ -16,23 +16,31 @@
                                     <label for="nomeProfessor">Nome do Professor</label>
                                     <input type="text" class="form-control" name="nomeProfessor" 
                                            id="nomeProfessor" placeholder="Nome do Professor">
+                                    <br>
                                     <label for="nomeCurso">Escolha um curso:</label>
                                     <select class="form-control" id="nomeCurso" name="nomeCurso">
                                         @foreach($cursos as $c)
                                             <option>{{$c->nome}}</option> <!--Mostra todos os cursos já cadastrados -->
                                         @endforeach
                                     </select>
+
+                                    <br>
                                     <label for="email">Telefone</label>
                                     <input type="text" class="form-control" name="telefone" 
                                            id="telefone" placeholder="Telefone">
+
+                                    <br>
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control" name="email" 
                                            id="email" placeholder="Email">
+
+                                    <br>
                                     <label for="senha">Senha</label>
                                     <input type="text" class="form-control" name="senha" 
                                            id="senha" placeholder="Senha">                     
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-md">Salvar</button>
+                                <a href="/adm/gerenciarProfessores" class="btn btn-danger btn-md">Cancelar</a>
                             </form>
                         </div>
                     </div>

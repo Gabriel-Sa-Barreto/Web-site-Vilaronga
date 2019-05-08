@@ -20,7 +20,7 @@
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
                     <img class="card-img-top img-fluid" src="/img/lista.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
                     <div class="card-header">
-                        <b><h5>Deletar Professor</h5></b>
+                        <b><h5>Deletar Professor do sistema</h5></b>
                     </div>
                     <div class="card-body">
                         <a href="/adm/gerenciarProfessores/deletar/1" class="btn btn-md btn-primary">Visualizar lista completa</a>

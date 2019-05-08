@@ -30,7 +30,7 @@
 						</tr>
 						@endforeach
 					@else
-						<b><h5 class="card-title text-center">Não possui avisos !!!!!!</h5></b>
+						<b><h5 class="card-title text-center">Não possui materiais !!!!!!</h5></b>
 					@endif
 				</tbody>
 			</table>

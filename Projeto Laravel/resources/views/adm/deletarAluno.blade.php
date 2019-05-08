@@ -9,7 +9,7 @@
 				</div>
 				<input type="text" id="myInput" onkeyup="myFunction('myInput','tabela')" placeholder="Digite o nome do aluno" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 			</div>
-			 
+			<h5>O aluno deletado será excluído de todas as turmas ao qual está vinculado!!</h5>
 			<table class="table table-ordered table-hover" id="tabela">
 				<thead class="thead-dark">
 				    <tr>

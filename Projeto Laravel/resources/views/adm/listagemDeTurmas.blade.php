@@ -28,11 +28,10 @@
 										<select class="custom-select" id="turma" name="turma">
 												@foreach($turma as $t)
 													@if($t->curso_id == $c->id)
-														<option selected value="{{$t->id}}">{{$t->nivel}} às {{$t->horario}}</option>
+														<option selected value="{{$t->id}}">{{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})</option>
 													@endif
 												@endforeach								    		
 									  	</select>
-
 									    <button type="submit" class="btn btn-outline-secondary" type="button">Visualizar</button>
 									  	</div>
 									</div>
