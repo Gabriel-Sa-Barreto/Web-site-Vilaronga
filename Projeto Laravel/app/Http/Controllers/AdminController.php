@@ -122,6 +122,7 @@ class AdminController extends Controller
 
     }
 
+
     public function escolherTurma( Request $request){
         $curso  = Curso::Where('nome', $request->input('nomeCurso'))->get()->first();
         $alunos = Aluno::all(); 
@@ -154,12 +155,13 @@ class AdminController extends Controller
 
         $verificação = Nota::Where([ ['aluno_id', $nota->aluno_id], ['id_turma', $nota->id_turma] ])->get()->first();
         if(isset($verificação)){//aluno já está vinculado nessa turma
-            return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');
+            return redirect('/adm/gerenciarCursos/vincularAlunoCurso');
         }else{
            $nota->save();
         } 
-        return redirect('/adm/gerenciarAlunos/vincularAlunoCurso');        
+        return redirect('/adm/gerenciarCursos/vincularAlunoCurso');        
     }
+
 
     public function listagemDeTurma(){
         $cursos = Curso::all();
@@ -182,10 +184,23 @@ class AdminController extends Controller
     public function listagemDeAlunosTurma(Request $request){
         //busca as tuplas com os alunos da turma desejada
         $alunos =  DB::table('alunos')->join('notas', 'alunos.id','=','aluno_id')
-                                      ->select('alunos.*')->Where('id_turma','=', $request->input('turma'))->get();
-                                  
-       return view('adm.listagemAlunosTurma',compact('alunos'));
+                                      ->select('alunos.*','notas.id_turma')->Where('id_turma','=', $request->input('turma'))->get();
+        if(count($alunos) > 0){//caso exista alunos na turma desejada
+            return view('adm.listagemAlunosTurma',compact('alunos'));
+        }
+        return view('adm.listagemAlunosTurma');
+    }
 
+
+    public function deletarAlunoTurma($id_aluno,$id_turma){
+        $verificação = Nota::Where([ ['aluno_id', $id_aluno], ['id_turma', $id_turma] ])->get()->first();
+        if(isset($verificação)){//aluno já está vinculado nessa turma
+            $verificação->delete();
+            return redirect('/adm/gerenciarAlunos/listagemDeTurma');
+        }else{
+           
+        } 
+        return redirect('/adm/gerenciarAlunos/listagemDeTurma');   
     }
 
 
