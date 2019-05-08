@@ -8,7 +8,7 @@
 				   <span class="input-group-text" id="inputGroup-sizing-default">Buscar:</span>
 				</div>
 				<input type="text" id="myInput" onkeyup="myFunction('myInput','materiais')" placeholder="Digite o nivel da turma" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-			</div>
+			</div> 
 			<table class="table table-ordered table-hover" id="materiais">
 				<thead class="thead-dark">
 					<tr>
@@ -18,7 +18,8 @@
 					</tr>
 				</thead>
 				<tbody>
-					@foreach($materiais as $material)
+					@if(isset($materiais))
+						@foreach($materiais as $material)
 						<tr>	
 							<td>{{$material->nome}}</td>
 							<td>{{$material->nivel}}</td>
@@ -27,7 +28,10 @@
 								<a class="btn btn-danger btn-xs"  href="/material/remover/{{$material->id}}">Excluir</a>
 							</td>
 						</tr>
-					@endforeach
+						@endforeach
+					@else
+						<b><h5 class="card-title text-center">Não possui avisos !!!!!!</h5></b>
+					@endif
 				</tbody>
 			</table>
 		</div>

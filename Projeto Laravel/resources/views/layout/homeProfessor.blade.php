@@ -32,9 +32,9 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/professor/gerenciarTurmas">Turmas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarAviso">Avisos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarTurmas">Turmas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarMaterial">Material</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarAviso">Aviso</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -57,7 +57,27 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script src="/js/smoothproducts.min.js"></script>
+    <script src="/js/theme.js"></script>
     <script>
+        $('#exampleAviso').on('show.bs.modal', function (event) {
+              var button = $(event.relatedTarget) // Button that triggered the modal
+              var titulo = button.data('whatever') // Extract info from data-* attributes
+              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+              var data = button.data('data') 
+              var aviso = button.data('aviso') 
+              var modal = $(this)
+              modal.find('.modal-title').text(titulo)
+              modal.find('.modal-data').text(data)
+              modal.find('.modal-aviso').text(aviso)
+        })
+    </script>
+    
+     <script>
         //Função responsável por filtrar dados em uma tabela tabela
         //idEntrada corresponde ao id do input
         //idTabela corresponde ao id da tabela que deseja-se realizar o filtro
@@ -82,25 +102,6 @@
             } 
           }
         }
-    </script>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="/js/smoothproducts.min.js"></script>
-    <script src="/js/theme.js"></script>
-    <script>
-        $('#exampleAviso').on('show.bs.modal', function (event) {
-              var button = $(event.relatedTarget) // Button that triggered the modal
-              var titulo = button.data('whatever') // Extract info from data-* attributes
-              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-              var data = button.data('data') 
-              var aviso = button.data('aviso') 
-              var modal = $(this)
-              modal.find('.modal-title').text(titulo)
-              modal.find('.modal-data').text(data)
-              modal.find('.modal-aviso').text(aviso)
-        })
     </script>
 </body>
 

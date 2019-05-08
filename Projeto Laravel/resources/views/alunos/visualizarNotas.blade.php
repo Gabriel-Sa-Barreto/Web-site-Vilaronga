@@ -2,17 +2,18 @@
 	@section('conteudo')
 	<div class="container">
         <div class="text-center" style="margin-bottom: 3em;">
+        	<br><br>
             <h2 class="text-info">Visualize suas notas</h2>
         </div> 
 	    <div class="row">		    	
 			    	<div class="jumbotron bg-light border border-secondary col-lg-7">
 			    			<div class="text-center" style="margin-bottom: 3em;">
-	            				<h2 class="text-info">Qual nota deseja ver?</h2>
+	            				<h2 class="text-info">Qual turma deseja ver?</h2>
 	        				</div>
 					        <div class="card-deck text-center">
 					            <div class="card border border-primary">
 					                <div class="card-body">
-					                    <h5 class="card-title">Escolha uma turma ao qual pertence:</h5>
+					                    <h5 class="card-title">Escolha uma turma ao qual você pertence:</h5>
 					                    <form action="/aluno/visualizarNotas/turmaEscolhida" method="POST">
 							            @csrf
 								            <table class="table table-ordered table-hover" id="tabela2">

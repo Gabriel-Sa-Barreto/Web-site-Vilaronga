@@ -26,9 +26,9 @@
                                         <label for="nomeAluno">Aviso</label>
                                         <textarea id ="aviso" name= "aviso" class="form-control"></textarea>
                                 	</div>	
-														         
-					            	<button type="submit" class="btn btn-success">Submit</button>
-					            	<button type="cancel" class="btn btn-danger">Cancel</button>
+									<br>	         
+					            	<button type="submit" class="btn btn-success">Criar</button>
+					            	<a class="btn btn-danger btn-xs"  href="/professor/gerenciarAviso">Cancelar</a>
 					            </div>	
 	       					</form>
 		                </div>

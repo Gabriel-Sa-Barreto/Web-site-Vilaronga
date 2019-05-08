@@ -53,7 +53,7 @@
                                         
                                     <div class="form-group col-md-4">
                                         <label for="cep">CEP</label>
-                                        <input type="text" class="form-control" id="cep" name="cep" required>
+                                        <input type="text" class="form-control" id="cep" name="cep">
                                     </div>
                                 </div>
 

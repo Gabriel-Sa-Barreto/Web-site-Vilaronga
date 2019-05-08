@@ -56,6 +56,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/perguntas">Dúvidas</a></li>
                 </ul>
         </div>
         </div>
@@ -88,9 +89,9 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h5>Legal</h5>
+                    <h5>Dúvidas?</h5>
                     <ul>
-                        <li><a href="#">Perguntas frequentes</a></li>
+                        <li><a href="/perguntas">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>

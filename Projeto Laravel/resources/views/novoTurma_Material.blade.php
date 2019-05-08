@@ -18,9 +18,9 @@
 								    </select>
 					                
 					                <input type="file"  class="myfrm form-control" name="arquivo" id="arquivo" enctype="multipart/form-data">
-
-					            	<button type="submit" class="btn btn-success">Submit</button>
-					            	<button type="cancel" class="btn btn-danger">Cancel</button>
+					            	<br>
+					            	<button type="submit" class="btn btn-success">Upload</button>
+					            	<a class="btn btn-danger btn-xs"  href="/professor/gerenciarMaterial">Cancelar</a>
 					            </div>	
 	       					</form>
 		                </div>

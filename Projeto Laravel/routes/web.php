@@ -40,6 +40,10 @@ Route::get('/login', function () {
     return view('fixas.login');
 });
 
+Route::get('/perguntas', function () {
+    return view('fixas.perguntasFrequentes');
+});
+
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('adm')->group(function(){

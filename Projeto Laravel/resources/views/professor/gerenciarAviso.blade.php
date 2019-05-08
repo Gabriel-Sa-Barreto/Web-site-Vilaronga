@@ -7,7 +7,7 @@
     	<div class="row">
     		<div class="col-sm-6 col-lg-6">
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
-                    <img class="card-img-top img-fluid" src="/img/upload.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
+                    <img class="card-img-top img-fluid" src="/img/notification.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
                     <div class="card-header">
                         <b><h5>Cadastre um aviso</h5></b>
                     </div>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-sm-6 col-lg-6">
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
-                    <img class="card-img-top img-fluid" src="/img/book.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
+                    <img class="card-img-top img-fluid" src="/img/calendar.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
                     <div class="card-header">
                         <b><h5>Visualizar lista de avisos</h5></b>
                     </div>

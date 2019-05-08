@@ -44,6 +44,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Inglês</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/espanhol">espanhol</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/portugues">português/redação</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/perguntas">Dúvidas</a></li>
                 </ul>
         </div>
         </div>
@@ -76,9 +77,9 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h5>Legal</h5>
+                    <h5>Dúvidas?</h5>
                     <ul>
-                        <li><a href="#">Perguntas frequentes</a></li>
+                        <li><a href="/perguntas">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>
