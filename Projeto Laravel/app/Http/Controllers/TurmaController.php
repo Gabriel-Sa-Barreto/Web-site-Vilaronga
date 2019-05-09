@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Turma;
 use App\Curso;
+use App\Nota;
 
 class TurmaController extends Controller
 {
@@ -95,6 +97,17 @@ class TurmaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::guard('administrador')->check()){ //caso o adm esteja logado
+            $turma = Turma::Where('id',$id)->get()->first(); 
+            $notas = Nota::Where('id_turma',$id)->get();
+            if(count($notas) > 0){//deleta a vinculação dos alunos da turma desejada
+                foreach ($notas as $n) {
+                    $n->delete(); 
+                }
+            }
+            $turma->delete();//agora deleta a turma
+            return redirect('/adm/gerenciarAlunos/listagemDeTurma');
+        }
+        return redirect('/');//caso não esteja logado volta para o início do site
     }
 }

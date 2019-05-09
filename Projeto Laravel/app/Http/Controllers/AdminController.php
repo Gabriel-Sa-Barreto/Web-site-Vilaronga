@@ -49,10 +49,16 @@ class AdminController extends Controller
         $new_aluno->telefone = $request->input('telefone');
         $new_aluno->email    = $request->input('email');
         $new_aluno->password = Hash::make($request->input('password'));
-        $new_aluno->save();
+       
 
         //colocar verificação de repetição de email (algo que não pode ocorrer)
-
+        $buscaEmail = Aluno::Where('email',$request->input('email'))->get()->first();
+        if(isset($buscaEmail)){
+            $erro = "Já existem um aluno cadastrado com esse email!!! Por favor, informe outro.";
+            //retorna para a tela de cadastro com uma mensagem de erro
+            return view('adm.novoAluno', compact('erro'));
+        }
+        $new_aluno->save();
         //vinculação de endereço ao aluno cadastrado
         $aluno_endereco = new Endereco();
         $aluno_endereco->rua    = $request->input('rua');

@@ -52,11 +52,6 @@ class TeacherController extends Controller
         $new_professor->telefone = $request->input('telefone');
         $new_professor->email = $request->input('email');
         $new_professor->password = Hash::make($request->input('senha'));
-
-        $nomeCurso = $request->input('nomeCurso');
-        //busca ID do curso que será vinculado à turma que está sendo criada.
-        $cursoID = Curso::Where('nome', $nomeCurso)->get()->first();
-        $new_professor->curso_id = $cursoID->id;
         $new_professor->save();
         return redirect('/adm/gerenciarProfessores/novo');
     }
