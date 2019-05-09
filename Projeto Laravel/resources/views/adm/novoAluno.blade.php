@@ -9,6 +9,9 @@
                 <div class="card-deck">
                     <div class="card border border-primary">
                         <div class="card-body">
+                            @if(isset($erro))
+                                <h5><b>{{$erro}}</b></h5>
+                            @endif
                             <h5 class="card-title">Cadastro de novo Aluno</h5>
                             <form action="/adm/gerenciarAlunos/novo/salvar" method="POST">
                             @csrf

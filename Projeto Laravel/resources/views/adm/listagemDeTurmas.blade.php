@@ -32,7 +32,15 @@
 													@endif
 												@endforeach								    		
 									  	</select>
-									    <button type="submit" class="btn btn-outline-secondary" type="button">Visualizar</button>
+									  	@foreach($turma as $t) <!-- somente mostra visualização caso exista alguma turma disponível -->
+												@if($t->curso_id == $c->id)
+													<button type="submit" class="btn btn-outline-secondary" type="button" style="margin-right:5px;">
+														Visualizar
+													</button>
+													<a href="/adm/gerenciarCursos/deletarTurma/{{$t->id}}" class="btn btn-outline-danger">Deletar Turma</a>
+													@break;
+												@endif
+										@endforeach					
 									  	</div>
 									</div>
 				            	</form>

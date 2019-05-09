@@ -80,7 +80,9 @@ Route::prefix('adm')->group(function(){
 
     Route::post('/gerenciarCursos/listagemDeTurma/visualizar', 'AdminController@listagemDeAlunosTurma'); //rota para visualização de alunos em uma turma
 
-    Route::get('/gerenciarProfessores', function(){ return view('adm.gerenciarProfessores');}); 
+    Route::get('/gerenciarCursos/deletarTurma/{id}','TurmaController@destroy'); //deletar uma turma
+
+    Route::get('/gerenciarProfessores', function(){ return view('adm.gerenciarProfessores');}); //rota para gerenciar professores
 
     Route::get('/gerenciarProfessores/novo', 'TeacherController@create');  //tela de formulário para cadastro de um professor
 
