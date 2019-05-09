@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
     <title>Cursos Vilaronga</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="/css/smoothproducts.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/smoothproducts.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -32,9 +32,9 @@
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarTurmas">Turmas</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarMaterial">Material</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/professor/gerenciarAviso">Aviso</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/professor/gerenciarTurmas">Turmas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/professor/gerenciarMaterial">Material</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/professor/gerenciarAviso">Aviso</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -57,11 +57,11 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/../../vilarongacursos/js/jquery.min.js"></script>
+    <script src="/../../vilarongacursos/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="/js/smoothproducts.min.js"></script>
-    <script src="/js/theme.js"></script>
+    <script src="/../../vilarongacursos/js/smoothproducts.min.js"></script>
+    <script src="/../../vilarongacursos/js/theme.js"></script>
     <script>
         $('#exampleAviso').on('show.bs.modal', function (event) {
               var button = $(event.relatedTarget) // Button that triggered the modal

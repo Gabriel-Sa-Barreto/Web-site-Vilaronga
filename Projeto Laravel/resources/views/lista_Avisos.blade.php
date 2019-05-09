@@ -24,7 +24,7 @@
 							<td>{{$aviso->data}}</td>
 							<td class="actions">
 								<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleAviso" data-whatever="{{$aviso->titulo}}" data-data="{{$aviso->data}}"  data-aviso="{{$aviso->aviso}}">Ver</button>
-								<a class="btn btn-danger btn-xs"  href="/aviso/remover/{{$aviso->id}}">Excluir</a>
+								<a class="btn btn-danger btn-xs"  href="/vilarongacursos/aviso/remover/{{$aviso->id}}">Excluir</a>
 							</td>
 						</tr>
 					@endforeach

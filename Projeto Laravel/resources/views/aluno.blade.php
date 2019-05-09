@@ -2,13 +2,13 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
     <title>Cursos Vilaronga</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="/css/smoothproducts.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/smoothproducts.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -25,11 +25,11 @@
 </head>
 <body>
      <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="/aluno" style="font-size:2em;">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/vilarongacursos/aluno" style="font-size:2em;">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/aluno/dados">Editar Dados</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/aluno/dados">Editar Dados</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-sm-4 col-lg-4">
                     <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
-                            <img class="card-img-top img-fluid" src="img/task.png" alt="Card image cap" style="width: 7em; height: 7em; display: block; margin:auto;">
+                            <img class="card-img-top img-fluid" src="/../../vilarongacursos/img/task.png" alt="Card image cap" style="width: 7em; height: 7em; display: block; margin:auto;">
                             <div class="card-header">
                                 <b><h5>Materiais de Apoio</h5></b>
                             </div>
@@ -72,13 +72,13 @@
                                     Realize o download dos materiais que você necessita.
                                     Selecione a turma desejada, baixe o arquivo e bons estudos.
                                 </p>
-                                <a href="/aluno/material" class="btn btn-lg btn-primary">Download de Materiais</a>
+                                <a href="/vilarongacursos/aluno/material" class="btn btn-lg btn-primary">Download de Materiais</a>
                             </div>
                     </div>              
                 </div>
                 <div class="col-sm-4 col-lg-4">
                     <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center">
-                            <img class="card-img-top img-fluid" src="img/message.png" alt="Card image cap" style="width:7em; height:7em; display: block; margin:auto;"> 
+                            <img class="card-img-top img-fluid" src="/../../vilarongacursos/img/message.png" alt="Card image cap" style="width:7em; height:7em; display: block; margin:auto;"> 
                             <div class="card-header">
                                 <b><h5>Avisos</h5></b>
                             </div>
@@ -87,13 +87,13 @@
                                 <p class="card-text text-left">
                                     Descubra se algum professor deixou um recado.<br><br><br>
                                 </p>
-                                <a href="/aluno/aviso" class="btn btn-lg btn-primary">Visualizar Avisos</a>
+                                <a href="/vilarongacursos/aluno/aviso" class="btn btn-lg btn-primary">Visualizar Avisos</a>
                             </div>
                     </div>              
                 </div>
                 <div class="col-sm-4 col-lg-4">
                     <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center">
-                            <img class="card-img-top img-fluid" src="img/grades.png" alt="Card image cap" style="width:7em; height:7em; display: block; margin:auto;"> 
+                            <img class="card-img-top img-fluid" src="/../../vilarongacursos/img/grades.png" alt="Card image cap" style="width:7em; height:7em; display: block; margin:auto;"> 
                             <div class="card-header">
                                 <b><h5>Notas</h5></b>
                             </div>
@@ -102,7 +102,7 @@
                                 <p class="card-text text-left">
                                     Veja suas notas do curso ao qual você está cadastrado.<br><br><br>
                                 </p>
-                                <a href="/aluno/visualizarNotas" class="btn btn-lg btn-primary">Visualizar Notas</a>
+                                <a href="/vilarongacursos/aluno/visualizarNotas" class="btn btn-lg btn-primary">Visualizar Notas</a>
                             </div>
                     </div>              
                 </div>
@@ -171,10 +171,10 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/../../vilarongacursos/js/jquery.min.js"></script>
+    <script src="/../../vilarongacursos/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="/js/smoothproducts.min.js"></script>
-    <script src="/js/theme.js"></script>
+    <script src="/../../vilarongacursos/js/smoothproducts.min.js"></script>
+    <script src="/../../vilarongacursos/js/theme.js"></script>
 </body>
 </html>

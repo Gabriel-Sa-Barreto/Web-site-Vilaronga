@@ -5,19 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Cursos Vilaronga</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
-    <link rel="stylesheet" href="/css/Customizable-Background--Overlay.css">
-    <link rel="stylesheet" href="/css/css_home/3-Columns-Info-Icons-1.css">
-    <link rel="stylesheet" href="/css/best-carousel-slide.css">
-    <link rel="stylesheet" href="/css/css_home/blocosAnimados.css">
-    <link rel="stylesheet" href="/css/css_home/Bold-BS4-Cards-with-Hover-Effect-74.css">
-    <link rel="stylesheet" href="/css/css_home/Card-hover-affect-2.css">
-    <link rel="stylesheet" href="/css/css_home/dh-card-image-left-dark.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/Customizable-Background--Overlay.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/css_home/3-Columns-Info-Icons-1.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/best-carousel-slide.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/css_home/blocosAnimados.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/css_home/Bold-BS4-Cards-with-Hover-Effect-74.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/css_home/Card-hover-affect-2.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/css_home/dh-card-image-left-dark.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="/css/css_home/Team-1.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/css_home/Team-1.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -39,7 +39,7 @@
     <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-light clean-navbar" 
         style="margin-bottom:0px;background-image: linear-gradient(to right,#C2C7C8,#9FB1B3);">
         <div class="container">
-            <a class="navbar-brand logo" href="/" style="font-size: 2em; font-family: 'Lobster', cursive;">
+            <a class="navbar-brand logo" href="/vilarongacursos" style="font-size: 2em; font-family: 'Lobster', cursive;">
                 <em>Cursos Vilaronga</em>
             </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
@@ -48,10 +48,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/sobrenos">Sobre Nós</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/ingles">Cursos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/traducao">Serviços</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/perguntas">Dúvidas</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/vilarongacursos/sobrenos">Sobre Nós</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/ingles">Cursos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/traducao">Serviços</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/perguntas">Dúvidas</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="" data-toggle="modal" data-target="#signIn">Login</a></li>
                 </ul>
         </div>
@@ -80,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-0 offset-xs-0">
-                    <div class="box"><img src="/img/knowledge.jpg" alt="Desmond" />
+                    <div class="box"><img src="/../../vilarongacursos/img/knowledge.jpg" alt="Desmond" />
                         <div class="box-heading">
                             <h4 class="title" style="color:#333333;">Visão Geral</h4>
                         </div>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-0 offset-xs-0">
-                    <div class="box"><img src="/img/values.jpg" alt="Lee-Ann" />
+                    <div class="box"><img src="/../../vilarongacursos/img/values.jpg" alt="Lee-Ann" />
                         <div class="box-heading">
                             <h4 class="title" style="color:#333333;">Valores</h4>
                         </div>
@@ -100,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-3 offset-xs-0">
-                    <div class="box"><img src="/img/workspace.jpg" alt="John-John" />
+                    <div class="box"><img src="/../../vilarongacursos/img/workspace.jpg" alt="John-John" />
                         <div class="box-heading">
                             <h4 class="title" style="color:#333333;">Objetivos</h4>
                         </div>
@@ -111,7 +111,7 @@
                 </div>
                 <div class = "text-md-center text-lg-center col-sm-4 col-md-4 col-lg-4 col-xs-4 offset-sm-4 offset-lg-4 offset-md-4 offset-xs-4">
                     <br><br>
-                    <a href="/sobrenos" style="text-decoration:none;">
+                    <a href="/vilarongacursos/sobrenos" style="text-decoration:none;">
                         <button type="button" class="btn btn-block btn-lg btn-outline-success">Veja mais</button> 
                     </a>
                 <div>    
@@ -130,7 +130,7 @@
                 <div class="row blocosAnimados">
                     <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-0 offset-xs-0">
                         <figure class="snip1563">
-                            <img src="/img/empire-state.jpg" alt="Empire State" />
+                            <img src="/../../vilarongacursos/img/empire-state.jpg" alt="Empire State" />
                             <figcaption>
                                 <h4>Inglês</h4>
                                 <p>Desenvolva suas habilidades na língua inglesa através do nosso grande curso.</p>
@@ -138,7 +138,7 @@
                     </div>
                     <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-0 offset-xs-0">
                         <figure class="snip1563 hover">
-                            <img src="/img/plaza-espana.jpg" alt="Plaza Espana" />
+                            <img src="/../../vilarongacursos/img/plaza-espana.jpg" alt="Plaza Espana" />
                             <figcaption>
                                 <h4>Espanhol</h4>
                                 <p>Aprenda o melhor da língua espanhola e aproveite essa nova oportunidade de se desenvolver.</p>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-3 offset-xs-0">
                         <figure class="snip1563">
-                            <img src="/img/rio-de-janeiro.jpg" alt="Rio de janeiro" />
+                            <img src="/../../vilarongacursos/img/rio-de-janeiro.jpg" alt="Rio de janeiro" />
                             <figcaption>
                                 <h4>Português<br>e Redação</h4>
                                 <p>Crie grandes textos e tire as melhores notas em concursos, ENEM e vestibulares.</p>
@@ -167,7 +167,7 @@
                     </div>
                 </div><div class="row">
     <div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
-        <div class="team-member"><img src="/img/imagens/Ricardo.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 5px 5px #888888;"/>
+        <div class="team-member"><img src="/../../vilarongacursos/img/imagens/Ricardo.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 5px 5px #888888;"/>
             <h4>Ricardo Vilaronga</h4>
             <p class="text-muted">Coordenador Geral</p>
             <ul class="list-inline social-buttons">
@@ -178,7 +178,7 @@
         </div>
     </div>
     <div class="col-sm-6 col-lg-6 col-md-6 col-xs-6">
-        <div class="team-member"><img src="/img/imagens/Adrielle.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 5px 5px #888888;"/>
+        <div class="team-member"><img src="/../../vilarongacursos/img/imagens/Adrielle.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 5px 5px #888888;"/>
             <h4>Adriele Almeida</h4>
             <p class="text-muted">2ª Coordenadora Geral</p>
             <ul class="list-inline social-buttons">
@@ -235,16 +235,16 @@
                 <div class="col-sm-3">
                     <h5>Ir para:</h5>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/ingles">Cursos&nbsp;</a></li>
+                        <li><a href="/vilarongacursos">Home</a></li>
+                        <li><a href="/vilarongacursos/ingles">Cursos&nbsp;</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
                     <h5>Instituição</h5>
                     <ul>
-                        <li><a href="/sobrenos">Sobre Nós ( detalhes )</a></li>
-                        <li><a href="/traducao">Serviços</a></li>
-                        <li><a href="/adm/login">Administrador</a></li>
+                        <li><a href="/vilarongacursos/sobrenos">Sobre Nós ( detalhes )</a></li>
+                        <li><a href="/vilarongacursos/traducao">Serviços</a></li>
+                        <li><a href="/vilarongacursos/adm/login">Administrador</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -256,7 +256,7 @@
                 <div class="col-sm-3">
                     <h5>Dúvidas?</h5>
                     <ul>
-                        <li><a href="/perguntas">Perguntas frequentes</a></li>
+                        <li><a href="/vilarongacursos/perguntas">Perguntas frequentes</a></li>
                     </ul>
                 </div>
             </div>
@@ -266,9 +266,9 @@
             <p>Imagens adquiridas por Bootstrap e pixabay.com</p>
         </div>
     </footer>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/../../vilarongacursos/js/jquery.min.js"></script>
+    <script src="/../../vilarongacursos/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="/js/Card-hover-affect-2.js"></script>
+    <script src="/../../vilarongacursos/js/Card-hover-affect-2.js"></script>
 </body>
 </html>

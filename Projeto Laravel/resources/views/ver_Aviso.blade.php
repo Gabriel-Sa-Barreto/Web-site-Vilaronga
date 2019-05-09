@@ -11,7 +11,7 @@
                     <div class="card border border-primary">
                         <div class="card-body">
                             <h2 class="card-title text-center">Aviso</h5>
-                            <form action="/aluno/editar" method="POST">
+                            <form action="/vilarongacursos/aluno/editar" method="POST">
                             @csrf
                                 <div class="form-group">
                                         <h3 for="nomeAluno">Nome C</label>

@@ -7,7 +7,7 @@
     	<div class="row">
     		<div class="col-sm-6 col-lg-6">
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
-                    <img class="card-img-top img-fluid" src="/img/aluno.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
+                    <img class="card-img-top img-fluid" src="/../../vilarongacursos/img/aluno.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
                     <div class="card-header">
                         <b><h5>Listagem completa de alunos por turma</h5></b>
                     </div>
@@ -20,7 +20,7 @@
             </div>
             <div class="col-sm-6 col-lg-6">
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
-                    <img class="card-img-top img-fluid" src="/img/notas.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
+                    <img class="card-img-top img-fluid" src="/../../vilarongacursos/img/notas.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
                     <div class="card-header">
                         <b><h5>Notas de atividades e avaliações</h5></b>
                     </div>
@@ -70,7 +70,7 @@
                                                                     <td>{{$t->horario}}</td>
                                                                     <td>{{$t->diaDaSemana}}</td>
                                                                     <td>
-                                                                        <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/listagemDeAlunos/{{$t->id}}" >Selecionar</a>
+                                                                        <a class="btn btn-md btn-success" href="/vilarongacursos/professor/gerenciarTurmas/listagemDeAlunos/{{$t->id}}" >Selecionar</a>
                                                                     </td>
                                                                 @endif
                                                             </tr>  
@@ -124,7 +124,7 @@
                                                                 <td>{{$t->horario}}</td>
                                                                 <td>{{$t->diaDaSemana}}</td>
                                                                 <td>
-                                                                    <a class="btn btn-md btn-success" href="/professor/gerenciarTurmas/notasTurma/{{$t->id}}" >Selecionar</a>
+                                                                    <a class="btn btn-md btn-success" href="/vilarongacursos/professor/gerenciarTurmas/notasTurma/{{$t->id}}" >Selecionar</a>
                                                                 </td>
                                                             @endif
                                                         </tr>  

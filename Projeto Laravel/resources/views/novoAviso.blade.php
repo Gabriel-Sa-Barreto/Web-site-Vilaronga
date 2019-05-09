@@ -7,7 +7,7 @@
 		            <div class="card border border-primary">
 		                <div class="card-body">
 		                    <h5 class="card-title">Cadastro Material</h5>
-		                    <form action="/aviso/novo" method="POST" enctype="multipart/form-data">
+		                    <form action="/vilarongacursos/aviso/novo" method="POST" enctype="multipart/form-data">
 				            @csrf
 					            <div class="form-group">
 					                <label for="nomeCurso">Escolha uma turma:</label>

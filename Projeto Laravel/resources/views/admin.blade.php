@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
     <title>Cursos Vilaronga</title>
-    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
-    <link rel="stylesheet" href="/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/fonts/simple-line-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.css">
-    <link rel="stylesheet" href="/css/smoothproducts.css">
+    <link rel="stylesheet" href="/../../vilarongacursos/css/smoothproducts.css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Roboto+Slab" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
@@ -29,13 +29,13 @@
 
 <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark clean-navbar">
-        <div class="container"><a class="navbar-brand logo" href="/adm">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand logo" href="/vilarongacursos/adm">Cursos Vilaronga</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse"
                 id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/adm/gerenciarCursos">cursos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarAlunos">Alunos</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="/adm/gerenciarProfessores">Professores</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/vilarongacursos/adm/gerenciarCursos">cursos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/adm/gerenciarAlunos">Alunos</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/vilarongacursos/adm/gerenciarProfessores">Professores</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="{{ route('logout') }}" 
                         onclick="event.preventDefault();
@@ -63,11 +63,11 @@
             <p>© 2019 Copyright Gabriel e Samuel</p>
         </div>
     </footer>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/../../vilarongacursos/js/jquery.min.js"></script>
+    <script src="/../../vilarongacursos/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="/js/smoothproducts.min.js"></script>
-    <script src="/js/theme.js"></script>
+    <script src="/../../vilarongacursos/js/smoothproducts.min.js"></script>
+    <script src="/../../vilarongacursos/js/theme.js"></script>
 </body>
 
 </html>

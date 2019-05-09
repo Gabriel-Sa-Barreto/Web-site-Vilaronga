@@ -13,7 +13,7 @@
 			<input class="form-control" type="text" readonly value="{{$nota}}">
 			<br>
 			<!--Formulário para colocar notas -->
-			<form action="/professor/gerenciarTurmas/notasTurma/salvarNota" method="POST">
+			<form action="/vilarongacursos/professor/gerenciarTurmas/notasTurma/salvarNota" method="POST">
 			@csrf
 				<div class="form-group">
 			    	<label for="valor"><b>Valor da nota</b></label>
@@ -27,7 +27,7 @@
 				<input type="hidden" id="idAluno" name="idAluno" value="{{$alunoNome->id}}">
 				<input type="hidden" id="nota" name="nota" value="{{$nota}}">
 				<button type="submit" class="btn btn-outline-success" type="button">Salvar</button>
-				<a class="btn btn-outline-danger" href="/professor/gerenciarTurmas/notasTurma/{{$turmaNota->id}}">Cancelar</a> 
+				<a class="btn btn-outline-danger" href="/vilarongacursos/professor/gerenciarTurmas/notasTurma/{{$turmaNota->id}}">Cancelar</a> 
 			</form>
 		</div>
 	</div>

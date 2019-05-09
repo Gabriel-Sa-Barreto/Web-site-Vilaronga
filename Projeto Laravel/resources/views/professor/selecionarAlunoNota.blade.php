@@ -25,7 +25,7 @@
 						      <td>{{$a->nome}}</td>
 						      <td>{{$a->email}}</td>
 						      <td>
-						        	<form class="form-inline" action="/professor/gerenciarTurmas/notasTurma/salvar" method="POST">
+						        	<form class="form-inline" action="/vilarongacursos/professor/gerenciarTurmas/notasTurma/salvar" method="POST">
 						      		@csrf
 						      			<div class="input-group">
 											<select class="custom-select" id="notaEscolhida" name="notaEscolhida">
