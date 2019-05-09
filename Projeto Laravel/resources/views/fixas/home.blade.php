@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">-->
     <title>Cursos Vilaronga</title>
     <link rel="stylesheet" href="/../../vilarongacursos/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
@@ -171,9 +171,8 @@
             <h4>Ricardo Vilaronga</h4>
             <p class="text-muted">Coordenador Geral</p>
             <ul class="list-inline social-buttons">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.facebook.com/people/Vilaronga-Ricardo/100011765255547"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/vilarongaidiomas/?hl=pt-br"><i class="fa fa-instagram"></i></a></li>
             </ul>
         </div>
     </div>
@@ -182,9 +181,8 @@
             <h4>Adriele Almeida</h4>
             <p class="text-muted">2ª Coordenadora Geral</p>
             <ul class="list-inline social-buttons">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://www.facebook.com/adriele.almeida.5264"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/flowerswinter/?hl=pt-br"><i class="fa fa-instagram"></i></a></li>
             </ul>
         </div>
     </div>
