@@ -12,9 +12,9 @@ class AdmSeeder extends Seeder
     public function run()
     {
         DB::table('administradors')->insert([
-        	'nome'=>"Biel",
-        	'password'=>Hash::make('biel123'),
-        	'email'=>'bielbarretoalves@gmail.com'
+        	'nome'=>"Ricardo",
+        	'password'=>Hash::make('vilaronga'),
+        	'email'=>'cursosvilaronga@gmail.com'
         ]);
     }
 }
