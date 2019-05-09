@@ -52,7 +52,7 @@ class TurmaController extends Controller
         $new_turma->curso_id = $cursoID->id;
 
         $new_turma->save();
-        return redirect('/adm/gerenciarCursos/novaTurma_Curso');
+        return redirect('/vilarongacursos/adm/gerenciarCursos/novaTurma_Curso');
     }
 
     /**
@@ -106,8 +106,8 @@ class TurmaController extends Controller
                 }
             }
             $turma->delete();//agora deleta a turma
-            return redirect('/adm/gerenciarAlunos/listagemDeTurma');
+            return redirect('/vilarongacursos/adm/gerenciarAlunos/listagemDeTurma');
         }
-        return redirect('/');//caso não esteja logado volta para o início do site
+        return redirect('/vilarongacursos');//caso não esteja logado volta para o início do site
     }
 }

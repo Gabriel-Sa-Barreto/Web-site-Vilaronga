@@ -38,6 +38,6 @@ class ProfLoginController extends Controller
     public function logout()
     {
         Auth::guard('professor')->logout();
-        return redirect('/');
+        return redirect('/vilarongacursos');
     }
 }
