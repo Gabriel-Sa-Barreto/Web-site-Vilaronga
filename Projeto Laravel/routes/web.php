@@ -64,6 +64,7 @@ Route::prefix('adm')->group(function(){
     Route::get('/gerenciarAlunos/deletar/{id}','AdminController@excluirAluno'); //rota para exclusão de aluno
 
     Route::get('/gerenciarAlunos/listagem','AdminController@listagemDeAlunos'); //rota para listagem de alunos
+    Route::post('/gerenciarAlunos/listagem/mudarSenha','AdminController@mudarSenha'); //rota para mudar senha
     Route::get('/gerenciarAlunos/dadosCompletos/{id}','AdminController@dadosAluno'); //rota para pegar os dados completos de um aluno, incluindo cursos aos quais está cadastrado e as turmas
 
     Route::get('/gerenciarCursos', function(){ return view('adm.gerenciarCursos');});  

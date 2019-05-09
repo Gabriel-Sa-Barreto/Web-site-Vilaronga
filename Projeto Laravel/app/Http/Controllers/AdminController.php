@@ -209,5 +209,17 @@ class AdminController extends Controller
         return redirect('/adm/gerenciarAlunos/listagemDeTurma');   
     }
 
+    public function mudarSenha(Request $request){
+        if(Auth::guard('administrador')->check())
+        {
+            $idAluno = $request->input('aluno');
+            $aluno = Aluno::Where('id', $idAluno)->get()->first();
+            $aluno->password = Hash::make($request->input('password'));
+            $aluno->save();
+            return redirect('/adm/gerenciarAlunos/listagem');
+        }
+        return redirect('/');    
+    }
+
 
 }
