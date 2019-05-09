@@ -73,7 +73,12 @@ class AvisoController extends Controller
     {
         $mytime = Carbon\Carbon::now();
         $new_aviso = new Aviso();
-        $new_aviso->data = $mytime->toDateTimeString();
+        //$new_aviso->data = $mytime->toDateTimeString();
+        $split = $mytime->toDateString();
+        $tempo = $mytime->toTimeString();
+        $date = explode('-', $split, 3);
+        $data = $date[2]."/".$date[1]."/".$date[0]."-".$tempo;
+        $new_aviso->data = $data;
         $new_aviso->titulo = $request->input('titulo');
         $new_aviso->aviso = $request->input('aviso');
         $nomeTurma = $request->input('nomeTurma');

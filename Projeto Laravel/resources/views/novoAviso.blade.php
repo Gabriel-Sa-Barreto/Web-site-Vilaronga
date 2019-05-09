@@ -13,7 +13,7 @@
 					                <label for="nomeCurso">Escolha uma turma:</label>
 					                <select class="form-control" id="nomeTurma" name="nomeTurma" enctype="multipart/form-data">
 								      	@foreach($turmas as $t)
-								      		<option>Turma: {{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})</option> <!--Mostra todos as turmas que o professor pertence -->
+								      		<option value = "{{$t->nivel}}">Turma: {{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})</option> <!--Mostra todos as turmas que o professor pertence -->
 								      	@endforeach
 								    </select>
 					                
