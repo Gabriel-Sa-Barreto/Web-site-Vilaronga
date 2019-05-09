@@ -10,6 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/processingForm', function(){
+    return view('processingForm');
+});
+
 
 Route::get('/', function () {
     return view('fixas.home');

@@ -138,7 +138,8 @@
                         <h2 class="text-info">Solicitação de serviços</h2>
                         <p><br><em>Preencha o formulário e o seu pedido ou questionamento será respondido.</em><br><br></p>
                     </div>
-                    <form class="bg-light border-dark shadow" action="processingForm.php" method="post" enctype="multipart/form-data">
+                    <form class="bg-light border-dark shadow" action="/processingForm" method="post" enctype="multipart/form-data">
+                    @csrf
                         <div class="form-group">
                             <label>Nome</label>
                             <input id="nome" name="nome" class="form-control" placeholder="Nome Completo" type="text" required>
