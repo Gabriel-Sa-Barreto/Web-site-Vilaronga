@@ -68,13 +68,15 @@ Route::prefix('adm')->group(function(){
     //Route::post('/gerenciarCursos/salvarCurso', 'CursoController@store');        //rota para salvar os dados de novo curso
     Route::post('/gerenciarCursos/salvarTurma', 'TurmaController@store');         //rota para salvar os dados da nova turma
 
-    Route::get('/gerenciarAlunos/vincularAlunoCurso', 'AdminController@vincularAlunoCurso'); //rota para escolher qual aluno irá ser vinculado a um curso e turma
+    Route::get('/gerenciarCursos/vincularAlunoCurso', 'AdminController@vincularAlunoCurso'); //rota para escolher qual aluno irá ser vinculado a um curso e turma
 
     Route::post('/gerenciarCursos/escolherCurso', 'AdminController@escolherTurma'); //rota para exibir lista de alunos na vinculação de turma 
 
     Route::post('/gerenciarCursos/vincularTurma', 'AdminController@salvarVinculacao'); //rota para salvar vinculação de aluno com turma e curso
 
     Route::get('/gerenciarAlunos/listagemDeTurma', 'AdminController@listagemDeTurma'); //rota para listagem de turmas por curso
+
+    Route::get('/gerenciarCursos/listagemDeTurma/visualizar/deletarAluno/{id_aluno}/{id_turma}','AdminController@deletarAlunoTurma'); //rota para excluir um aluno de uma turma
 
     Route::post('/gerenciarCursos/listagemDeTurma/visualizar', 'AdminController@listagemDeAlunosTurma'); //rota para visualização de alunos em uma turma
 

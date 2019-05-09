@@ -31,10 +31,10 @@
                 <div class= "card shadow-sm p-3 mb-5 bg-white rounded text-center"> 
                     <img class="card-img-top img-fluid" src="/img/turma.png" alt="Card image cap" style="width: 6em; height: 6em; display: block; margin:auto;">
                     <div class="card-header">
-                        <b><h5>Vincular aluno em curso e turma</h5></b>
+                        <b><h5>Vincular/Desvincular aluno em curso e turma</h5></b>
                     </div>
                     <div class="card-body">
-                        <a href="/adm/gerenciarAlunos/vincularAlunoCurso" class="btn btn-md btn-primary">Vincular aluno</a>
+                        <a href="/adm/gerenciarCursos/vincularAlunoCurso" class="btn btn-md btn-primary">Vincular Aluno</a>
                     </div>
                 </div>              
             </div>

@@ -19,12 +19,18 @@
 				    </tr>
 				</thead>
 				<tbody>
-				  	@foreach($alunos as $c)
-						<tr>	
-						    <td>{{$c->nome}}</td>
-						    <td>{{$c->email}}</td>
-						    <td><a href="" class="btn btn-md btn-danger">Excluir</a></td>
-					@endforeach
+					@if(isset($alunos))
+					  	@foreach($alunos as $c)
+							<tr>	
+							    <td>{{$c->nome}}</td>
+							    <td>{{$c->email}}</td>
+							    <td>
+							    	<a href="/adm/gerenciarCursos/listagemDeTurma/visualizar/deletarAluno/{{$c->id}}/{{$c->id_turma}}" class="btn btn-md btn-danger">Excluir</a>
+							    </td>
+						@endforeach
+					@else
+						<h5>Não existe alunos nessa turma!!</h5>
+					@endif
 				</tbody>
 			</table>
 		</div>
