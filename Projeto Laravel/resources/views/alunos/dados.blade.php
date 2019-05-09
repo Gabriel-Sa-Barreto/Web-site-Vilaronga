@@ -12,7 +12,7 @@
                     <div class="card border border-primary">
                         <div class="card-body">
                             <h5 class="card-title text-center">Edição de dados</h5>
-                            <form action="/adm/gerenciarAlunos/listagem/mudarSenha" method="POST">
+                            <form action="/vilarongacursos/adm/gerenciarAlunos/listagem/mudarSenha" method="POST">
                             @csrf
                                 <div class="form-group">
                                         <label for="nomeAluno">Nome Completo</label>

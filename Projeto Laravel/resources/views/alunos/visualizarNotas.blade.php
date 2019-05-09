@@ -14,7 +14,7 @@
 					            <div class="card border border-primary">
 					                <div class="card-body">
 					                    <h5 class="card-title">Escolha uma turma ao qual você pertence:</h5>
-					                    <form action="/aluno/visualizarNotas/turmaEscolhida" method="POST">
+					                    <form action="/vilarongacursos/aluno/visualizarNotas/turmaEscolhida" method="POST">
 							            @csrf
 								            <table class="table table-ordered table-hover" id="tabela2">
 												<thead class="thead-dark">
@@ -35,7 +35,7 @@
 																    					{{$c->nome}} - Nível: {{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})	
 																    				</td>
 																    				<td>
-																    					<a class="btn btn-md btn-success" href="/aluno/visualizarNotas/turmaEscolhida/{{$t->id}}" >Selecionar</a>
+																    					<a class="btn btn-md btn-success" href="/vilarongacursos/aluno/visualizarNotas/turmaEscolhida/{{$t->id}}" >Selecionar</a>
 																    				</td>
 																    			@endif
 																    		</tr>

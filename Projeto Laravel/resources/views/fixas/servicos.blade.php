@@ -113,7 +113,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 offset-lg-3 col-md-6 offset-md-3 col-sm-12 offset-sm-0 col-xs-12 offset-xs-0">
-                     <div class="team-member"><img src="/img/imagens/traducao/Ricardo.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 10px 8px 10px #888888;"/>
+                     <div class="team-member"><img src="/../../vilarongacursos/img/imagens/traducao/Ricardo.jpeg" class="rounded-circle img-fluid" style = "box-shadow: 5px 10px 8px 10px #888888;"/>
                                 <br><br>
                                 <h4>Ricardo Vilaronga</h4>
                                 <br>
@@ -138,7 +138,7 @@
                         <h2 class="text-info">Solicitação de serviços</h2>
                         <p><br><em>Preencha o formulário e o seu pedido ou questionamento será respondido.</em><br><br></p>
                     </div>
-                    <form class="bg-light border-dark shadow" action="/processingForm" method="post" enctype="multipart/form-data">
+                    <form class="bg-light border-dark shadow" action="/vilarongacursos/processingForm" method="post" enctype="multipart/form-data">
                     @csrf
                         <div class="form-group">
                             <label>Nome</label>

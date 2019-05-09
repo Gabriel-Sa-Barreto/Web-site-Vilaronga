@@ -3,7 +3,7 @@
 		<div class="card-border border-secondary">
 			<div class="card-body">
 				<b><h4 class="card-title text-center">Escolha um curso</h4></b>
-				<form action="/adm/gerenciarCursos/escolherCurso" method="POST">
+				<form action="/vilarongacursos/adm/gerenciarCursos/escolherCurso" method="POST">
 				@csrf
 					<select class="form-control" id="nomeCurso" name="nomeCurso">
 						@foreach($cursos as $c)

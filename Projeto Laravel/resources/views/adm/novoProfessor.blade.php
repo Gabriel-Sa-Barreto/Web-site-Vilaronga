@@ -10,7 +10,7 @@
                     <div class="card border border-primary">
                         <div class="card-body">
                             <h5 class="card-title">Cadastro de novo Professor</h5>
-                            <form action="/adm/gerenciarProfessores/novo/salvar" method="POST">
+                            <form action="/vilarongacursos/adm/gerenciarProfessores/novo/salvar" method="POST">
                             @csrf
                                 <div class="form-group">
                                     <label for="nomeProfessor">Nome do Professor</label>
@@ -40,7 +40,7 @@
                                            id="senha" placeholder="Senha">                     
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-md">Salvar</button>
-                                <a href="/adm/gerenciarProfessores" class="btn btn-danger btn-md">Cancelar</a>
+                                <a href="/vilarongacursos/adm/gerenciarProfessores" class="btn btn-danger btn-md">Cancelar</a>
                             </form>
                         </div>
                     </div>

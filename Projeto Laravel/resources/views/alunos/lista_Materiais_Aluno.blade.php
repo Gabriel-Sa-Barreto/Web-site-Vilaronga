@@ -24,7 +24,7 @@
 								<td>{{$material->nome}}</td>
 								<td>{{$material->nivel}}</td>
 								<td class="actions">
-									<a class="btn btn-success btn-xs" href="/material/download/{{$material->id}}">Download</a>
+									<a class="btn btn-success btn-xs" href="/vilarongacursos/material/download/{{$material->id}}">Download</a>
 								</td>
 							</tr>
 						@endforeach

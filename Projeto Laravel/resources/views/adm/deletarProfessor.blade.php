@@ -27,7 +27,7 @@
 						      <td>{{$p->nome}}</td>
 						      <td>{{$p->telefone}}</td>
 						      <td>{{$p->email}}</td>
-						      <td><a href="/adm/gerenciarProfessores/deletar/salvar/{{$p->id}}" class="btn btn-md btn-danger">Deletar</a></td>
+						      <td><a href="/vilarongacursos/adm/gerenciarProfessores/deletar/salvar/{{$p->id}}" class="btn btn-md btn-danger">Deletar</a></td>
 						    </tr>
 						@endforeach
 					@else

@@ -30,7 +30,7 @@
 				            <div class="card border border-primary">
 				                <div class="card-body">
 				                    <h5 class="card-title">Cadastro de nova Turma</h5>
-				                    <form action="/adm/gerenciarCursos/salvarTurma" method="POST">
+				                    <form action="/vilarongacursos/adm/gerenciarCursos/salvarTurma" method="POST">
 						            @csrf
 							            <div class="form-group">
 							                <label for="nomeCurso">Escolha um curso:</label>
@@ -67,7 +67,7 @@
 
 							            </div>
 							            <button type="submit" class="btn btn-md btn-primary">Salvar</button>
-							            <a href="/adm/gerenciarCursos" class="btn btn-md btn-danger">Cancelar</a>
+							            <a href="/vilarongacursos/adm/gerenciarCursos" class="btn btn-md btn-danger">Cancelar</a>
 			       					</form>
 				                </div>
 				            </div>   

@@ -17,7 +17,7 @@
                     <p>O ser humano se empolga com tudo que é novo, o sentimento e o desejo de aprender idiomas, em especial o Inglês e o Espanhol, se torna cada vez mais efervescente.</p>
                 </div>
                 <div class="row align-items-center">
-                    <div class="col-md-6"><img class="img-thumbnail" src="/img/imagens/spanish.jpg"></div>
+                    <div class="col-md-6"><img class="img-thumbnail" src="/../../vilarongacursos/img/imagens/spanish.jpg"></div>
                     <div class="col-md-6">
                         <h3>Apresentação</h3>
                         <div class="getting-started-info">

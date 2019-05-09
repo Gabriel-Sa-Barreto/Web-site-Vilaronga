@@ -25,7 +25,7 @@
 							    <td>{{$c->nome}}</td>
 							    <td>{{$c->email}}</td>
 							    <td>
-							    	<a href="/adm/gerenciarCursos/listagemDeTurma/visualizar/deletarAluno/{{$c->id}}/{{$c->id_turma}}" class="btn btn-md btn-danger">Excluir</a>
+							    	<a href="/vilarongacursos/adm/gerenciarCursos/listagemDeTurma/visualizar/deletarAluno/{{$c->id}}/{{$c->id_turma}}" class="btn btn-md btn-danger">Excluir</a>
 							    </td>
 						@endforeach
 					@else

@@ -86,10 +86,10 @@
 													    	<td>{{$t->nome}}</td>
 															<td>
 																@if($opcao == 1)
-																	<form class="form-inline" action="/adm/gerenciarProfessores/vincular" method="POST">
+																	<form class="form-inline" action="/vilarongacursos/adm/gerenciarProfessores/vincular" method="POST">
 							      									@csrf
 							      								@else
-							      									<form class="form-inline" action="/adm/gerenciarProfessores/desvincular" method="POST">
+							      									<form class="form-inline" action="/vilarongacursos/adm/gerenciarProfessores/desvincular" method="POST">
 							      									@csrf
 							      								@endif
 																	<input type="hidden" name="idTurma" value="{{$t->id}}" readonly="readonly">

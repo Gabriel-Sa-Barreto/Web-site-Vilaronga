@@ -22,37 +22,37 @@
                         style="box-shadow: 5px 10px 8px 5px #888888;border: 1px solid;">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto4.jpeg" alt="First slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto4.jpeg" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto5.jpeg" alt="Second slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto5.jpeg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto6.jpeg" alt="Third slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto6.jpeg" alt="Third slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto7.jpeg" alt="Fourth slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto7.jpeg" alt="Fourth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto8.jpeg" alt="Fifth slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto8.jpeg" alt="Fifth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto9.jpeg" alt="Sixth slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto9.jpeg" alt="Sixth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto10.jpeg" alt="Seventh slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto10.jpeg" alt="Seventh slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto11.jpeg" alt="Eighth slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto11.jpeg" alt="Eighth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto12.jpeg" alt="Nineth slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto12.jpeg" alt="Nineth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto13.jpeg" alt="Tenth slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto13.jpeg" alt="Tenth slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="img/fotosCursos/ingles/Foto14.jpeg" alt="Eleventh slide">
+                            <img class="d-block w-100" src="/../../vilarongacursos/img/fotosCursos/ingles/Foto14.jpeg" alt="Eleventh slide">
                         </div>
                         <a class="carousel-control-prev" href="#carouselSlides" role="button" data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

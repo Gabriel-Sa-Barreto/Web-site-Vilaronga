@@ -13,7 +13,7 @@
                                 <h5><b>{{$erro}}</b></h5>
                             @endif
                             <h5 class="card-title">Cadastro de novo Aluno</h5>
-                            <form action="/adm/gerenciarAlunos/novo/salvar" method="POST">
+                            <form action="/vilarongacursos/adm/gerenciarAlunos/novo/salvar" method="POST">
                             @csrf
                                 <div class="form-group">
                                         <label for="nomeAluno">Nome Completo</label>

@@ -22,7 +22,7 @@
 						    <tr>	
 						      <td>{{$c->nome}}</td>
 						      <td>
-						      	<form class="form-inline" action="/adm/gerenciarCursos/listagemDeTurma/visualizar" method="POST">
+						      	<form class="form-inline" action="/vilarongacursos/adm/gerenciarCursos/listagemDeTurma/visualizar" method="POST">
 						      	@csrf
 						      		<div class="input-group">
 										<select class="custom-select" id="turma" name="turma">
@@ -37,7 +37,7 @@
 													<button type="submit" class="btn btn-outline-secondary" type="button" style="margin-right:5px;">
 														Visualizar
 													</button>
-													<a href="/adm/gerenciarCursos/deletarTurma/{{$t->id}}" class="btn btn-outline-danger">Deletar Turma</a>
+													<a href="/vilarongacursos/adm/gerenciarCursos/deletarTurma/{{$t->id}}" class="btn btn-outline-danger">Deletar Turma</a>
 													@break;
 												@endif
 										@endforeach					

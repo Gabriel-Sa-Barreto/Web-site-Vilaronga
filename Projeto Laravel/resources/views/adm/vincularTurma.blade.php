@@ -24,7 +24,7 @@
 						      <td>{{$a->nome}}</td>
 						      <td>{{$a->telefone}}</td>
 						      <td>
-						      	<form class="form-inline" action="/adm/gerenciarCursos/vincularTurma" method="POST">
+						      	<form class="form-inline" action="/vilarongacursos/adm/gerenciarCursos/vincularTurma" method="POST">
 						      	@csrf
 						      		<div class="input-group">
 										<select class="custom-select" id="nivelTurma" name="nivelTurma">

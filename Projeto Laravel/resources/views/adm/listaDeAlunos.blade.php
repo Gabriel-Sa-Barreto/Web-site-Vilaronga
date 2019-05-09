@@ -26,7 +26,7 @@
 						      <td>{{$a->nome}}</td>
 						      <td>{{$a->telefone}}</td>
 						      <td>{{$a->email}}</td>
-						      <td><a href="/adm/gerenciarAlunos/dadosCompletos/{{$a->id}}" class="btn btn-md btn-danger">Dados Completos</a>
+						      <td><a href="/vilarongacursos/adm/gerenciarAlunos/dadosCompletos/{{$a->id}}" class="btn btn-md btn-danger">Dados Completos</a>
 						      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#senha" data-whatever="{{$a->nome}}" data-id="{{$a->id}}">Mudar senha</button></td>
 						    </tr>
 						@endforeach
@@ -45,7 +45,7 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		        <form action="/adm/gerenciarAlunos/listagem/mudarSenha" method="POST">
+		        <form action="/vilarongacursos/adm/gerenciarAlunos/listagem/mudarSenha" method="POST">
 		          @csrf
 		          <div class="form-group">
 		            <label for="recipient-name" class="col-form-label">Nova Senha:</label>

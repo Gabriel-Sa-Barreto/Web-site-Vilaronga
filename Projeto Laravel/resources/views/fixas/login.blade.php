@@ -20,7 +20,6 @@
                                     <div class="form-group">
                                         <button class="btn btn-primary btn-block" type="submit">Login</button>
                                     </div>
-                                    <a style = "font-size: 1em;" href="#" class="forgot">Esqueceu seu email ou senha?</a>
                                 </form>
                             </div>
                         </div>
