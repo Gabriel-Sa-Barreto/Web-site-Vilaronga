@@ -49,7 +49,7 @@ class MaterialController extends Controller
                                                ->select('materials.*' , 'turmas.nivel')->Where('aluno_id','=', $userAluno->id)->get();
             return view('alunos.lista_Materiais_Aluno' , compact('materiais'));                                   
         }
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
     /**
      * Show the form for creating a new resource.
@@ -63,7 +63,7 @@ class MaterialController extends Controller
             $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();//retorna todos as turmas disponíveis no banco para associação com um novo arquivo
             return view('novoTurma_Material', compact('turmas'));
         }
-        return redirect('/vilarongacursos');    
+        return redirect('/');    
     }
     /**
      * Store a newly created resource in storage.

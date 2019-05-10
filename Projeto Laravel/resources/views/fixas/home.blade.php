@@ -32,7 +32,6 @@
         }
 
     </style>
-
 </head>
 
 <body style="margin-top: 65px;">
@@ -134,7 +133,7 @@
                             <figcaption>
                                 <h4>Inglês</h4>
                                 <p>Desenvolva suas habilidades na língua inglesa através do nosso grande curso.</p>
-                            </figcaption><a href="/ingles"></a></figure>
+                            </figcaption><a href="/vilarongacursos/ingles"></a></figure>
                     </div>
                     <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-0 offset-xs-0">
                         <figure class="snip1563 hover">
@@ -142,7 +141,7 @@
                             <figcaption>
                                 <h4>Espanhol</h4>
                                 <p>Aprenda o melhor da língua espanhola e aproveite essa nova oportunidade de se desenvolver.</p>
-                            </figcaption><a href="/espanhol"></a></figure>
+                            </figcaption><a href="/vilarongacursos/espanhol"></a></figure>
                     </div>
                     <div class="col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-lg-0 offset-md-3 offset-xs-0">
                         <figure class="snip1563">
@@ -150,7 +149,7 @@
                             <figcaption>
                                 <h4>Português<br>e Redação</h4>
                                 <p>Crie grandes textos e tire as melhores notas em concursos, ENEM e vestibulares.</p>
-                            </figcaption><a href="/portugues"></a></figure>
+                            </figcaption><a href="/vilarongacursos/portugues"></a></figure>
                     </div>
                 </div>
             </div>
@@ -214,10 +213,10 @@
                                 <p><b>Escolha qual usuário você deseja realizar o login.</b></p>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <a class="btn btn-success btn-xs"  href="/professor/login">Usuário Professor</a>
+                                <a class="btn btn-success btn-xs"  href="/vilarongacursos/professor/login">Usuário Professor</a>
                             </div>
                             <div class="col-sm-12 col-md-6 col-lg-6">
-                                <a class="btn btn-success btn-xs"  href="/aluno/login">Usuário Aluno</a>
+                                <a class="btn btn-success btn-xs"  href="/vilarongacursos/aluno/login">Usuário Aluno</a>
                             </div>
                         </div>
                     </div>

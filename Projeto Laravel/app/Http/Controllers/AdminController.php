@@ -71,7 +71,7 @@ class AdminController extends Controller
 
         $aluno_endereco->aluno_id = $id_aluno->id;
         $aluno_endereco->save();
-        return redirect('/vilarongacursos/adm/gerenciarAlunos');
+        return redirect('/adm/gerenciarAlunos');
 
     }
 
@@ -91,7 +91,7 @@ class AdminController extends Controller
             $end->delete();
             $aluno->delete(); 
         }
-        return redirect('/vilarongacursos/adm/gerenciarAlunos/deletar');
+        return redirect('/adm/gerenciarAlunos/deletar');
     }
 
 
@@ -100,7 +100,7 @@ class AdminController extends Controller
         if($alunosCad){
             return view('adm.listaDeAlunos',compact('alunosCad'));
         }
-        return redirect('/vilarongacursos/adm/gerenciarAlunos');
+        return redirect('/adm/gerenciarAlunos');
     }
 
     public function dadosAluno($id){
@@ -115,7 +115,7 @@ class AdminController extends Controller
         if(isset($userAluno)){
             return view('adm.dadosCompletosAlunos',compact('userAluno'));
         }
-        return redirect('/vilarongacursos/adm/gerenciarAlunos');
+        return redirect('/adm/gerenciarAlunos');
 
     }
 
@@ -124,7 +124,7 @@ class AdminController extends Controller
         if(isset($cursos)){
             return view('adm.vincularAlunoCurso',compact('cursos'));
         }
-        return redirect('/vilarongacursos/adm/gerenciarCursos');
+        return redirect('/adm/gerenciarCursos');
 
     }
 
@@ -161,11 +161,11 @@ class AdminController extends Controller
 
         $verificação = Nota::Where([ ['aluno_id', $nota->aluno_id], ['id_turma', $nota->id_turma] ])->get()->first();
         if(isset($verificação)){//aluno já está vinculado nessa turma
-            return redirect('/vilarongacursos/adm/gerenciarCursos/vincularAlunoCurso');
+            return redirect('/adm/gerenciarCursos/vincularAlunoCurso');
         }else{
            $nota->save();
         } 
-        return redirect('/vilarongacursos/adm/gerenciarCursos/vincularAlunoCurso');        
+        return redirect('/adm/gerenciarCursos/vincularAlunoCurso');        
     }
 
 
@@ -202,11 +202,11 @@ class AdminController extends Controller
         $verificação = Nota::Where([ ['aluno_id', $id_aluno], ['id_turma', $id_turma] ])->get()->first();
         if(isset($verificação)){//aluno já está vinculado nessa turma
             $verificação->delete();
-            return redirect('/vilarongacursos/adm/gerenciarAlunos/listagemDeTurma');
+            return redirect('/adm/gerenciarAlunos/listagemDeTurma');
         }else{
            
         } 
-        return redirect('/vilarongacursos/adm/gerenciarAlunos/listagemDeTurma');   
+        return redirect('/adm/gerenciarAlunos/listagemDeTurma');   
     }
 
     public function mudarSenha(Request $request){
@@ -216,9 +216,9 @@ class AdminController extends Controller
             $aluno = Aluno::Where('id', $idAluno)->get()->first();
             $aluno->password = Hash::make($request->input('password'));
             $aluno->save();
-            return redirect('/vilarongacursos/adm/gerenciarAlunos/listagem');
+            return redirect('/adm/gerenciarAlunos/listagem');
         }
-        return redirect('/vilarongacursos');    
+        return redirect('/');    
     }
 
 

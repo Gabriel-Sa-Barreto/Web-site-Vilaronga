@@ -38,6 +38,6 @@ class AlunoLoginController extends Controller
     public function logout()
     {
         Auth::guard('aluno')->logout();
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 }

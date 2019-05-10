@@ -62,7 +62,7 @@ class AlunoController extends Controller
             return view('alunos.dados', compact('aluno', 'enderecoAluno'));
         }
        
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 
     /**
@@ -89,10 +89,10 @@ class AlunoController extends Controller
 
                 $aluno->save(); //salva as alterações de aluno
                 $enderecoAluno->save(); //salva as alterações do endereço do aluno
-                return redirect('/vilarongacursos/aluno/dados');
+                return redirect('/aluno/dados');
             }
         }
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 
     /**
@@ -109,7 +109,7 @@ class AlunoController extends Controller
                 return view('alunos.visualizarNotas'); //caso o aluno não esteja em nenhuma turma.
             }
         }
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 
     public function mostrarNotas($id){
@@ -128,7 +128,7 @@ class AlunoController extends Controller
             $turmas = Turma::all();
             return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas', 'notas', 'class','teste'));
         }
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 
 }

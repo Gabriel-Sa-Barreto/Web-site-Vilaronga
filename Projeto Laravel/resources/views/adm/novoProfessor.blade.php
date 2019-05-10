@@ -15,7 +15,7 @@
                                 <div class="form-group">
                                     <label for="nomeProfessor">Nome do Professor</label>
                                     <input type="text" class="form-control" name="nomeProfessor" 
-                                           id="nomeProfessor" placeholder="Nome do Professor">
+                                           id="nomeProfessor" placeholder="Nome do Professor" required>
                                     <br>
                                     <label for="nomeCurso">Escolha um curso:</label>
                                     <select class="form-control" id="nomeCurso" name="nomeCurso">
@@ -27,17 +27,17 @@
                                     <br>
                                     <label for="email">Telefone</label>
                                     <input type="text" class="form-control" name="telefone" 
-                                           id="telefone" placeholder="Telefone">
+                                           id="telefone" placeholder="Telefone" required>
 
                                     <br>
                                     <label for="email">Email</label>
                                     <input type="text" class="form-control" name="email" 
-                                           id="email" placeholder="Email">
+                                           id="email" placeholder="Email" required>
 
                                     <br>
-                                    <label for="senha">Senha</label>
-                                    <input type="text" class="form-control" name="senha" 
-                                           id="senha" placeholder="Senha">                     
+                                    <label for="senha">Senha - acima de 6 caracteres</label>
+                                    <input type="password" class="form-control" name="senha" 
+                                           id="senha" placeholder="Senha" required>                     
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-md">Salvar</button>
                                 <a href="/vilarongacursos/adm/gerenciarProfessores" class="btn btn-danger btn-md">Cancelar</a>

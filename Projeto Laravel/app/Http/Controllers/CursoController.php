@@ -38,7 +38,7 @@ class CursoController extends Controller
         $new_curso = new Curso();
         $new_curso->nome = $request->input('nomeCurso');
         $new_curso->save();
-        return redirect('/vilarongacursos/adm/gerenciarCursos/novaTurma_Curso');
+        return redirect('/adm/gerenciarCursos/novaTurma_Curso');
     }
 
     /**

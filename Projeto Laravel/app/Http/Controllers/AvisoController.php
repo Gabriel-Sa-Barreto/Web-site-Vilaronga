@@ -45,7 +45,7 @@ class AvisoController extends Controller
                                          ->select('avisos.*' , 'turmas.nivel')->Where('aluno_id','=', $userAluno->id)->get();
             return view('alunos.lista_Avisos_Aluno' , compact('avisos'));
         }
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 
     /**
@@ -60,7 +60,7 @@ class AvisoController extends Controller
             $turmas = DB::table('turmas')->where('professor_id', '=', $user->id)->get();//retorna todos as turmas disponíveis no banco para associação com um novo arquivo
             return view('novoAviso', compact('turmas'));
         }
-        return redirect('/vilarongacursos');    
+        return redirect('/');    
     }
 
     /**

@@ -1,6 +1,6 @@
 @extends('layout.fixas')
     @section('conteudo')
-            <div style="background-image: url(&quot;/img/imagens/traducao/technology.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+            <div style="background-image: url(&quot;img/imagens/traducao/technology.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
                 <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgba(30,41,99,0.53);">
                     <div class="d-flex align-items-center order-12" style="height:200px;">
                         <div class="container">
@@ -131,7 +131,7 @@
                 </div>
     </section>
             <!-- Formulário de solicitação de serviços -->
-            <section class="clean-block clean-form dark" style="background-image: url(&quot;/img/imagens/traducao/cenario.jpg&quot;);background-color: transparent;background-repeat: no-repeat;background-size: cover;">
+            <section class="clean-block clean-form dark" style="background-image: url(&quot;img/imagens/traducao/cenario.jpg&quot;);background-color: transparent;background-repeat: no-repeat;background-size: cover;">
                 <div class="container">
                     <div class="block-heading" style="padding-top: 40px;">
                         <h2 class="text-info">Solicitação de serviços</h2>

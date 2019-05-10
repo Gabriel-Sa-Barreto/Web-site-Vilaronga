@@ -34,7 +34,7 @@ class TeacherController extends Controller
             $cursos = Curso::all();
             return view('adm.novoProfessor',compact('cursos'));
         }else{
-            return redirect('/vilarongacursos');//redireciona para a home_page do site
+            return redirect('/');//redireciona para a home_page do site
         }
        
     }
@@ -53,7 +53,7 @@ class TeacherController extends Controller
         $new_professor->email = $request->input('email');
         $new_professor->password = Hash::make($request->input('senha'));
         $new_professor->save();
-        return redirect('/vilarongacursos/adm/gerenciarProfessores/novo');
+        return redirect('/adm/gerenciarProfessores/novo');
     }
 
     /**
@@ -106,9 +106,9 @@ class TeacherController extends Controller
                 $t->save();
             }
             $professor->delete();
-            return redirect('/vilarongacursos/adm/gerenciarProfessores/deletar/1');
+            return redirect('/adm/gerenciarProfessores/deletar/1');
         }
-        return redirect('/vilarongacursos/adm/gerenciarProfessores/deletar/1');
+        return redirect('/adm/gerenciarProfessores/deletar/1');
     }
 
 
@@ -133,11 +133,19 @@ class TeacherController extends Controller
                 if($opcao == 1){//para deletar   
                     return view('adm.deletarProfessor');
                 }else if($opcao == 2){//para vincular um professor
-                    return view('adm.vincular_desvincularProfessor');
+                    $cursos  = Curso::all();
+                    $turmas = Turma::all();
+                    $opcao = 1;
+                    return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao'));
+                }else if($opcao == 3){//para vincular um professor
+                    $cursos  = Curso::all();
+                    $turmas = Turma::all();
+                    $opcao = 2;
+                    return view('adm.vincular_desvincularProfessor', compact('professores', 'cursos', 'turmas','opcao'));
                 }
             }
         }else{
-            return redirect('/vilarongacursos');
+            return redirect('/');
         }
     }
 
@@ -155,9 +163,9 @@ class TeacherController extends Controller
                 $turma->professor_id = $request->input('idProfessor');
                 $turma->save();
             }
-            return redirect('/vilarongacursos/adm/gerenciarProfessores/vincularDesvincular/2');
+            return redirect('/adm/gerenciarProfessores/vincularDesvincular/2');
         }else{
-            return redirect('/vilarongacursos');
+            return redirect('/');
         }
 
     }
@@ -169,13 +177,13 @@ class TeacherController extends Controller
             if($turma->professor_id == $request->input('idProfessor')){
                 $turma->professor_id = null;
                 $turma->save();
-                return redirect('/vilarongacursos/adm/gerenciarProfessores/vincularDesvincular/3');
+                return redirect('/adm/gerenciarProfessores/vincularDesvincular/3');
             }else{
                 //o professor não pertece à turma escolhida
-                return redirect('/vilarongacursos/adm/gerenciarProfessores/vincularDesvincular/3');    
+                return redirect('/adm/gerenciarProfessores/vincularDesvincular/3');    
             }
         }else{
-            return redirect('/vilarongacursos');
+            return redirect('/');
         }
 
     }

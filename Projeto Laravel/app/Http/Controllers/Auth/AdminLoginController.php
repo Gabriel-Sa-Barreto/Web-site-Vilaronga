@@ -38,6 +38,6 @@ class AdminLoginController extends Controller
     public function logout()
     {
         Auth::guard('administrador')->logout();
-        return redirect('/vilarongacursos');
+        return redirect('/');
     }
 }

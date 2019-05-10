@@ -12,7 +12,7 @@
                     <div class="card border border-primary">
                         <div class="card-body">
                             <h5 class="card-title text-center">Edição de dados</h5>
-                            <form action="/vilarongacursos/adm/gerenciarAlunos/listagem/mudarSenha" method="POST">
+                            <form action="/vilarongacursos/aluno/editar" method="POST">
                             @csrf
                                 <div class="form-group">
                                         <label for="nomeAluno">Nome Completo</label>
@@ -56,7 +56,7 @@
                                 <button type="submit" class="btn btn-md btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                     Salvar edição
                                 </button>
-                                <a class="btn btn-danger btn-md" href="/aluno">Cancelar</a>
+                                <a class="btn btn-danger btn-md" href="/vilarongacursos/aluno">Cancelar</a>
                             </form>
                         </div>
                     </div>

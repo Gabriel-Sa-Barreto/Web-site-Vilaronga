@@ -33,7 +33,7 @@ Route::get('/portugues', function () {
 });
 
 Route::get('/sobrenos', function () {
-    return view('fixas.sobreNos');
+    return view('fixas.sobrenos');
 });
 
 Route::get('/traducao', function () {

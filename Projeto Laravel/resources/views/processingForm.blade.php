@@ -62,7 +62,7 @@
         </div>
         </div>
     </nav>
-     <div style="background-image: url(&quot;/img/imagens/traducao/technology.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+     <div style="background-image: url(&quot;img/imagens/traducao/technology.jpg&quot;);height: 550px;background-position: center;background-size: cover;background-repeat: no-repeat;">
             <div class="d-flex justify-content-center align-items-center" style="height:inherit;min-height:initial;width:100%;position:absolute;left:0;background-color:rgba(30,41,99,0.53);">
                 <div class="d-flex align-items-center order-12" style="height:200px;">
                     <div class="container">
@@ -101,13 +101,13 @@
                                         
                                         //configuração do usuário do gmail
                                         $mail->SMTPAuth    = true;             
-                                        $mail->Username    = 'bielbarretoalves@gmail.com'; //colocar email 
-                                        $mail->Password    = 'biel81018840';     // e senha do professor
+                                        $mail->Username    = 'oraculotraducoes10@gmail.com'; //colocar email 
+                                        $mail->Password    = 'asilaydying';     // e senha do professor
                                         $mail->SingleTo = true;
                                 
                                         /*---------------Envio principal para o tradutor responsável---------------*/
                                         $mail->setFrom($email, $nome);
-                                        $mail->addAddress('bielbarretoalves10@gmail.com', 'Oráculo Traduções');//destinatário(email do professor)
+                                        $mail->addAddress('oraculotraducoes10@gmail.com', 'Oráculo Traduções');//destinatário(email do professor)
                                 
                                         $mail->Subject = "Oráculo Traduções: {$assunto}";
                                         $mail->msgHTML("<html>Nome: {$nome}<br/>Telefone: {$telefone}<br/> Email: {$email}<br/>Mensagem: <br/>{$mensagem}</html>");
