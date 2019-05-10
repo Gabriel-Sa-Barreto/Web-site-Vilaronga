@@ -52,6 +52,10 @@ class TeacherController extends Controller
         $new_professor->telefone = $request->input('telefone');
         $new_professor->email = $request->input('email');
         $new_professor->password = Hash::make($request->input('senha'));
+        $busca = Professor::Where('email',$request->input('email'))->get()->first();
+        if(isset($busca)){//já existe professor com este email
+            return redirect('/adm/gerenciarProfessores/novo');
+        }
         $new_professor->save();
         return redirect('/adm/gerenciarProfessores/novo');
     }
