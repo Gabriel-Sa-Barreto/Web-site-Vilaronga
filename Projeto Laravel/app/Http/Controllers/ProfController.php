@@ -48,9 +48,9 @@ class ProfController extends Controller
         $turmas = Turma::Where('professor_id', Auth::user()->id)->get();//busca todas as turmas que este professor pertence
         $cursos = Curso::all();
 
-        //busca alunos daquela turma em específico
+        //busca alunos daquela turma em específico (somente do primeiro trimestre para evitar repetição)
         $alunos = DB::table('alunos')->join('notas', 'alunos.id','=','aluno_id')
-                                      ->select('alunos.*')->Where('id_turma','=', $id)->get();
+                                      ->select('alunos.*')->Where([ ['id_turma','=', $id],['trimestre','=',1]])->get();
         return view('professor.listagemAlunosTurma',compact('alunos','turmas','cursos'));
     }
 
@@ -59,7 +59,7 @@ class ProfController extends Controller
         $cursos = Curso::all();
         //busca alunos daquela turma em específico
         $alunos =  DB::table('alunos')->join('notas', 'alunos.id','=','aluno_id')
-                                      ->select('alunos.*')->Where('id_turma','=', $id)->get();
+                                      ->select('alunos.*')->Where([ ['id_turma','=', $id],['trimestre','=',1]])->get();
         $id_turma = $id; //id da turma desejada
 
         //busca a tupla da turma desejada para realizar a busca pelo curso 
@@ -78,7 +78,7 @@ class ProfController extends Controller
     public function formularioNota(Request $request){
         $idTurma = $request->input('idTurma');
         $idAluno = $request->input('idAluno');
-        $nota    = $request->input('notaEscolhida');
+        $trimestre    = $request->input('trimestreEscolhido');
 
         $alunoNome = Aluno::Where('id', $idAluno)->get()->first(); //busca nome do aluno
         $turmaNota = Turma::Where('id', $idTurma)->get()->first(); //busca dados da turma
@@ -87,10 +87,10 @@ class ProfController extends Controller
         $cursos = Curso::all();
         $turmas = Turma::Where('professor_id', Auth::user()->id)->get();//busca todas as turmas que este professor pertence
 
-        $descricaoNota = null; 
-        $valorNota     = null;
-        $aluno         = $this->notaAluno($idTurma,$idAluno);
-        if($aluno != null){
+        //$descricaoNota = null; 
+        //$valorNota     = null;
+        $aluno         = $this->notaAluno($idTurma,$idAluno,$trimestre);
+        /*if($aluno != null){
             if($cursoNome->id == '1' || $cursoNome->id == '2'){//inglês ou espanhol
                 switch ($nota) { //passa para a view os valores atuais da nota e da descrição, assim caso o usuário deseje editar, somente faz o complemento necessário.
                     case '1':
@@ -130,8 +130,8 @@ class ProfController extends Controller
                         break;
                     }
             }
-        }
-        return view('professor.nota_e_descricao', compact('alunoNome', 'turmaNota', 'nota', 'cursoNome', 'cursos','turmas', 'descricaoNota', 'valorNota'));
+        }*/
+        return view('professor.nota_e_descricao', compact('alunoNome', 'turmaNota', 'nota', 'cursoNome', 'cursos','turmas', 'trimestre'));
     }
 
 
@@ -141,12 +141,13 @@ class ProfController extends Controller
     public function salvarNota(Request $request){
         $idTurma    = $request->input('idTurma');
         $idAluno    = $request->input('idAluno');
-        $nota       = $request->input('nota'); 
+        $trimestre  = $request->input('trimestre'); 
         $valorNota  = (float) $request->input('valor'); //converte de string para float
         $descricao  = $request->input('descricao');
+        $nota       = $request->input('notaEscolhida');
 
         //busca a tupla específica que pertence ao aluno na turma desejada
-        $new_nota = Nota::Where([ ['aluno_id',$idAluno], ['id_turma', $idTurma] ])->get()->first();
+        $new_nota = Nota::Where([ ['aluno_id',$idAluno], ['id_turma', $idTurma], ['trimestre',$trimestre] ])->get()->first();
 
         //modifica o campo desejado de nota e descrição
         switch ($nota) {
@@ -166,6 +167,10 @@ class ProfController extends Controller
                 $new_nota->nota4      = $valorNota;
                 $new_nota->descricao4 = $descricao;
                 break;
+            case '5':
+                $new_nota->nota5      = $valorNota;
+                $new_nota->descricao5 = $descricao;
+                break;
         }
 
         $new_nota->save(); //salva a atualização de dados
@@ -175,9 +180,9 @@ class ProfController extends Controller
     /**
         Método que retorna a tupla com as notas relacionadas a um aluno em uma turma desejada
     */
-    public function notaAluno($idTurma, $idAluno){
-        $notaAluno = Nota::Where([ ['id_turma',$idTurma], ['aluno_id', $idAluno] ])->get()->first();
-        if(isset($notaAluno) > 0){
+    public function notaAluno($idTurma, $idAluno, $trimestre){
+        $notaAluno = Nota::Where([ ['id_turma',$idTurma], ['aluno_id', $idAluno],['trimestre', $trimestre] ])->get()->first();
+        if(isset($notaAluno)){
             return $notaAluno;
         }
         return null;

@@ -28,9 +28,9 @@
 						        	<form class="form-inline" action="/vilarongacursos/professor/gerenciarTurmas/notasTurma/salvar" method="POST">
 						      		@csrf
 						      			<div class="input-group">
-											<select class="custom-select" id="notaEscolhida" name="notaEscolhida">
+											<select class="custom-select" id="trimestreEscolhido" name="trimestreEscolhido">
 												<!-- se for curso de inglês ou espanhol -->
-												@if($cursoTurma->id == '1' || $cursoTurma->id == '2')
+												<!--@if($cursoTurma->id == '1' || $cursoTurma->id == '2')
 													<option selected value="1">Nota 1</option>
 													<option selected value="2">Nota 2</option>
 													<option selected value="3">Nota 3</option>
@@ -40,8 +40,11 @@
 													<option selected value="1">Nota 1</option>
 													<option selected value="2">Nota 2</option>
 													<option selected value="3">Nota 3</option>	
-												@endif
-																			   
+												@endif-->
+												    <option selected value="1">1ª Trimestre</option>
+													<option selected value="2">2ª Trimestre</option>
+													<option selected value="3">3ª Trimestre</option>
+													<option selected value="4">4ª Trimestre</option>						   
 										  	</select>
 										  	<input type="hidden" id="idTurma" name="idTurma" value="{{$id_turma}}">
 										  	<input type="hidden" id="idAluno" name="idAluno" value="{{$a->id}}">

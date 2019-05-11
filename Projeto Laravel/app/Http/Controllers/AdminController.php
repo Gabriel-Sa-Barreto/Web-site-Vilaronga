@@ -79,7 +79,7 @@ class AdminController extends Controller
     public function excluirAluno($id){
         $aluno = Aluno::find($id);
         if(isset($aluno)){
-            //deletar o aluno, e suas viinculações com as turmas
+            //deletar o aluno, e suas vinculações com as turmas
             $turmas = Nota::Where('aluno_id',$id)->get();
             if(isset($turmas)){
                 foreach ($turmas as $t) {
@@ -155,15 +155,18 @@ class AdminController extends Controller
         $aluno = Aluno::Where('id', $request->input('idAluno'))->get()->first();
         $turma = Turma::Where('id', $request->input('nivelTurma'))->get()->first();
 
-        $nota           = new Nota();
-        $nota->aluno_id = $aluno->id;
-        $nota->id_turma = $turma->id;
-
-        $verificação = Nota::Where([ ['aluno_id', $nota->aluno_id], ['id_turma', $nota->id_turma] ])->get()->first();
+        //primeiro verifica se o aluno já está na turma desejada
+        $verificação = Nota::Where([ ['aluno_id', $aluno->id], ['id_turma', $turma->id] ])->get()->first();
         if(isset($verificação)){//aluno já está vinculado nessa turma
             return redirect('/adm/gerenciarCursos/vincularAlunoCurso');
         }else{
-           $nota->save();
+            for ($i = 0; $i < 4; $i++) { //criação das tuplas referentes aos 4 trimestres para o aluno
+                $notaTrimestre            = new Nota();
+                $notaTrimestre->aluno_id  = $aluno->id;
+                $notaTrimestre->id_turma  = $turma->id;
+                $notaTrimestre->trimestre = $i + 1;
+                $notaTrimestre->save();
+            }           
         } 
         return redirect('/adm/gerenciarCursos/vincularAlunoCurso');        
     }
@@ -188,9 +191,9 @@ class AdminController extends Controller
     }
 
     public function listagemDeAlunosTurma(Request $request){
-        //busca as tuplas com os alunos da turma desejada
+        //busca as tuplas com os alunos da turma desejada somente com o trimestre igual a 1 para evitar repetição na hora de exibir.
         $alunos =  DB::table('alunos')->join('notas', 'alunos.id','=','aluno_id')
-                                      ->select('alunos.*','notas.id_turma')->Where('id_turma','=', $request->input('turma'))->get();
+                                      ->select('alunos.*','notas.id_turma')->Where([['id_turma','=', $request->input('turma')], ['notas.trimestre','=', 1 ]])->get();
         if(count($alunos) > 0){//caso exista alunos na turma desejada
             return view('adm.listagemAlunosTurma',compact('alunos'));
         }
@@ -199,12 +202,12 @@ class AdminController extends Controller
 
 
     public function deletarAlunoTurma($id_aluno,$id_turma){
-        $verificação = Nota::Where([ ['aluno_id', $id_aluno], ['id_turma', $id_turma] ])->get()->first();
+        $verificação = Nota::Where([ ['aluno_id', $id_aluno], ['id_turma', $id_turma] ])->get();
         if(isset($verificação)){//aluno já está vinculado nessa turma
-            $verificação->delete();
+            foreach ($verificação as $v) {//deletar a vinculação do aluno com a turma desejada
+                $v->delete();   
+            }
             return redirect('/adm/gerenciarAlunos/listagemDeTurma');
-        }else{
-           
         } 
         return redirect('/adm/gerenciarAlunos/listagemDeTurma');   
     }
