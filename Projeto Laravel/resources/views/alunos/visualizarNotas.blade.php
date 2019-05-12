@@ -14,8 +14,6 @@
 					            <div class="card border border-primary">
 					                <div class="card-body">
 					                    <h5 class="card-title">Escolha uma turma ao qual você pertence:</h5>
-					                    <form action="/vilarongacursos/aluno/visualizarNotas/turmaEscolhida" method="POST">
-							            @csrf
 								            <table class="table table-ordered table-hover" id="tabela2">
 												<thead class="thead-dark">
 												    <tr>
@@ -25,31 +23,43 @@
 												</thead>
 												<tbody>
 												  	@if(isset($turmasAluno))	
-															    @foreach($turmasAluno as $a)
-															    	@foreach($turmas as $t)
-															    		@if($t->id == $a->id_turma)
-																    		@foreach($cursos as $c)
-																    		<tr>
-																    			@if($c->id == $t->curso_id)
-																    				<td>
-																    					{{$c->nome}} - Nível: {{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})	
-																    				</td>
-																    				<td>
-																    					<a class="btn btn-md btn-success" href="/vilarongacursos/aluno/visualizarNotas/turmaEscolhida/{{$t->id}}" >Selecionar</a>
-																    				</td>
-																    			@endif
-																    		</tr>
-																    		@endforeach
-																		@endif
-															      	@endforeach
-															    @endforeach					
+														@foreach($turmasAluno as $a)
+															@foreach($turmas as $t)
+															    @if($t->id == $a->id_turma)
+																    @foreach($cursos as $c)
+																    	<tr>
+																    		@if($c->id == $t->curso_id)
+																    			<td>
+																    			{{$c->nome}} - {{$t->nivel}} às {{$t->horario}} ({{$t->diaDaSemana}})
+																    			</td>
+																    			<td>
+																    				<form class="form-inline" action="/vilarongacursos/aluno/visualizarNotas/turmaEscolhida" method="POST">
+																    				@csrf
+																    				<div class="input-group">
+																    					<select class="custom-select" id="trimestreEscolhido" name="trimestreEscolhido">
+																    						<option selected value="1">1ª Trimestre</option>
+																							<option selected value="2">2ª Trimestre</option>
+																							<option selected value="3">3ª Trimestre</option>
+																							<option selected value="4">4ª Trimestre</option>
+																						</select>
+																						<input type="hidden" id="idTurma" name="idTurma" value="{{$t->id}}">
+																						<button type="submit" class="btn btn-outline-success">Ver</button>
+																					</div>
+																    				</form>
+																    					<!--<a class="btn btn-md btn-success" href="/vilarongacursos/aluno/visualizarNotas/turmaEscolhida/{{$t->id}}" >Selecionar</a>-->
+																    			</td>
+																    		@endif
+																    	</tr>
+																    @endforeach
+																@endif
+															@endforeach
+														@endforeach					
 														    </tr>
 													@else
 														<h5><b>Desculpe, você não está vinculado a nenhuma turma no momento!!</b></h5>
 													@endif
 												</tbody>
 											</table>
-				       					</form>
 					                </div>
 					           </div>
 					       </div>
@@ -66,7 +76,7 @@
 					                    	@if($class->id == 1 || $class->id == 2)
 
 					                    		@if(($notas->nota1 != null))
-						                    		<label for="valor1"><b>Média 1:</b></label>
+						                    		<label for="valor1"><b>Nota 1:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota1}}"  name="valor1" readonly><br>
 								                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota1}}"
 								                    data-descricao="{{$notas->descricao1}}">
@@ -75,7 +85,7 @@
 							                    @endif
 
 							                    @if(($notas->nota2 != null))
-								                    <label for="valor2"><b>Média 2:</b></label>
+								                    <label for="valor2"><b>Nota 2:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota2}}"  name="valor2" readonly><br>
 								                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota2}}"
 								                    data-descricao="{{$notas->descricao2}}">
@@ -84,7 +94,7 @@
 							                    @endif
 
 							                    @if(($notas->nota3 != null))
-								                    <label for="valor3"><b>Média 3:</b></label>
+								                    <label for="valor3"><b>Nota 3:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota3}}"  name="valor3" readonly><br>
 								                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota3}}"
 								                    data-descricao="{{$notas->descricao3}}">
@@ -93,7 +103,7 @@
 								                @endif
 
 								                @if(($notas->nota4 != null))
-								                    <label for="valor4"><b>Média 4:</b></label>
+								                    <label for="valor4"><b>Nota 4:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota4}}"  name="valor4" readonly><br>
 								                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota4}}" data-descricao="{{$notas->descricao4}}">
 								                    Composição</button><br>
@@ -101,15 +111,18 @@
 							                    @endif
 
 							                    @if(($notas->nota5 != null))
-								                    <label for="valor5"><b>Média 5:</b></label>
+								                    <label for="valor5"><b>Nota 5:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota5}}"  name="valor5" readonly><br>
 								                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota5}}" data-descricao="{{$notas->descricao5}}">
 								                    Composição</button><br>
 								                    <hr>
 							                    @endif
+  
+								                <label for="valor5"><b>Média (final/parcial):</b></label>
+								                <input class="form-control" type="text" value="{{$notas->media}}" readonly><br>
 						                   	@else
 						                   		@if(($notas->nota1 != null))
-							                   		<label for="valor1"><b>Média 1:</b></label>
+							                   		<label for="valor1"><b>Nota 1:</b></label>
 							                   		<input class="form-control" type="text" value="{{$notas->nota1}}"  name="valor1" readonly><br>
 							                   		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota1}}" data-descricao="{{$notas->descricao1}}">
 							                   		Composição</button><br>
@@ -117,7 +130,7 @@
 						                   		@endif
 
 						                   		@if(($notas->nota2 != null))
-							                   		<label for="valor2"><b>Média 2:</b></label>
+							                   		<label for="valor2"><b>Nota 2:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota2}}"  name="valor2" readonly><br>
 								                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota2}}" data-descricao="{{$notas->descricao2}}">
 								                    Composição</button><br>
@@ -125,11 +138,14 @@
 							                    @endif
 
 							                    @if(($notas->nota3 != null))
-								                    <label for="valor3"><b>Média 3:</b></label>
+								                    <label for="valor3"><b>Nota 3:</b></label>
 								                    <input class="form-control" type="text" value="{{$notas->nota3}}"  name="valor3" readonly>
 													<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalNotas" data-whatever="{{$notas->nota3}}" data-descricao="{{$notas->descricao3}}">
 													Composição</button><br>
 												@endif
+
+												<label for="valor5"><b>Média (final/parcial):</b></label>
+								                <input class="form-control" type="text" value="{{$notas->media}}" readonly><br>
 						                   	@endif
 										@else
 											<h5><b><i>Para visualizar escolha uma turma!!</i></b></h5>	

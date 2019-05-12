@@ -89,7 +89,16 @@ class ProfController extends Controller
 
         //$descricaoNota = null; 
         //$valorNota     = null;
-        $aluno         = $this->notaAluno($idTurma,$idAluno,$trimestre);
+        $notas_aluno        = $this->notaAluno($idTurma,$idAluno,$trimestre);
+        $media = 0;
+        if($cursoNome->id == '1' || $cursoNome->id == '2'){//curso de inglês/espanhol média dividida por 5 utilizando as 5 notas
+            $media = $notas_aluno->nota1 + $notas_aluno->nota2 + $notas_aluno->nota3 + $notas_aluno->nota4 + $notas_aluno->nota5;
+            $media = $media/5; 
+        }else{//curso de português e redação média dividida por 3 utilizando as 3 notas
+            $media = $notas_aluno->nota1 + $notas_aluno->nota2 + $notas_aluno->nota3;
+            $media = $media/3; 
+        }
+
         /*if($aluno != null){
             if($cursoNome->id == '1' || $cursoNome->id == '2'){//inglês ou espanhol
                 switch ($nota) { //passa para a view os valores atuais da nota e da descrição, assim caso o usuário deseje editar, somente faz o complemento necessário.
@@ -131,7 +140,7 @@ class ProfController extends Controller
                     }
             }
         }*/
-        return view('professor.nota_e_descricao', compact('alunoNome', 'turmaNota', 'nota', 'cursoNome', 'cursos','turmas', 'trimestre'));
+        return view('professor.nota_e_descricao', compact('alunoNome', 'turmaNota', 'media', 'cursoNome', 'cursos','turmas', 'trimestre'));
     }
 
 
@@ -173,6 +182,18 @@ class ProfController extends Controller
                 break;
         }
 
+        $turma = Turma::Where('id', $idTurma)->get()->first();         //busca dados da turma
+        $curso = Curso::Where('id', $turma->curso_id)->get()->first(); //busca dados do curso
+        if($curso->id == '1' || $curso->id == '2'){//curso de inglês/espanhol média dividida por 5 utilizando as 5 notas
+            $media = $new_nota->nota1 + $new_nota->nota2 + $new_nota->nota3 + $new_nota->nota4 + $new_nota->nota5;
+            $media = $media/5; 
+            $new_nota->media = $media;
+        }else{//curso de português e redação média dividida por 3 utilizando as 3 notas
+            $media = $new_nota->nota1 + $new_nota->nota2 + $new_nota->nota3;
+            $media = $media/3; 
+            $new_nota->media = $media;
+        }
+        
         $new_nota->save(); //salva a atualização de dados
         return $this->listagemAlunos($idTurma);
     }

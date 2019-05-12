@@ -7,6 +7,8 @@ use Auth;
 use App\Turma;
 use App\Curso;
 use App\Nota;
+use App\Aviso;
+use App\Material;
 
 class TurmaController extends Controller
 {
@@ -105,6 +107,15 @@ class TurmaController extends Controller
                     $n->delete(); 
                 }
             }
+
+            //agora deleta os avisos vinculados à essa turma
+            $aviso = Aviso::Where('turma_id',$id)->get();
+            if(count($aviso) > 0){
+                foreach ($aviso as $a) {
+                    $a->delete();
+                }
+            }
+
             $turma->delete();//agora deleta a turma
             return redirect('/adm/gerenciarAlunos/listagemDeTurma');
         }

@@ -42,7 +42,7 @@ class AvisoController extends Controller
             }*/
             $avisos = DB::table('avisos')->join('notas', 'avisos.turma_id','=','notas.id_turma')
                                          ->join('turmas', 'avisos.turma_id','=','turmas.id')
-                                         ->select('avisos.*' , 'turmas.nivel')->Where('aluno_id','=', $userAluno->id)->get();
+                                         ->select('avisos.*' , 'turmas.nivel')->Where([ ['aluno_id','=', $userAluno->id],['trimestre','=',1]])->get();
             return view('alunos.lista_Avisos_Aluno' , compact('avisos'));
         }
         return redirect('/');
@@ -71,7 +71,7 @@ class AvisoController extends Controller
      */
     public function store(Request $request)
     {
-        $mytime = Carbon\Carbon::now();
+        $mytime = Carbon\Carbon::now('America/Bahia');
         $new_aviso = new Aviso();
         //$new_aviso->data = $mytime->toDateTimeString();
         $split = $mytime->toDateString();

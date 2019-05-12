@@ -100,7 +100,7 @@ class AlunoController extends Controller
     */
     public function telaVisualizarNota(){
         if(Auth::check()){
-            $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
+            $turmasAluno = Nota::Where([ ['aluno_id', Auth::user()->id], ['trimestre',1] ])->get();
             if(count($turmasAluno) > 0){//o aluno está cadastrado em alguma turma
                 $cursos  = Curso::all();
                 $turmas = Turma::all();
@@ -112,8 +112,9 @@ class AlunoController extends Controller
         return redirect('/');
     }
 
-    public function mostrarNotas($id){
-        $turmaId   = $id;
+    public function mostrarNotas(Request $request){
+        $turmaId     = $request->input('idTurma');
+        $trimestre   = $request->input('trimestreEscolhido');
         if(Auth::check()){
             /*$class = DB::table('cursos')->join('turmas', 'cursos.id','=','turmas.curso_id')
                                         ->select('cursos.*', 'turmas.*')->Where([['turmas.id',$turmaId], ['turmas.curso_id', 'cursos.id']])->get()->first();*/
@@ -121,9 +122,9 @@ class AlunoController extends Controller
             $class = Curso::Where('id',$class->curso_id)->get()->first();//retorna o curso vinculado à turma encontrada   
             
             
-            $notas = DB::table('notas')->Where([ ['aluno_id',Auth::user()->id] , ['id_turma', $turmaId] ])->get()->first();
+            $notas = DB::table('notas')->Where([ ['aluno_id',Auth::user()->id] , ['id_turma', $turmaId], ['trimestre','=', $trimestre] ])->get()->first();
 
-            $turmasAluno = Nota::Where('aluno_id', Auth::user()->id)->get();
+            $turmasAluno = Nota::Where([ ['aluno_id', Auth::user()->id] , ['trimestre',1] ])->get();
             $cursos  = Curso::all();
             $turmas = Turma::all();
             return view('alunos.visualizarNotas', compact('turmasAluno', 'cursos', 'turmas', 'notas', 'class','teste'));

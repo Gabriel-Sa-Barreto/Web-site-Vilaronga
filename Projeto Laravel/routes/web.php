@@ -115,7 +115,7 @@ Route::prefix('aluno')->group(function(){
 
     Route::get('/visualizarNotas', 'AlunoController@telaVisualizarNota'); //rota para visualizar as notas que o aluno possue em cada turma ao qual ele pertence.
 
-    Route::get('/visualizarNotas/turmaEscolhida/{id}', 'AlunoController@mostrarNotas'); //rota para visualizar as notas da turma que o aluno escolheu.
+    Route::post('/visualizarNotas/turmaEscolhida', 'AlunoController@mostrarNotas'); //rota para visualizar as notas da turma que o aluno escolheu.
 });
 
 Route::prefix('material')->group(function(){

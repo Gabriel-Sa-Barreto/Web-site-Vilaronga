@@ -15,7 +15,7 @@
 				    <tr>
 				     	<th scope="col">Nome</th>
 				      	<th scope="col">Email</th>
-				      	<th scope="col">Escolha uma Nota</th>
+				      	<th scope="col">Escolha um trimestre</th>
 				    </tr>
 				</thead>
 				<tbody>

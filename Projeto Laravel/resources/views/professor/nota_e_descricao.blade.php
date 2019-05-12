@@ -2,7 +2,7 @@
 	@section('nota_e_descricao')
 	<div class="card border border-secondary">
 		<div class="card-body">
-			<b><h4 class="card-title text-center">Lista completa de aluno nesta turma:</h4></b>
+			<b><h4 class="card-title text-center">Salve as notas referentes ao trimestre escolhido:</h4></b>
 			<h5>Nome do Aluno:</h5>
 			<input class="form-control" type="text" readonly value="{{$alunoNome->nome}}">
 			<br>
@@ -11,7 +11,7 @@
 			<br>
 			
 			<h5>Média do trimestre (final/parcial):</h5>
-			<input class="form-control" type="text" readonly value="">
+			<input class="form-control" type="text" readonly value="{{$media}}">
 			<br>
 			<!--Formulário para colocar notas -->
 			<form action="/vilarongacursos/professor/gerenciarTurmas/notasTurma/salvarNota" method="POST">
@@ -34,7 +34,7 @@
 			  	</div>
 
 				<div class="form-group">
-			    	<label for="valor"><b>Valor da nota:</b></label>
+			    	<label for="valor"><b>Informe a nota do aluno:</b></label>
 			    	<input type="text" class="form-control" id="valor" name="valor" required>
 			  	</div>
 
@@ -46,7 +46,7 @@
 				<input type="hidden" id="idAluno"   name="idAluno"     value="{{$alunoNome->id}}">
 				<input type="hidden" id="trimestre"   name="trimestre"   value="{{$trimestre}}">
 				<button type="submit" class="btn btn-outline-success" type="button">Salvar</button>
-				<a class="btn btn-outline-danger" href="/vilarongacursos/professor/gerenciarTurmas/notasTurma/{{$turmaNota->id}}">Cancelar</a> 
+				<a class="btn btn-outline-danger" href="/vilarongacursos/professor/gerenciarTurmas/notasTurma/{{$turmaNota->id}}">Cancelar</a>
 			</form>
 		</div>
 	</div>

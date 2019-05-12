@@ -46,7 +46,7 @@ class MaterialController extends Controller
             return view('lista_Materiais' , compact('materiais'));*/
             $materiais = DB::table('materials')->join('notas', 'materials.turma_id','=','notas.id_turma')
                                                ->join('turmas', 'materials.turma_id','=','turmas.id')
-                                               ->select('materials.*' , 'turmas.nivel')->Where('aluno_id','=', $userAluno->id)->get();
+                                               ->select('materials.*' , 'turmas.nivel')->Where([ ['aluno_id','=', $userAluno->id], ['trimestre','=',1]])->get();
             return view('alunos.lista_Materiais_Aluno' , compact('materiais'));                                   
         }
         return redirect('/');
@@ -114,7 +114,7 @@ class MaterialController extends Controller
         $headers = [
             'Content-Type' => 'application/pdf',
         ];
-        return response()->download( public_path() . '\materiais/' . $material->nome , $material->nome , $headers);
+        return response()->download( public_path() . '/materiais/' . $material->nome , $material->nome , $headers);
     }
     /**
      * Update the specified resource in storage.
